@@ -1,14 +1,53 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
         <title>GRAPHQON</title>
         <link rel="stylesheet" href="style.css">
-        <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Commissioner&family=Lato&display=swap" rel="stylesheet">
 	</head>
 	<body>
-        <div id='canvas-container'>
-            <button class='more-info'>More info ↓</button>
+        <div id='canvas-container' class='full-bleed'>
+            <div class='btn-container'>
+                <div class='button register'>Register Now</div>
+                <div onclick='scrollToTarget("about")' class='button more-info'>More info ↓</div>
+            </div>
+        </div>
+        <div id='about'>
+            <h2>About the event</h2>
+            <p>MOTOGRAPH is the annual Montreal-Toronto pre-SIGGRAPH workshop, organized by the major East-Canadian computer graphics labs. It is an opportunity for students to present their prospective submissions to a friendly, constructively critical audience and to get valuable feedback.</p>
+            <div class='btn-container full-bleed'>
+                <div onclick='scrollToTarget("schedule")' class='button schedule'>Schedule</div>
+                <div class='button register'>Register</div>
+            </div>
+        </div>
+        <div id='keynote'>
+            <h2>Keynote Speakers</h2>
+            <div class='speaker-container full-bleed'>
+                <div>
+                    <h3>Speaker 1</h3>
+                    <img src='person.png' />
+                    <p>Short Description</p>
+                </div>
+                <div>
+                    <h3>Speaker 2</h3>
+                    <img src='person.png' />
+                    <p>Short Description</p>
+                </div>
+            </div>
+        </div>
+        <div id='schedule'>
+            <h2>Schedule</h2>
+            <p>TBD</p>
+        </div>
+        <div id='registration'>
+            <h2>Registrations are open</h2>
+            <p>Are you affiliated with an East-Canadian computer graphics laboratory? Sign up for MOTOGRAPH free of charge.
+                <br>Any questions at all? Contact us using the form below.</p>
+            <div class='btn-container full-bleed'>
+                <div class='button register'>Register</div>
+            </div>
         </div>
 
         <script src="three.js"></script>

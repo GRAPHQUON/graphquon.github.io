@@ -23,13 +23,31 @@ function clamp(val, min, max) {
     return Math.min(Math.max(val, min), max);
 };
 
+function computeFov(aspect_ratio) {
+    //  fovy = 2 * atan(tan(fovx / 2) / aspect_ratio)
+    const fovx = 80 / 180 * Math.PI; // Convert degrees to radians
+    return 2 * Math.atan(Math.tan(fovx / 2) / aspect_ratio) / Math.PI * 180;
+}
+
+// Adapted from https://stackoverflow.com/a/18071824
+window.scrollToTarget = function(targetId) {
+    const scrollContainer = document.documentElement;
+    let target = document.getElementById(targetId);
+    let targetY = 0;
+    do { // find the top of target relatively to the container
+        if (target == scrollContainer) break;
+        targetY += target.offsetTop;
+    } while (target = target.offsetParent);
+
+    scrollContainer.scrollTop = targetY; // This, combined with css 'scroll-behavior: smooth;' results in a smooth scrolling animation
+}
+
 
 /* BASIC THREE.JS SETUP */
 const scene = new THREE.Scene();
-const fovx = 80 / 180 * Math.PI; // Convert degrees to radians
-//  fovy = 2 * atan(tan(fovx / 2) / aspect_ratio)
 const aspect_ratio = window.innerWidth / window.innerHeight;
-const camera = new THREE.PerspectiveCamera(2 * Math.atan(Math.tan(fovx / 2) / aspect_ratio) / Math.PI * 180, aspect_ratio, 1, 10000); // fovy = 45
+const fovy = computeFov(aspect_ratio);
+const camera = new THREE.PerspectiveCamera(fovy, aspect_ratio, 1, 10000); // fovy = 45
 camera.position.z = cam_radius;
 
 const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
@@ -124,7 +142,6 @@ loader.load('Titillium_Bold.json', (title_font) => {
     });
 });
 
-
 /* EVENT HANDLERS */
 function handleMotion(x, y) {
     cam_pos = spherical_to_cartesian(x * 0.5, y * 0.7 + Math.PI / 2, cam_radius);
@@ -145,6 +162,17 @@ document.addEventListener("mousemove", (e) => {
 //     const y = clamp(e.beta / 90, -1, 1) / 2;
 //     handleMotion(x, y);
 // });
+
+window.addEventListener('resize', (e) => {
+    const aspect_ratio = window.innerWidth / window.innerHeight;
+    const fovy = computeFov(aspect_ratio);
+
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.fov = fovy;
+    camera.updateProjectionMatrix();
+
+    renderer.setSize(window.innerWidth, window.innerHeight);
+});
 
 
 /* RENDERING LOOP */
