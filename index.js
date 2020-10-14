@@ -4,7 +4,7 @@ const subtitles = [
     'McGill (Virtual)',
     'November 28-29, 2020'
 ];
-const cam_radius = 50;
+const cam_radius = 50; // radius of the sphere around which the camera rotates
 const start_y_position = 5; // Note: The origin is the center of the window
 const debug = false; // Set to true to enable orbit controls and to view the shadow map cameras
 
@@ -24,22 +24,10 @@ function clamp(val, min, max) {
 };
 
 function computeFov(aspect_ratio) {
-    //  fovy = 2 * atan(tan(fovx / 2) / aspect_ratio)
+    // Compute the vertical fov from a set horizontal fov using the window's aspect ratio
+    // fovy = 2 * atan(tan(fovx / 2) / aspect_ratio)
     const fovx = 80 / 180 * Math.PI; // Convert degrees to radians
     return 2 * Math.atan(Math.tan(fovx / 2) / aspect_ratio) / Math.PI * 180;
-}
-
-// Adapted from https://stackoverflow.com/a/18071824
-window.scrollToTarget = function(targetId) {
-    const scrollContainer = document.documentElement;
-    let target = document.getElementById(targetId);
-    let targetY = 0;
-    do { // find the top of target relatively to the container
-        if (target == scrollContainer) break;
-        targetY += target.offsetTop;
-    } while (target = target.offsetParent);
-
-    scrollContainer.scrollTop = targetY; // This, combined with css 'scroll-behavior: smooth;' results in a smooth scrolling animation
 }
 
 
@@ -77,8 +65,8 @@ light.position.set(-30, 30, 50);
 light.castShadow = true;
 scene.add(light);
 
-light.shadow.mapSize.width = 4096;
-light.shadow.mapSize.height = 2048;
+light.shadow.mapSize.width = 2048;
+light.shadow.mapSize.height = 1024;
 light.shadow.camera.top = 20;
 light.shadow.camera.bottom = -10;
 light.shadow.camera.left = 30;
@@ -172,6 +160,16 @@ window.addEventListener('resize', (e) => {
     camera.updateProjectionMatrix();
 
     renderer.setSize(window.innerWidth, window.innerHeight);
+});
+
+window.addEventListener('scroll', (e) => {
+    const scrollY = document.documentElement.scrollTop;
+    const navEl = document.getElementById('nav-container');
+    if (scrollY > window.innerHeight / 4) {
+        navEl.classList.add('solid');
+    } else {
+        navEl.classList.remove('solid');
+    }
 });
 
 
