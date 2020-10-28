@@ -101,7 +101,7 @@ canvas {
     width: 150px;
     height: 60px;
     border-radius: 10px;
-    background-color: transparent;
+    background-color: #ffffff1f;
     border: solid 2px white;
     color: white;
     font-size: 20px;
@@ -111,12 +111,27 @@ canvas {
 }
 
 .button:hover {
-    background-color: rgba(255, 255, 255, 0.07);
+    background-color: rgba(255, 255, 255, 0.17);
 }
 
 #canvas-container {
     position: relative;
     flex-direction: row;
+}
+
+#canvas-container:before {
+    background-image: url('mcgill.jpg');
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    content: ' ';
+    background: li;
+    opacity: 0.15;
+    z-index: -10;
 }
 
 #canvas-container .btn-container {
