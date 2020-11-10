@@ -25,6 +25,11 @@ body > div {
     text-align: center;
 }
 
+#contact {
+    padding-top: 0;
+    padding-bottom: 50px;
+}
+
 body > *:first-child {
     margin-bottom: 0;
     padding-top: 0;
