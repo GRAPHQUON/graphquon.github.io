@@ -1,0 +1,116 @@
+[
+    {
+        "date": "28",
+        "month": "November",
+        "day": "Saturday",
+        "items": [
+            {
+                "time": "9:00",
+                "name": "Opening"
+            },
+            {
+                "time": "9:15",
+                "name": "Talks 1",
+                "items": [
+                    {
+                        "name": "A Tracking Solution for Animating Detailed Smoke from Coarse Density Simulation",
+                        "author": "Arnaud Schoentgen"
+                    },
+                    {
+                        "name": "Deformation Gradient Control in the Material Point Method",
+                        "author": "Michael Xu"
+                    },
+                    {
+                        "name": "Differentiable Path Tracing",
+                        "author": "Peter Quinn"
+                    }
+                ]
+            },
+            {
+                "time": "10:45",
+                "name": "Break"
+            },
+            {
+                "time": "11:00",
+                "name": "Keynote"
+            },
+            {
+                "time": "12:00",
+                "name": "Lunch Break"
+            },
+            {
+                "time": "13:30",
+                "name": "Talks 2"
+            },
+            {
+                "time": "15:00",
+                "name": "Break"
+            },
+            {
+                "time": "15:15",
+                "name": "Talks 3"
+            },
+            {
+                "time": "17:15",
+                "name": "End of Day 1"
+            }
+        ]
+    },
+    {
+        "date": "29",
+        "month": "November",
+        "day": "Sunday",
+        "items": [
+            {
+                "time": "9:00",
+                "name": "Opening"
+            },
+            {
+                "time": "9:15",
+                "name": "Talks 4",
+                "items": [
+                    {
+                        "name": "A Tracking Solution for Animating Detailed Smoke from Coarse Density Simulation",
+                        "author": "Arnaud Schoentgen"
+                    },
+                    {
+                        "name": "Deformation Gradient Control in the Material Point Method",
+                        "author": "Michael Xu"
+                    },
+                    {
+                        "name": "Differentiable Path Tracing",
+                        "author": "Peter Quinn"
+                    }
+                ]
+            },
+            {
+                "time": "10:45",
+                "name": "Break"
+            },
+            {
+                "time": "11:00",
+                "name": "Keynote"
+            },
+            {
+                "time": "12:00",
+                "name": "Lunch Break"
+            },
+            {
+                "time": "13:30",
+                "name": "Talks 5"
+            },
+            {
+                "time": "15:00",
+                "name": "Break"
+            },
+            {
+                "time": "15:15",
+                "name": "Talks 6"
+            },
+            {
+                "time": "17:15",
+                "name": "End of Day 2"
+            }
+        ]
+    }
+]
