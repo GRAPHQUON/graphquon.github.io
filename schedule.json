@@ -1,37 +1,29 @@
 [
     {
-        "date": "28",
-        "month": "November",
+        "date": "12",
+        "month": "December",
         "day": "Saturday",
         "items": [
             {
-                "time": "9:00",
+                "time": "9:30",
                 "name": "Opening"
             },
             {
-                "time": "9:15",
+                "time": "9:45",
                 "name": "Talks 1",
                 "items": [
                     {
-                        "name": "A Tracking Solution for Animating Detailed Smoke from Coarse Density Simulation",
-                        "author": "Arnaud Schoentgen"
-                    },
-                    {
-                        "name": "Deformation Gradient Control in the Material Point Method",
-                        "author": "Michael Xu"
-                    },
-                    {
-                        "name": "Differentiable Path Tracing",
-                        "author": "Peter Quinn"
+                        "name": "TBD",
+                        "author": ""
                     }
                 ]
             },
             {
-                "time": "10:45",
+                "time": "11:00",
                 "name": "Break"
             },
             {
-                "time": "11:00",
+                "time": "11:15",
                 "name": "Keynote"
             },
             {
@@ -39,76 +31,92 @@
                 "name": "Lunch Break"
             },
             {
-                "time": "13:30",
-                "name": "Talks 2"
+                "time": "13:00",
+                "name": "Talks 2",
+                "items": [
+                    {
+                        "name": "TBD",
+                        "author": ""
+                    }
+                ]
             },
             {
-                "time": "15:00",
+                "time": "14:15",
                 "name": "Break"
             },
             {
-                "time": "15:15",
-                "name": "Talks 3"
+                "time": "14:30",
+                "name": "Talks 3",
+                "items": [
+                    {
+                        "name": "TBD",
+                        "author": ""
+                    }
+                ]
             },
             {
-                "time": "17:15",
+                "time": "16:00",
                 "name": "End of Day 1"
             }
         ]
     },
     {
-        "date": "29",
-        "month": "November",
+        "date": "13",
+        "month": "December",
         "day": "Sunday",
         "items": [
             {
-                "time": "9:00",
-                "name": "Opening"
+                "time": "9:30",
+                "name": "Good Morning"
             },
             {
-                "time": "9:15",
+                "time": "9:45",
                 "name": "Talks 4",
                 "items": [
                     {
-                        "name": "A Tracking Solution for Animating Detailed Smoke from Coarse Density Simulation",
-                        "author": "Arnaud Schoentgen"
-                    },
-                    {
-                        "name": "Deformation Gradient Control in the Material Point Method",
-                        "author": "Michael Xu"
-                    },
-                    {
-                        "name": "Differentiable Path Tracing",
-                        "author": "Peter Quinn"
+                        "name": "TBD",
+                        "author": ""
                     }
                 ]
             },
             {
-                "time": "10:45",
+                "time": "11:00",
                 "name": "Break"
             },
             {
-                "time": "11:00",
-                "name": "Keynote"
+                "time": "11:15",
+                "name": "Keynote 2"
             },
             {
                 "time": "12:00",
                 "name": "Lunch Break"
             },
             {
-                "time": "13:30",
-                "name": "Talks 5"
+                "time": "13:00",
+                "name": "Talks 5",
+                "items": [
+                    {
+                        "name": "TBD",
+                        "author": ""
+                    }
+                ]
             },
             {
-                "time": "15:00",
+                "time": "14:15",
                 "name": "Break"
             },
             {
-                "time": "15:15",
-                "name": "Talks 6"
+                "time": "14:30",
+                "name": "Talks 6",
+                "items": [
+                    {
+                        "name": "TBD",
+                        "author": ""
+                    }
+                ]
             },
             {
-                "time": "17:15",
+                "time": "16:00",
                 "name": "End of Day 2"
             }
         ]

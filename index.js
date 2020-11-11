@@ -2,7 +2,7 @@
 const title = 'GRAPHQUON';
 const subtitles = [
     'McGill (Virtual)',
-    'November 28-29, 2020'
+    'December 12-13, 2020'
 ];
 const cam_radius = 50; // radius of the sphere around which the camera rotates
 const start_y_position = 5; // Note: The origin is the center of the window
