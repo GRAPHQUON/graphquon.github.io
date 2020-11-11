@@ -1,5 +1,5 @@
 /* CONFIG */
-const title = 'GRAPHQON';
+const title = 'GRAPHQUON';
 const subtitles = [
     'McGill (Virtual)',
     'November 28-29, 2020'
@@ -91,7 +91,7 @@ loader.load('res/Titillium_Bold.json', (title_font) => {
         // Title
         const title_geometry = new THREE.TextGeometry(title, {
             font: title_font,
-            size: 8,
+            size: 7.5,
             height: 1.4,
             curveSegments: 12,
             bevelEnabled: true,
