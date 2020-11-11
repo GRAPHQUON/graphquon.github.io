@@ -82,8 +82,8 @@ if (debug) {
 /* TEXT MESHES */
 // Use https://gero3.github.io/facetype.js/ to convert a font to the required json format
 const loader = new THREE.FontLoader();
-loader.load('Titillium_Bold.json', (title_font) => {
-    loader.load('Lato_Regular.json', (subtitle_font) => {
+loader.load('res/Titillium_Bold.json', (title_font) => {
+    loader.load('res/Lato_Regular.json', (subtitle_font) => {
 
         let previous_y_position = start_y_position;
         const text_material = new THREE.MeshLambertMaterial({ color: 0xecf0f1, emissive: 0xffffff, emissiveIntensity: 0.1 });
