@@ -1,13 +1,21 @@
 /* CONFIG */
-const title = 'GRAPHQUON';
-const subtitles = [
-    'McGill (Virtual)',
-    'December 12-13, 2020'
-];
 const cam_radius = 50; // radius of the sphere around which the camera rotates
 const start_y_position = 5; // Note: The origin is the center of the window
 const debug = false; // Set to true to enable orbit controls and to view the shadow map cameras
 
+/* GET TEXT CONTENT FROM THE HTML */
+let title = '';
+let subtitles = [];
+const canvasContainerEl = document.getElementById('canvas-container').childNodes.forEach((node) => {
+    console.log(node.nodeName);
+    if (node.nodeName === 'H1') {
+        title = node.textContent;
+        node.remove();
+    } else if (node.nodeName === 'H2') {
+        subtitles.push(node.textContent);
+        node.remove();
+    }
+});
 
 /* UTILS */
 function spherical_to_cartesian(theta, phi, r) {

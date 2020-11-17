@@ -125,7 +125,7 @@ canvas {
 }
 
 #canvas-container:before {
-    background-image: url('res/mcgill.jpg');
+    background-image: url('res/background.jpg');
     background-position: center;
     background-size: cover;
     position: absolute;

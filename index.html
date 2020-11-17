@@ -9,15 +9,19 @@
         <link href="https://fonts.googleapis.com/css2?family=Commissioner&family=Lato&display=swap" rel="stylesheet">
 	</head>
 	<body>
+        <div id='nav-container'>
+            <nav>
+                <a href='#about'>About</a>
+                <a href='#keynote'>Speakers</a>
+                <a href='#schedule'>Schedule</a>
+                <a href='#contact'>Contact</a>
+            </nav>
+        </div>
         <div id='canvas-container' class='full-bleed'>
-            <div id='nav-container'>
-                <nav>
-                    <a href='#about'>About</a>
-                    <a href='#keynote'>Speakers</a>
-                    <a href='#schedule'>Schedule</a>
-                    <a href='#contact'>Contact</a>
-                </nav>
-            </div>
+            <!-- The following h1 and h2 elements are read from the javascript code to generate the 3D scene -->
+            <h1>GRAPHQUON</h1>
+            <h2>McGill (Virtual)</h2>
+            <h2>December 12-13, 2020</h2>
             <div class='btn-container'>
                 <div class='button register'>Register Now</div>
                 <div onclick='window.location="#about"' class='button more-info'>More info ↓</div>
@@ -25,7 +29,7 @@
         </div>
         <div id='about'>
             <h2>About the event</h2>
-            <p>GRAPHQUON (previously MOTOGRAPH) is the annual Quebec-Ontario pre-SIGGRAPH workshop, organized by and for the major East-Canadian computer graphics labs. It is an opportunity for students to present their prospective submissions to a friendly, constructively critical audience and to get valuable feedback.</p>
+            <p>GRAPHQUON (formerly MOTOGRAPH) is the annual Quebec-Ontario pre-SIGGRAPH workshop, organized by and for the major East-Canadian computer graphics labs. It is an opportunity for students to present their prospective submissions to a friendly, constructively critical audience and to get valuable feedback.</p>
             <div class='btn-container full-bleed'>
                 <div onclick='window.location="#schedule"' class='button schedule'>Schedule</div>
                 <div class='button register'>Register</div>
