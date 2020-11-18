@@ -7,7 +7,6 @@ const debug = false; // Set to true to enable orbit controls and to view the sha
 let title = '';
 let subtitles = [];
 const canvasContainerEl = document.getElementById('canvas-container').childNodes.forEach((node) => {
-    console.log(node.nodeName);
     if (node.nodeName === 'H1') {
         title = node.textContent;
         node.remove();
