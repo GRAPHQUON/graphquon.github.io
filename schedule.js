@@ -70,7 +70,9 @@ request.onreadystatechange = () => {
             dayEl.appendChild(nameEl);
         }
 
-        scheduleEl.appendChild(dayEl);
+        const dayContainerEl = document.createElement('div');
+        dayContainerEl.appendChild(dayEl);
+        scheduleEl.appendChild(dayContainerEl);
     }
 };
 

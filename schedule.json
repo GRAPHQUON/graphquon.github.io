@@ -10,11 +10,19 @@
             },
             {
                 "time": "9:45",
-                "name": "Talks 1",
+                "name": "Session 1",
                 "items": [
                     {
-                        "name": "TBD",
-                        "author": ""
+                        "name": "talk-1",
+                        "author": "Kirill Brodt"
+                    },
+					{
+                        "name": "talk-2",
+                        "author": "Jordy Ajanohoun"
+                    },
+					{
+                        "name": "talk-3",
+                        "author": "Vismay Modi"
                     }
                 ]
             },
@@ -24,7 +32,7 @@
             },
             {
                 "time": "11:15",
-                "name": "Keynote"
+                "name": "Keynote - T. Hachisuka"
             },
             {
                 "time": "12:00",
@@ -32,11 +40,19 @@
             },
             {
                 "time": "13:00",
-                "name": "Talks 2",
+                "name": "Session 2",
                 "items": [
                     {
-                        "name": "TBD",
-                        "author": ""
+                        "name": "talk-4",
+                        "author": "Hsueh-Ti Derek Liu"
+                    },
+					{
+                        "name": "talk-5",
+                        "author": "Towaki Takikawa"
+                    },
+					{
+                        "name": "talk-6",
+                        "author": "Silvia Sellán"
                     }
                 ]
             },
@@ -46,17 +62,32 @@
             },
             {
                 "time": "14:30",
-                "name": "Talks 3",
+                "name": "Session 3",
                 "items": [
                     {
-                        "name": "TBD",
-                        "author": ""
+                        "name": "talk-7",
+                        "author": "Jumyung \"JC\" Chang"
+                    },
+					{
+                        "name": "talk-8",
+                        "author": "Jonathan Panuelos"
+                    },
+					{
+                        "name": "talk-9",
+                        "author": "Damien Rioux-Lavoie"
+                    },{
+                        "name": "talk-10",
+                        "author": "Nathan King"
                     }
                 ]
             },
             {
                 "time": "16:00",
                 "name": "End of Day 1"
+            },
+            {
+                "time": "19:30",
+                "name": "Graphics Trivia Night"
             }
         ]
     },
@@ -71,11 +102,19 @@
             },
             {
                 "time": "9:45",
-                "name": "Talks 4",
+                "name": "Session 4",
                 "items": [
                     {
-                        "name": "TBD",
-                        "author": ""
+                        "name": "talk-11",
+                        "author": "Ivan Puhachov"
+                    },
+					{
+                        "name": "talk-12",
+                        "author": "Rinat Abdrashitov"
+                    },
+					{
+                        "name": "talk-13",
+                        "author": "Seungbae Bang"
                     }
                 ]
             },
@@ -85,7 +124,7 @@
             },
             {
                 "time": "11:15",
-                "name": "Keynote 2"
+                "name": "Keynote - D. Holden"
             },
             {
                 "time": "12:00",
@@ -93,11 +132,19 @@
             },
             {
                 "time": "13:00",
-                "name": "Talks 5",
+                "name": "Session 5",
                 "items": [
                     {
-                        "name": "TBD",
-                        "author": ""
+                        "name": "talk-14",
+                        "author": "Henry Ho & Marwen Kraiem"
+                    },
+					{
+                        "name": "talk-15",
+                        "author": "Xinhao Cai"
+                    },
+					{
+                        "name": "talk-16",
+                        "author": "Alexandre Mercier-Aubin"
                     }
                 ]
             },
@@ -107,11 +154,23 @@
             },
             {
                 "time": "14:30",
-                "name": "Talks 6",
+                "name": "Session 6",
                 "items": [
                     {
-                        "name": "TBD",
-                        "author": ""
+                        "name": "talk-17",
+                        "author": "Ryusuke Sugimoto"
+                    },
+					{
+                        "name": "talk-18",
+                        "author": "Abdesselam Guerroudj"
+                    },
+					{
+                        "name": "talk-19",
+                        "author": "Jean-Philippe Guertin"
+                    },
+					{
+                        "name": "talk-20",
+                        "author": "Rex West"
                     }
                 ]
             },
