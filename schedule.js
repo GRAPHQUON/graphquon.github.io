@@ -56,8 +56,15 @@ request.onreadystatechange = () => {
                     subitemNameEl.textContent = subitem['name'];
                     subitemNameEl.className = 'schedule-sublist-name';
                     const subitemAuthorEl = document.createElement('div');
-                    subitemAuthorEl.textContent = subitem['author'];
                     subitemAuthorEl.className = 'schedule-sublist-author';
+                    const authorNameEl = document.createElement('span');
+                    const affiliationEl = document.createElement('span');
+                    authorNameEl.textContent = subitem['author'];
+                    authorNameEl.className = 'schedule-sublist-author-name';
+                    affiliationEl.textContent = '(' + subitem['affiliation'] + ')';
+                    affiliationEl.className = 'schedule-sublist-affiliation';
+                    subitemAuthorEl.appendChild(authorNameEl);
+                    subitemAuthorEl.appendChild(affiliationEl);
 
                     sublistEl.appendChild(subitemNameEl);
                     sublistEl.appendChild(subitemAuthorEl);

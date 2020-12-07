@@ -70,15 +70,15 @@
 .schedule-sublist {
     display: none;
     position: absolute;
-    left: -91px;
+    left: -67px;
     border-radius: 10px;
     background: linear-gradient(45deg, #549ddc, #b94de4);
     color: white;
     border: none;
-    padding: 23px;
+    padding: 20px;
     padding-bottom: 0;
     box-sizing: border-box;
-    width: 330px;
+    width: 280px;
     font-size: 14px;
     z-index: 10;
 }
@@ -95,6 +95,11 @@
     text-align: right;
     margin-bottom: 15px;
     font-weight: bold;
+}
+
+.schedule-sublist-affiliation {
+    font-weight: normal;
+    padding-left: 7px;
 }
 
 @media screen and (max-width: 800px) {

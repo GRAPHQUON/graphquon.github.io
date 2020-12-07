@@ -13,16 +13,19 @@
                 "name": "Session 1",
                 "items": [
                     {
-                        "name": "talk-1",
-                        "author": "Kirill Brodt"
+                        "name": "Talk #1",
+                        "author": "Kirill Brodt",
+                        "affiliation": "UdeM"
                     },
 					{
-                        "name": "talk-2",
-                        "author": "Jordy Ajanohoun"
+                        "name": "Talk #2",
+                        "author": "Jordy Ajanohoun",
+                        "affiliation": "ÉTS"
                     },
 					{
-                        "name": "talk-3",
-                        "author": "Vismay Modi"
+                        "name": "Talk #3",
+                        "author": "Vismay Modi",
+                        "affiliation": "UofT"
                     }
                 ]
             },
@@ -43,16 +46,19 @@
                 "name": "Session 2",
                 "items": [
                     {
-                        "name": "talk-4",
-                        "author": "Hsueh-Ti Derek Liu"
+                        "name": "Talk #4",
+                        "author": "Hsueh-Ti Derek Liu",
+                        "affiliation": "UofT"
                     },
 					{
-                        "name": "talk-5",
-                        "author": "Towaki Takikawa"
+                        "name": "Talk #5",
+                        "author": "Towaki Takikawa",
+                        "affiliation": "UofT"
                     },
 					{
-                        "name": "talk-6",
-                        "author": "Silvia Sellán"
+                        "name": "Talk #6",
+                        "author": "Silvia Sellán",
+                        "affiliation": "UofT"
                     }
                 ]
             },
@@ -65,19 +71,23 @@
                 "name": "Session 3",
                 "items": [
                     {
-                        "name": "talk-7",
-                        "author": "Jumyung \"JC\" Chang"
+                        "name": "Talk #7",
+                        "author": "Jumyung \"JC\" Chang",
+                        "affiliation": "UWaterloo"
                     },
 					{
-                        "name": "talk-8",
-                        "author": "Jonathan Panuelos"
+                        "name": "Talk #8",
+                        "author": "Jonathan Panuelos",
+                        "affiliation": "UWaterloo"
                     },
 					{
-                        "name": "talk-9",
-                        "author": "Damien Rioux-Lavoie"
+                        "name": "Talk #9",
+                        "author": "Damien Rioux-Lavoie",
+                        "affiliation": "McGill"
                     },{
-                        "name": "talk-10",
-                        "author": "Nathan King"
+                        "name": "Talk #10",
+                        "author": "Nathan King",
+                        "affiliation": "UWaterloo"
                     }
                 ]
             },
@@ -105,16 +115,19 @@
                 "name": "Session 4",
                 "items": [
                     {
-                        "name": "talk-11",
-                        "author": "Ivan Puhachov"
+                        "name": "Talk #11",
+                        "author": "Ivan Puhachov",
+                        "affiliation": "UofT"
                     },
 					{
-                        "name": "talk-12",
-                        "author": "Rinat Abdrashitov"
+                        "name": "Talk #12",
+                        "author": "Rinat Abdrashitov",
+                        "affiliation": "UofT"
                     },
 					{
-                        "name": "talk-13",
-                        "author": "Seungbae Bang"
+                        "name": "Talk #13",
+                        "author": "Seungbae Bang",
+                        "affiliation": "UofT"
                     }
                 ]
             },
@@ -135,16 +148,19 @@
                 "name": "Session 5",
                 "items": [
                     {
-                        "name": "talk-14",
-                        "author": "Henry Ho & Marwen Kraiem"
+                        "name": "Talk #14",
+                        "author": "Henry Ho & Marwen Kraiem",
+                        "affiliation": "McGill"
                     },
 					{
-                        "name": "talk-15",
-                        "author": "Xinhao Cai"
+                        "name": "Talk #15",
+                        "author": "Xinhao Cai",
+                        "affiliation": "McGill"
                     },
 					{
-                        "name": "talk-16",
-                        "author": "Alexandre Mercier-Aubin"
+                        "name": "Talk #16",
+                        "author": "Alexandre Mercier-Aubin",
+                        "affiliation": "McGill"
                     }
                 ]
             },
@@ -157,20 +173,24 @@
                 "name": "Session 6",
                 "items": [
                     {
-                        "name": "talk-17",
-                        "author": "Ryusuke Sugimoto"
+                        "name": "Talk #17",
+                        "author": "Ryusuke Sugimoto",
+                        "affiliation": "UWaterloo"
                     },
 					{
-                        "name": "talk-18",
-                        "author": "Abdesselam Guerroudj"
+                        "name": "Talk #18",
+                        "author": "Abdesselam Guerroudj",
+                        "affiliation": "ÉTS"
                     },
 					{
-                        "name": "talk-19",
-                        "author": "Jean-Philippe Guertin"
+                        "name": "Talk #19",
+                        "author": "Jean-Philippe Guertin",
+                        "affiliation": "UdeM"
                     },
 					{
-                        "name": "talk-20",
-                        "author": "Rex West"
+                        "name": "Talk #20",
+                        "author": "Rex West",
+                        "affiliation": "UTokyo"
                     }
                 ]
             },
