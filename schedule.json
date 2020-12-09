@@ -180,20 +180,19 @@
                     },
 					{
                         "name": "Talk #19",
-                        "author": "Abdesselam Guerroudj",
-                        "affiliation": "ÉTS"
-                    },
-					{
-                        "name": "Talk #20",
                         "author": "Jean-Philippe Guertin",
                         "affiliation": "UdeM"
                     },
 					{
-                        "name": "Talk #21",
+                        "name": "Talk #20",
                         "author": "Rex West",
                         "affiliation": "UTokyo"
                     }
                 ]
+            },
+            {
+                "time": "15:45",
+                "name": "Closing ceremony"
             },
             {
                 "time": "16:00",
