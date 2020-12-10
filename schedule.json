@@ -187,15 +187,20 @@
                         "name": "Talk #20",
                         "author": "Rex West",
                         "affiliation": "UTokyo"
+                    },
+                    {
+                        "name": "Talk #21",
+                        "author": "Soroush Saryazdi",
+                        "affiliation": "Concordia"
                     }
                 ]
             },
             {
-                "time": "15:45",
+                "time": "16:00",
                 "name": "Closing ceremony"
             },
             {
-                "time": "16:00",
+                "time": "16:15",
                 "name": "End of Day 2"
             }
         ]
