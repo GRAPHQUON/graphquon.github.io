@@ -17,27 +17,30 @@
                 <a href='#contact'>Contact</a>
             </nav>
         </div>
-        <div id='canvas-container' class='full-bleed'>
+        <div id='logo-container' class='logo-container full-bleed'>
             <!-- The following h1 and h2 elements are read from the javascript code to generate the 3D scene -->
-            <h1>GRAPHQUON</h1>
-            <h2>McGill (Virtual)</h2>
+            <img src='res/Graphquon2024.png' class='logo-img' />
+            <div class='logo-below'>
+                <img src='res/ets_logo.svg' class='ets-img' />
+                <h2>ÉTS (Virtual)</h2>
+            </div>
             <h2>December 10-11, 2020</h2>
             <div class='btn-container'>
                 <div class='button register' onclick="window.open('https:/\/forms.gle/QCgbsWWqLJgeazjN9')">Register Now</div>
                 <div onclick='window.location="#about"' class='button more-info'>More info ↓</div>
             </div>
         </div>
-        <div id='about'>
-            <h2>About the event</h2>
+        <div id='about' class='full-bleed'>
+            <h1>About the event</h1>
             <p>GRAPHQUON (formerly MOTOGRAPH) is the annual Quebec-Ontario pre-SIGGRAPH workshop, organized by and for the major East-Canadian computer graphics labs. It is an opportunity for students to present their prospective submissions to a friendly, constructively critical audience and to get valuable feedback.</p>
-            <div class='btn-container full-bleed'>
+            <div class='btn-container'>
                 <div onclick='window.location="#schedule"' class='button schedule'>Schedule</div>
                 <div class='button register' onclick="window.open('https:/\/forms.gle/QCgbsWWqLJgeazjN9')">Register</div>
             </div>
         </div>
-        <div id='keynote'>
-            <h2>Keynote Speakers</h2>
-            <div class='speaker-container full-bleed'>
+        <div id='keynote' class='full-bleed'>
+            <h1>Keynote Speakers</h1>
+            <div class='speaker-container'>
                 <div>
                     <h3>Toshiya Hachisuka</h3>
                     <img src='res/speaker1.jpg' />
@@ -50,19 +53,19 @@
                 </div>
             </div>
         </div>
-        <div id='schedule'>
-            <h2>Schedule</h2>
+        <div id='schedule' class='full-bleed'>
+            <h1>Schedule</h1>
             <div id='schedule-grid-container'>
                 <div id='schedule-grid'>
                     <!-- See schedule.js for how this section is automatically filled using schedule.json -->
                 </div>
             </div>
         </div>
-        <div id='contact'>
-            <h2>Contact</h2>
+        <div id='contact' class='full-bleed'>
+            <h1>Contact</h1>
             <p>Any questions at all? Send us an email!</p>
-            <div class='btn-container full-bleed'>
-                <div class='button contact' onclick="window.open('mailto:gfx.qcon@gmail.com')" title='gfx.qcon@gmail.com'>Contact</div>
+            <div class='btn-container'>
+                <div class='button contact' onclick="window.open('mailto:sheldon.andrews@etsmtl.ca')" title='gfx.qcon@gmail.com'>Contact</div>
             </div>
         </div>
 
