@@ -1,207 +1,41 @@
 [
     {
-        "date": "10",
-        "month": "December",
-        "day": "Thursday",
+        "date": "9",
+        "month": "November",
+        "day": "Saturday",
         "items": [
             {
-                "time": "9:30",
-                "name": "Opening"
+                "time": "??:??",
+                "name": "TBA"
             },
             {
-                "time": "9:45",
-                "name": "Session 1",
-                "items": [
+                "time": "??:??",
+                "name": "TBA",
+                "items":[
                     {
-                        "name": "Talk #1",
-                        "author": "Kirill Brodt",
-                        "affiliation": "UdeM"
+                        "time": "??:??",
+                        "name": "TBA"
                     },
-					{
-                        "name": "Talk #2",
-                        "author": "Jordy Ajanohoun",
-                        "affiliation": "ÉTS"
-                    },
-					{
-                        "name": "Talk #3",
-                        "author": "Vismay Modi",
-                        "affiliation": "UofT"
+                    {
+                        "time": "??:??",
+                        "name": "TBA"
                     }
                 ]
-            },
-            {
-                "time": "11:00",
-                "name": "Break"
-            },
-            {
-                "time": "11:15",
-                "name": "Keynote - T. Hachisuka"
-            },
-            {
-                "time": "12:00",
-                "name": "Lunch Break"
-            },
-            {
-                "time": "13:00",
-                "name": "Session 2",
-                "items": [
-                    {
-                        "name": "Talk #4",
-                        "author": "Hsueh-Ti Derek Liu",
-                        "affiliation": "UofT"
-                    },
-					{
-                        "name": "Talk #5",
-                        "author": "Towaki Takikawa",
-                        "affiliation": "UofT"
-                    },
-					{
-                        "name": "Talk #6",
-                        "author": "Silvia Sellán",
-                        "affiliation": "UofT"
-                    }
-                ]
-            },
-            {
-                "time": "14:15",
-                "name": "Break"
-            },
-            {
-                "time": "14:30",
-                "name": "Session 3",
-                "items": [
-                    {
-                        "name": "Talk #7",
-                        "author": "Jumyung \"JC\" Chang",
-                        "affiliation": "UWaterloo"
-                    },
-					{
-                        "name": "Talk #8",
-                        "author": "Jonathan Panuelos",
-                        "affiliation": "UWaterloo"
-                    },
-					{
-                        "name": "Talk #9",
-                        "author": "Damien Rioux-Lavoie",
-                        "affiliation": "McGill"
-                    },{
-                        "name": "Talk #10",
-                        "author": "Nathan King",
-                        "affiliation": "UWaterloo"
-                    }
-                ]
-            },
-            {
-                "time": "16:00",
-                "name": "End of Day 1"
-            },
-            {
-                "time": "19:30",
-                "name": "Graphics Trivia Night"
             }
         ]
     },
     {
-        "date": "11",
-        "month": "December",
-        "day": "Friday",
+        "date": "10",
+        "month": "November",
+        "day": "Sunday",
         "items": [
             {
-                "time": "9:30",
-                "name": "Session 4",
-                "items": [
-                    {
-                        "name": "Talk #11",
-                        "author": "Ivan Puhachov",
-                        "affiliation": "UdeM"
-                    },
-					{
-                        "name": "Talk #12",
-                        "author": "Rinat Abdrashitov",
-                        "affiliation": "UofT"
-                    },
-					{
-                        "name": "Talk #13",
-                        "author": "Seungbae Bang",
-                        "affiliation": "UofT"
-                    },
-                    {
-                        "name": "Talk #14",
-                        "author": "Otman Benchekroun",
-                        "affiliation": "UofT"
-                    }
-                ]
+                "time": "??:??",
+                "name": "TBA"
             },
             {
-                "time": "11:05",
-                "name": "Break"
-            },
-            {
-                "time": "11:15",
-                "name": "Keynote - D. Holden"
-            },
-            {
-                "time": "12:00",
-                "name": "Lunch Break"
-            },
-            {
-                "time": "13:00",
-                "name": "Session 5",
-                "items": [
-                    {
-                        "name": "Talk #15",
-                        "author": "Henry Ho & Marwen Kraiem",
-                        "affiliation": "McGill"
-                    },
-					{
-                        "name": "Talk #16",
-                        "author": "Xinhao Cai",
-                        "affiliation": "McGill"
-                    },
-					{
-                        "name": "Talk #17",
-                        "author": "Alexandre Mercier-Aubin",
-                        "affiliation": "McGill"
-                    }
-                ]
-            },
-            {
-                "time": "14:15",
-                "name": "Break"
-            },
-            {
-                "time": "14:30",
-                "name": "Session 6",
-                "items": [
-                    {
-                        "name": "Talk #18",
-                        "author": "Ryusuke Sugimoto",
-                        "affiliation": "UWaterloo"
-                    },
-					{
-                        "name": "Talk #19",
-                        "author": "Jean-Philippe Guertin",
-                        "affiliation": "UdeM"
-                    },
-					{
-                        "name": "Talk #20",
-                        "author": "Rex West",
-                        "affiliation": "UTokyo"
-                    },
-                    {
-                        "name": "Talk #21",
-                        "author": "Soroush Saryazdi",
-                        "affiliation": "Concordia"
-                    }
-                ]
-            },
-            {
-                "time": "16:00",
-                "name": "Closing ceremony"
-            },
-            {
-                "time": "16:15",
-                "name": "End of Day 2"
+                "time": "??:??",
+                "name": "TBA"
             }
         ]
     }
