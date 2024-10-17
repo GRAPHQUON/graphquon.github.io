@@ -36,7 +36,33 @@ class AboutSection extends LitElement {
       text-align: justify;
     }
 
-    /* Media Query for mobile responsiveness */
+    .button-container {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    button {
+      background-color: #bd0029;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      border: none;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #d8063b;
+    }
+
+    button:focus {
+      outline: 4px solid #d8063b;
+      outline-offset: 2px;
+    }
+
     @media (max-width: 768px) {
       h1 {
         font-size: 2rem;
@@ -44,6 +70,11 @@ class AboutSection extends LitElement {
 
       p {
         font-size: 1rem;
+      }
+
+      button {
+        font-size: 0.875rem;
+        padding: 0.5rem 1rem;
       }
     }
   `;
@@ -57,8 +88,19 @@ class AboutSection extends LitElement {
           major East-Canadian computer graphics labs. It is an opportunity for students to present their prospective
           submissions to a friendly, constructively critical audience and to receive valuable feedback.
         </p>
+        <div class="button-container">
+          <button @click="${this.handleButtonClick}" aria-label="View event from 2018">2018</button>
+          <button @click="${this.handleButtonClick}" aria-label="View event from 2022">2022</button>
+          <button @click="${this.handleButtonClick}" aria-label="View event from 2023">2023</button>
+        </div>
       </section>
     `;
+  }
+
+  handleButtonClick(e) {
+    const year = e.target.innerText;
+    console.log(`You clicked on event year: ${year}`);
+    // Add functionality to navigate to event pages or handle year selection here
   }
 }
 

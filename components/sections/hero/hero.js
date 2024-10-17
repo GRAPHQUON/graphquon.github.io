@@ -28,22 +28,63 @@ class HeroSection extends LitElement {
     }
 
     h1 {
-      font-size: 5rem;
+      font-size: 4rem;
       font-weight: bold;
     }
 
-    button {
+    p {
+      font-size: 1.25rem;
       margin-top: 1rem;
+    }
+
+    button {
+      margin-top: 2rem;
       padding: 1rem 2rem;
       background-color: green;
       color: white;
       border: none;
       border-radius: 8px;
       cursor: pointer;
+      font-size: 1.25rem;
+      transition: background-color 0.3s ease;
     }
 
     button:hover {
       background-color: darkgreen;
+    }
+
+    button:focus {
+      outline: 3px solid yellow;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 3rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      button {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 0.875rem;
+      }
+
+      button {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+      }
     }
   `;
 
@@ -54,13 +95,13 @@ class HeroSection extends LitElement {
         <div class="content">
           <h1>GRAPHQUON 2024</h1>
           <p>November 9-10, 2024 at École de technologie supérieure</p>
-          <button @click="${() => this.scrollToSection('about')}">Learn More</button>
+          <button @click="${() => this.scrollToSection('about')}" aria-label="Scroll to About Section">Learn More</button>
         </div>
       </section>
     `;
   }
 
-  // Use document.querySelector to access light DOM elements
+  // Use document.querySelector to access light DOM elements and perform smooth scroll
   scrollToSection(sectionId) {
     const section = document.querySelector(`#${sectionId}`);
     if (section) {

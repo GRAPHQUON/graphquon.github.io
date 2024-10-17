@@ -50,6 +50,11 @@ class KeynoteSection extends LitElement {
       color: #ffffff;
     }
 
+    /* Accessibility focus style for images */
+    img:focus {
+      outline: 3px solid #f6e05e;
+    }
+
     @media (max-width: 768px) {
       h1 {
         font-size: 2rem;
@@ -87,11 +92,11 @@ class KeynoteSection extends LitElement {
         <h1 id="keynote-heading">Keynote Speakers</h1>
         <div class="grid">
           <div class="speaker-card" aria-label="Keynote Speaker 1">
-            <img src="../res/speaker1.jpg" alt="Photo of keynote speaker 1">
+            <img src="../res/speaker1.jpg" alt="Photo of Keynote Speaker 1" tabindex="0" />
             <h3>Speaker 1 - TBA</h3>
           </div>
           <div class="speaker-card" aria-label="Keynote Speaker 2">
-            <img src="../res/speaker2.jpg" alt="Photo of keynote speaker 2">
+            <img src="../res/speaker2.jpg" alt="Photo of Keynote Speaker 2" tabindex="0" />
             <h3>Speaker 2 - TBA</h3>
           </div>
         </div>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRAPHQUON 2024</title>
+    <meta name="description"
+        content="GRAPHQUON is the annual Quebec-Ontario pre-SIGGRAPH workshop for computer graphics students and professionals.">
+
+    <!-- TailwindCSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="schedule.css">
+    <link href="https://fonts.googleapis.com/css2?family=Commissioner&family=Lato&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Particle.js and Three.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
+    <script src="lib/three.min.js" defer></script>
+    <script src="lib/OrbitControl.js" defer></script>
+
+    <!-- LitElement CDN -->
+    <script type="module" src="https://unpkg.com/lit@2.2.7?module"></script>
+</head>
+
+<body>
+    <!-- Particle.js Container -->
+    <div id="particles-js" aria-hidden="true"></div>
+
+    <!-- Navigation Header -->
+    <header id="nav-container" class="bg-opacity-75 bg-gray-900 fixed top-0 w-full z-50">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between">
+                <a href="#about"
+                    class="text-white hover:text-yellow-300 px-3 py-2 rounded-md text-sm font-medium scroll-link"
+                    data-target="#about">About</a>
+                <a href="#keynote"
+                    class="text-white hover:text-yellow-300 px-3 py-2 rounded-md text-sm font-medium scroll-link"
+                    data-target="#keynote">Keynote</a>
+                <a href="#schedule"
+                    class="text-white hover:text-yellow-300 px-3 py-2 rounded-md text-sm font-medium scroll-link"
+                    data-target="#schedule">Schedule</a>
+                <a href="#contact"
+                    class="text-white hover:text-yellow-300 px-3 py-2 rounded-md text-sm font-medium scroll-link"
+                    data-target="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg full-bleed" aria-label="Hero Background">
+        <div class="relative h-full w-full flex items-center justify-center z-0">
+            <svg class="relative z-10 w-4/5 h-4/5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 982 786" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M490 401V537H348.5V401H490ZM490 785.5V676H348.5V785.5H347.5V676H206V785.5H205V676H63.5V785.5H62.5V676H0V675H62.5V538H0V537H62.5V401H0V400H62.5V258H0V257H62.5V116H0V115H62.5V0H63.5V115L205 115V0H206V115L347.5 115V0H348.5V115H490V0H491V115L627.5 115V0H628.5V115H765V0H766V115L902.5 115V0H903.5V115H982V116H903.5V257H982V258H903.5V400H982V401H903.5V537H982V538H903.5V675H982V676H903.5V785.5H902.5V676H766V785.5H765V676H628.5V785.5H627.5V676H491V785.5H490ZM902.5 675V538H766V675H902.5ZM902.5 537V401H766V537H902.5ZM902.5 400V258H766V400H902.5ZM902.5 257V116L766 116V257H902.5ZM627.5 675H491V538H627.5V675ZM765 675H628.5V538H765V675ZM348.5 675H490V538H348.5V675ZM347.5 538V675H206V538H347.5ZM205 538V675H63.5V538H205ZM765 537V401H628.5V537H765ZM765 400V258H628.5V400H765ZM765 257V116H628.5V257H765ZM347.5 401V537H206V401H347.5ZM205 401V537H63.5V401H205ZM627.5 401V537H491V401H627.5ZM627.5 116L491 116V257H627.5V116ZM627.5 258H491V400H627.5V258ZM63.5 257V116L205 116V257H63.5ZM63.5 400V258H205V400H63.5ZM206 116V257H347.5V116L206 116ZM348.5 116V257H490V116H348.5ZM206 400V258H347.5V400H206ZM348.5 258V400H490V258H348.5Z"
+                    fill="url(#paint0_radial_1_8)" />
+                <defs>
+                    <radialGradient id="paint0_radial_1_8" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                        gradientTransform="translate(491 392.75) rotate(90) scale(513.25 679.989)">
+                        <stop stop-color="white" stop-opacity="0.2" />
+                        <stop offset="1" stop-color="#000" stop-opacity="0" />
+                    </radialGradient>
+                </defs>
+            </svg>
+
+            <div class="absolute w-48 h-48 bg-primary blur-3xl rounded-full z-0"></div>
+        </div>
+    </section>
+
+    <!-- Logo Section -->
+    <section class="relative h-screen bg-cover bg-center" style="background-image: url('res/bg1.jpg');">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="relative z-10 flex flex-col items-center justify-center text-white h-full">
+            <h1 class="text-5xl font-bold mb-4">GRAPHQUON 2024</h1>
+            <div class="logo-wrapper">
+                <img src="res/Graphquon2024.png" alt="Graphquon 2024 Logo" class="logo-img" loading="lazy">
+            </div>
+            <p class="text-xl">November 9-10, 2024 at the École de technologie supérieure</p>
+            <div class="logo-below">
+                <img src="res/ets_logo.svg" alt="ÉTS Logo" class="ets-img" loading="lazy">
+                <h2>ÉTS</h2>
+            </div>
+            <button
+                class="mt-8 bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 focus:ring-4 focus:ring-green-500 scroll-link"
+                data-target="#about">
+                Learn More
+            </button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-gradient-to-r from-green-500 via-green-300 to-green-100 text-center py-16">
+        <h1 id="about-heading" class="text-4xl font-bold text-white mb-6">About the Event</h1>
+        <p class="text-white max-w-3xl mx-auto mb-8">
+            GRAPHQUON (formerly MOTOGRAPH) is the annual Quebec-Ontario pre-SIGGRAPH workshop, organized by and for the
+            major East-Canadian computer graphics labs. It is an opportunity for students to present their prospective
+            submissions to a friendly, constructively critical audience and to receive valuable feedback.
+        </p>
+        <div class="space-x-4">
+            <button
+                class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 focus:ring-4 focus:ring-red-400">2018</button>
+            <button
+                class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 focus:ring-4 focus:ring-red-400">2022</button>
+            <button
+                class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 focus:ring-4 focus:ring-red-400">2023</button>
+        </div>
+    </section>
+
+    <!-- Keynote Speakers Section -->
+    <section id="keynote" class="bg-gradient-to-r from-pink-500 to-yellow-300 text-center py-16">
+        <h1 id="keynote-heading" class="text-4xl font-bold text-white mb-8">Keynote Speakers</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div class="speaker animate-left">
+                <h3 class="text-2xl font-semibold text-white mb-4">TBA</h3>
+                <img src="res/speaker1.jpg" alt="Keynote Speaker Placeholder"
+                    class="w-56 h-56 object-cover rounded-full shadow-lg mx-auto">
+            </div>
+            <div class="speaker animate-right">
+                <h3 class="text-2xl font-semibold text-white mb-4">TBA</h3>
+                <img src="res/speaker2.jpg" alt="Keynote Speaker Placeholder"
+                    class="w-56 h-56 object-cover rounded-full shadow-lg mx-auto">
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section id="schedule" class="full-bleed" aria-labelledby="schedule-heading">
+        <h1 id="schedule-heading">Schedule</h1>
+        <div id="schedule-grid-container">
+            <div id="schedule-grid">
+                <!-- Schedule content dynamically filled by schedule.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="full-bleed" aria-labelledby="contact-heading">
+        <h1 id="contact-heading">Contact Us</h1>
+        <p>Have any questions? Feel free to send us an email!</p>
+        <button onclick="window.location='mailto:graphquon@etsmtl.ca'"
+            class="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 focus:ring-4 focus:ring-red-500 focus:outline-none transition ease-in-out duration-300">
+            Contact Us
+        </button>
+    </section>
+
+    <footer class="bg-gray-900 text-gray-200 py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-between">
+                <!-- Left Column - Event Info -->
+                <div class="w-full lg:w-1/3 md:w-1/2 mb-8">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold text-white">GraphQUON 2024</h3>
+                        <p class="mt-2">November 9-10, 2024</p>
+                        <p class="mt-4">
+                            <a href="https://maps.google.com/maps?q=Maison+des+étudiants+ÉTS&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+                                target="_blank" class="text-gray-400 hover:text-gray-300">
+                                ÉTS Maison des étudiants, <br>Pavillon E, 1220 Notre-Dame St W, <br>Montreal, QC, Canada
+                                H3C 1K5
+                            </a>
+                        </p>
+                    </div>
+                    <div>
+                        <h5 class="text-xl font-semibold text-white">Previous Years</h5>
+                        <ul class="mt-4 space-y-2">
+                            <li><a href="https://foiegraph2022.github.io/"
+                                    class="text-gray-400 hover:text-gray-300">FoieGraph 2022</a></li>
+                            <li><a href="https://tomatograph2021.github.io/"
+                                    class="text-gray-400 hover:text-gray-300">Tomatograph 2021</a></li>
+                            <li><a href="https://graphquon.github.io/"
+                                    class="text-gray-400 hover:text-gray-300">GraphQUON 2020</a></li>
+                            <li><a href="https://cs.uwaterloo.ca/~c2batty/MOTOGRAPH19/"
+                                    class="text-gray-400 hover:text-gray-300">MOTOGRAPH 2019</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Right Column - Map -->
+                <div class="w-full lg:w-2/3 md:w-1/2 mb-8">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2796.7827154035053!2d-73.56550592294413!3d45.49432012107451!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc91a60c9579333%3A0xed21070ced136f14!2sMaison%20des%20%C3%A9tudiants%20%C3%89TS!5e0!3m2!1sfr!2sca!4v1729198807876!5m2!1sfr!2sca"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+            <!-- Bottom Row - Copyright -->
+            <div class="border-t border-gray-700 pt-4 text-center">
+                <p class="text-gray-400">
+                    © 2024 ETS Multimedia Lab - All rights reserved.
+                </p>
+                <p class="mt-2">
+                    <a href="https://www.etsmtl.ca/en/research/chairs-and-labs/lab-multimedia"
+                        class="text-gray-400 hover:text-gray-300">
+                        Visit ETS Multimedia Lab
+                    </a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js" defer></script>
+    <script src="index.js" defer></script>
+    <script src="schedule.js" defer></script>
+</body>
+
+</html>
