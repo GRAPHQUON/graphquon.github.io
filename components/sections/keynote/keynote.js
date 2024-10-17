@@ -1,5 +1,4 @@
 import { LitElement, html, css } from 'https://unpkg.com/lit@2.2.7?module';
-import 
 
 class KeynoteSection extends LitElement {
   static styles = css`
@@ -209,6 +208,8 @@ class KeynoteSection extends LitElement {
 
   render() {
     return html`
+    <script src="https://cdn.jsdelivr.net/npm/particlesjs@2.2.3/dist/particles.min.js
+    "></script>
       <section id="keynote" aria-labelledby="keynote-heading">
         <!-- Particle.js Background -->
         <div id="particles-js"></div>

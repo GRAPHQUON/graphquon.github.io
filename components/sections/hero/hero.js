@@ -32,7 +32,7 @@ class HeroSection extends LitElement {
     }
 
     .logo-img {
-      width: 200px;
+      width: 500px;
       height: auto;
       border-radius: 50%;
       transition: transform 0.3s ease-in-out;
@@ -104,7 +104,7 @@ class HeroSection extends LitElement {
       }
 
       .logo-img {
-        width: 150px;
+        width: 500px;
       }
 
       .logo-below img {
@@ -127,7 +127,7 @@ class HeroSection extends LitElement {
       }
 
       .logo-img {
-        width: 120px;
+        width: 500px;
       }
 
       .logo-below img {

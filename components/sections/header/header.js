@@ -58,6 +58,8 @@ class HeaderComponent extends LitElement {
     /* Ensures the header doesn't overlap content */
     .spacer {
       height: 80px; /* Adjust to header height */
+      color: red;
+      background: red;
     }
 
     /* Mobile responsive menu */
