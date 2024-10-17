@@ -1,53 +1,107 @@
 # GRAPHQUON Website
 
-This repository contains the code for the GRAPHQUON (previously MOTOGRAPH) website. The site is hosted on GitHub and automatically deployed from the main branch with every push.
+![GitHub last commit](https://img.shields.io/github/last-commit/username/graphquon-website)
+![GitHub license](https://img.shields.io/github/license/username/graphquon-website)
 
-The goal is to maintain this codebase in a way that it can be reused for future events, regardless of the hosting institution.
+This repository contains the code for the **GRAPHQUON** (formerly **MOTOGRAPH**) website. The site is hosted on **GitHub Pages** and automatically deployed from the `main` branch with every push.
 
-## Developing Locally
+GRAPHQUON is a technology and creative industry event, and this codebase is designed to be flexible for future events, regardless of the hosting institution.
 
-The website is intentionally simple for ease of maintenance. To develop or debug the site locally, all you need is a basic HTTP server to avoid CORS (Cross-Origin Resource Sharing) issues. You can set this up using npm:
+---
 
-1. Install the HTTP server package:
+## 🚀 Quick Start
 
-   ```bash
-   npm install http-server
-   ```
+### Install the HTTP Server
+To run the site locally, you'll need a basic HTTP server to avoid CORS issues.
+```bash
+npm install http-server
+```
 
-2. From the root directory of the project, run the server:
+### Run the Local Server
+```bash
+http-server
+```
 
+### 4. Access the Site
+Navigate to `http://localhost:8080` to see the site running locally.
+
+---
+
+## 🛠️ Project Structure
+
+Here is the structure of the repository:
+
+```
+├── components
+│   ├── app.js                # Main app component
+│   ├── privacy/
+│   │   └── privacy.js        # Privacy section
+│   ├── sections/
+│   │   ├── about/            # About section
+│   │   ├── contact/          # Contact section
+│   │   ├── footer/           # Footer component
+│   │   ├── header/           # Header component
+│   │   ├── hero/             # Hero section
+│   │   ├── keynote/          # Keynote section
+│   │   ├── schedule/         # Schedule section
+│   │   └── terms/            # Terms section
+├── res/                      # Resources (images, fonts)
+├── favicon.png               # Website favicon
+├── index.html                # Main HTML file
+├── index.js                  # Entry JavaScript file
+├── lib/
+├── privacy.html              # Privacy policy page
+└── terms.html                # Terms and conditions page
+```
+
+---
+
+## 🔄 Updating for Future Events
+
+To adapt the website for future editions of GRAPHQUON, you need to update a few files and sections:
+
+### 1. **`index.html`**
+- **Event Information**: Update the event date, location, and general info in the `<h2>` tags inside the `#canvas-container` section.
+- **Keynote Speakers**: Replace the name, image, and bio of keynote speakers.
+- **Registration Links**: Update all registration buttons by modifying elements with the `register` class.
+
+### 2. **`schedule.json`**
+- **Event Schedule**: Update this JSON file to reflect the new event’s sessions, speaker names, and timings.
+
+### 3. **Background Image**
+- **Background Image**: Replace the `res/background.jpg` image with a new background that fits the new event's theme. Remember to compress the image for faster loading times.
+
+---
+
+## 💻 Local Development
+
+This website is straightforward to maintain and develop locally. Using **npm** and **http-server**, you can run a local version of the site to preview changes.
+
+To test changes:
+
+1. Make necessary updates to files like `index.html`, `schedule.json`, or styles.
+2. Start the server using:
    ```bash
    http-server
    ```
+3. View the site locally at `http://localhost:8080`.
 
-   This will serve the website locally, allowing you to test changes.
+---
 
-## Updating for Future Events
+## 🚢 Deployment
 
-To update the website for future editions of GRAPHQUON, there are a few specific files and elements that need to be modified:
+The website is hosted on **GitHub Pages**, and any push to the `main` branch automatically triggers a deployment. This ensures that the site is always up-to-date after edits.
 
-### 1. `index.html`
-- **Event Details**: Update the event date, location, and any other key information in the `<h2>` tags located within the `#canvas-container` section.
-- **Keynote Speaker**: Replace the name, image, and any other relevant details for the keynote speaker.
-- **Registration Links**: Update all buttons linking to the registration form. These buttons can be easily found by searching for elements with the `register` class.
+Steps for deployment:
 
-### 2. `schedule.json`
-- **Event Schedule**: Edit the entire `schedule.json` file to reflect the new event’s schedule, including session times, speaker names, and topics.
+1. Commit your changes.
+2. Push to the `main` branch.
+3. GitHub Pages will automatically deploy the latest version of the site.
 
-### 3. Background Image
-- **Background Image**: Replace `res/background.jpg` with an image appropriate for the new event’s location or theme. The image should be heavily compressed to minimize page load time, as the background doesn’t need to be high-resolution.
+---
 
-## Repository Structure
+## 🛡 License
 
-Here’s an overview of the key files and directories in this repository:
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-- **`index.html`**: The main page of the website.
-- **`schedule.json`**: JSON file containing the event schedule.
-- **`index.js`**: Contains JavaScript code for the site’s functionality.
-- **`style.css`**: CSS styles for the website’s appearance.
-- **`favicon.png`**: The website's favicon.
-- **`res/`**: Directory containing resources like the background image.
-
-## Deployment
-
-The website is hosted via GitHub Pages, and any push to the main branch will automatically trigger a deployment. This ensures the site is always up-to-date after edits are made.
+---
