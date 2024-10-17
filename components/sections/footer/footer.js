@@ -135,8 +135,8 @@ class FooterComponent extends LitElement {
 
         <!-- Bottom Row - Footer Links -->
         <div class="footer-links" aria-label="Footer Links">
-          <a href="/privacy" aria-label="Privacy Policy">Privacy Policy</a>
-          <a href="/terms" aria-label="Terms and Conditions">Terms and Conditions</a>
+          <a href="/privacy.html" aria-label="Privacy Policy">Privacy Policy</a>
+          <a href="/terms.html" aria-label="Terms and Conditions">Terms and Conditions</a>
           <a href="#contact" aria-label="Contact Us">Contact Us</a>
         </div>
 
