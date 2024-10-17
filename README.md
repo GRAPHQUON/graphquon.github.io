@@ -1,7 +1,7 @@
 # GRAPHQUON Website
 
-![GitHub last commit](https://img.shields.io/github/last-commit/username/graphquon-website)
-![GitHub license](https://img.shields.io/github/license/username/graphquon-website)
+![GitHub last commit](https://img.shields.io/github/last-commit/GRAPHQUON/graphquon.github.io)
+![GitHub license](https://img.shields.io/github/license/GRAPHQUON/graphquon.github.io)
 
 This repository contains the code for the **GRAPHQUON** (formerly **MOTOGRAPH**) website. The site is hosted on **GitHub Pages** and automatically deployed from the `main` branch with every push.
 
