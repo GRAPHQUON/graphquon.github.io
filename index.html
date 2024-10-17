@@ -1,96 +1,142 @@
 <!DOCTYPE html>
-<html>
-	<head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-        <title>GRAPHQUON</title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="schedule.css">
-        <link href="https://fonts.googleapis.com/css2?family=Commissioner&family=Lato&display=swap" rel="stylesheet">
-        <link rel="icon" type="image/png" href="favicon.png">
-	</head>
-	<body>
-        <div id='nav-container'>
-            <nav>
-                <a href='#about'>About</a>
-                <a href='#keynote'>Speakers</a>
-                <a href='#schedule'>Schedule</a>
-                <a href='#contact'>Contact</a>
-            </nav>
-        </div>
-        <!-- Div for background image for the about section -->
-        <div class='bg' class='full-bleed'>
-            <img src='res/bg1.jpg' />
-        </div>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>GRAPHQUON</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="schedule.css">
+    <link href="https://fonts.googleapis.com/css2?family=Commissioner&family=Lato&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="lib/three.min.js"></script>
+    <script src="lib/OrbitControl.js"></script>
+    <style>
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div> <!-- Particle.js container -->
 
-        <div id='logo-container' class='logo-container full-bleed'>
-            <!-- The following h1 and h2 elements are read from the javascript code to generate the 3D scene -->
-            <img src='res/Graphquon2024.png' class='logo-img' />
-            <div class='logo-below'>
-                <img src='res/ets_logo.svg' class='ets-img' />
-                <h2>ÉTS</h2>
-            </div>
-            <h2>November 9-10, 2024</h2>
-            <div class='btn-container'>
-                <div onclick='window.location="#about"' class='button more-info'>More info ↓</div>
-            </div>
-        </div>
+    <header id="nav-container">
+        <nav>
+            <a href="#about">About</a>
+            <a href="#keynote">Speakers</a>
+            <a href="#schedule">Schedule</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
-        <div id='about' class='full-bleed'>
-            <h1>About the event</h1>
-            <p>GRAPHQUON (formerly MOTOGRAPH) is the annual Quebec-Ontario pre-SIGGRAPH workshop, organized by and for the major East-Canadian computer graphics labs. It is an opportunity for students to present their prospective submissions to a friendly, constructively critical audience and to get valuable feedback.</p>
-            <div class='btn-container'>
-                <span>Previous Editions:</span>
-                <div class='button prev' onclick="window.open('https:/\/www-labs.iro.umontreal.ca/~bernhard/Motograph18/index.html')">2018</div>
-                <!-- <div class='button prev' onclick="window.open('https:/\/graphquon.github.io/')">2020</div> -->
-                <div class='button prev' onclick="window.open('https:/\/foiegraph2022.github.io/')">2022</div>
-                <div class='button prev' onclick="window.open('https:/\/graphquon2023.github.io/')">2023</div>
-            </div>
+    <section class="bg full-bleed">
+        <img src="res/bg1.jpg" alt="Background Image">
+    </section>
 
-            <h1>Registeration is closed now.</h1>
-            <p>GraphQUON 2023 is not open to the public. [Code of Conduct]</p>
-            <p><strong>Student/Postdoc</strong>: Ask your supervisor whether your group is participating.</p>
-            <p><strong>Faculty</strong>: If you have not received an email regarding the registration form, contact us (<a href="mailto:graphquon@etsmtl.ca">graphquon@etsmtl.ca</a>) to get the link to the registration form.</p>
-            <div class='btn-container'>
-                <div onclick='window.location="#schedule"' class='button schedule'>Schedule</div>
-            </div>
+    <section id="logo-container" class="logo-container full-bleed">
+        <img src="res/Graphquon2024.png" alt="Graphquon 2024 Logo" class="logo-img">
+        <div class="logo-below">
+            <img src="res/ets_logo.svg" alt="ETS Logo" class="ets-img">
+            <h2>ÉTS</h2>
         </div>
-        <div id='keynote' class='full-bleed'>
-            <h1>Keynote Speakers</h1>
-            <div class='speaker-container'>
-                <div>
-                    <h3>TBA</h3>
-                    <img src='res/person.png' />
-                    <p></p>
-                </div>
-                <div>
-                    <h3>TBA</h3>
-                    <img src='res/person.png' />
-                    <p></p>
-                </div>
-            </div>
+        <h2>November 9-10, 2024</h2>
+        <div class="btn-container">
+            <button onclick="window.location='#about'" class="button more-info">More info &darr;</button>
         </div>
-        <div id='schedule' class='full-bleed'>
-            <h1>Schedule</h1>
-            <div id='schedule-grid-container'>
-                <div id='schedule-grid'>
-                    <!-- See schedule.js for how this section is automatically filled using schedule.json -->
-                </div>
-            </div>
-        </div>
-        <div id='contact' class='full-bleed'>
-            <h1>Contact</h1>
-            <p>Any questions at all? Send us an email!</p>
-            <div class='btn-container'>
-                <div class='button contact' onclick="window.open('mailto:graphquon@etsmtl.ca')" title='graphquon@etsmtl.ca'>Contact</div>
-            </div>
-        </div>
+    </section>
 
-        <script src="lib/three.min.js"></script>
-        <script src="lib/OrbitControl.js"></script>
-        <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+    <section id="about" class="full-bleed">
+        <h1>About the event</h1>
+        <p>GRAPHQUON (formerly MOTOGRAPH) is the annual Quebec-Ontario pre-SIGGRAPH workshop, organized by and for the major East-Canadian computer graphics labs. It is an opportunity for students to present their prospective submissions to a friendly, constructively critical audience and to get valuable feedback.</p>
+        <div class="btn-container">
+            <span>Previous Editions:</span>
+            <button class="button prev" onclick="window.open('https://www-labs.iro.umontreal.ca/~bernhard/Motograph18/index.html')">2018</button>
+            <button class="button prev" onclick="window.open('https://foiegraph2022.github.io/')">2022</button>
+            <button class="button prev" onclick="window.open('https://graphquon2023.github.io/')">2023</button>
+        </div>
+        <h2>Registration is closed now.</h2>
+        <p>GraphQUON 2023 is not open to the public. <strong>Student/Postdoc:</strong> Ask your supervisor whether your group is participating. <strong>Faculty:</strong> If you have not received an email regarding the registration form, contact us (<a href="mailto:graphquon@etsmtl.ca">graphquon@etsmtl.ca</a>) to get the link to the registration form.</p>
+        <div class="btn-container">
+            <button onclick="window.location='#schedule'" class="button schedule">Schedule</button>
+        </div>
+    </section>
 
-        <script src='index.js'></script>
-        <script src="schedule.js"></script>
-	</body>
+    <section id="keynote" class="full-bleed">
+        <h1>Keynote Speakers</h1>
+        <div class="speaker-container">
+            <div>
+                <h3>TBA</h3>
+                <img src="res/person.png" alt="Keynote Speaker">
+            </div>
+            <div>
+                <h3>TBA</h3>
+                <img src="res/person.png" alt="Keynote Speaker">
+            </div>
+        </div>
+    </section>
+
+    <section id="schedule" class="full-bleed">
+        <h1>Schedule</h1>
+        <div id="schedule-grid-container">
+            <div id="schedule-grid">
+                <!-- Automatically filled using schedule.js -->
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="full-bleed">
+        <h1>Contact</h1>
+        <p>Any questions at all? Send us an email!</p>
+        <div class="btn-container">
+            <button class="button contact" onclick="window.open('mailto:graphquon@etsmtl.ca')" title="graphquon@etsmtl.ca">Contact</button>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+    <script src="index.js"></script>
+    <script src="schedule.js"></script>
+    <script>
+        // Initialize Particle.js
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": { "value": "#ffffff" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.5 },
+                "size": { "value": 3, "random": true },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 6,
+                    "direction": "none",
+                    "out_mode": "out"
+                }
+            },
+            "interactivity": {
+                "events": {
+                    "onhover": { "enable": true, "mode": "repulse" },
+                    "onclick": { "enable": true, "mode": "push" }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+</body>
 </html>
