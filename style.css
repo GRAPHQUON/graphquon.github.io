@@ -430,3 +430,36 @@ canvas {
         transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
     }
 }
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+/* Animation for the first speaker (slide in from left) */
+.animate-left {
+    animation: slideInFromLeft 1s ease-out forwards;
+}
+
+/* Animation for the second speaker (slide in from right) */
+.animate-right {
+    animation: slideInFromRight 1s ease-out forwards;
+}
