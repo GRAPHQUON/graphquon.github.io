@@ -144,18 +144,18 @@ class HeroSection extends LitElement {
           <h1>GRAPHQUON 2024</h1>
           <p>November 9-10, 2024 at École de technologie supérieure</p>
 
-          <!-- Countdown Timer -->
-          <div class="countdown" id="countdown-timer"></div>
-
           <!-- Logo Section -->
           <div class="logo-wrapper">
-            <img src="./../../res/Graphquon2024.png" alt="Graphquon 2024 Logo" class="logo-img" loading="lazy" />
+            <img src="/res/Graphquon2024.png" alt="Graphquon 2024 Logo" class="logo-img" loading="lazy" />
           </div>
 
           <div class="logo-below">
-            <img src="./../../res/ets_logo.svg" alt="ÉTS Logo" loading="lazy" />
+            <img src="/res/ets_logo.svg" alt="ÉTS Logo" loading="lazy" />
             <h2>ÉTS</h2>
           </div>
+
+          <!-- Countdown Timer -->
+          <div class="countdown" id="countdown-timer"></div>
 
           <button @click="${() => this.scrollToSection('about')}" aria-label="Scroll to About Section">Learn More</button>
         </div>

@@ -177,7 +177,7 @@ class ScheduleSection extends LitElement {
 
   async fetchScheduleData() {
     try {
-      const response = await fetch('schedule.json');
+      const response = await fetch('./components/schedule/schedule.json');
       if (!response.ok) throw new Error('Failed to load schedule data');
       const data = await response.json();
       this.scheduleData = data;
