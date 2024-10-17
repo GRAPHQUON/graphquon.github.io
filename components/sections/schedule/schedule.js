@@ -1,24 +1,45 @@
 import { LitElement, html, css } from 'https://unpkg.com/lit@2.2.7?module';
+import 'https://cdn.jsdelivr.net/npm/ionicons@5.5.2/dist/ionicons/ionicons.esm.js';
 
 class ScheduleSection extends LitElement {
+  static properties = {
+    scheduleData: { type: Array },
+    activeSublist: { type: Object },
+  };
+
   static styles = css`
-    section {
+    :host {
+      display: block;
       padding: 2rem;
+      font-family: 'Commissioner', sans-serif;
       background-color: #f7fafc;
-      border-radius: 15px;
+      color: #111827;
+    }
+
+    header {
+      background-color: #1f2937;
+      color: white;
       text-align: center;
+      padding: 1.5rem 0;
+      border-radius: 15px;
     }
 
     h1 {
-      color: #2d3748;
       font-size: 2.5rem;
-      margin-bottom: 2rem;
+      font-weight: bold;
     }
 
     #schedule-grid-container {
-      border-radius: 23px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      padding: 40px;
       background-color: white;
-      padding: 15px;
+      color: #252525;
+      border-radius: 17px;
+      border: solid 2px #d4d4d4;
+      cursor: default;
+      flex-wrap: wrap;
     }
 
     .schedule-day {
@@ -32,9 +53,11 @@ class ScheduleSection extends LitElement {
       border: solid 2px #d4d4d4;
       cursor: default;
       margin-bottom: 2rem;
+      position: relative;
+      width: 300px;
     }
 
-    h2 {
+    .schedule-day h2 {
       grid-column: 1 / 3;
       margin: 0;
       font-size: 2rem;
@@ -42,7 +65,7 @@ class ScheduleSection extends LitElement {
       color: #2b6cb0;
     }
 
-    h3 {
+    .schedule-day h3 {
       grid-column: 1 / 3;
       margin: 0;
       font-size: 1.5rem;
@@ -51,23 +74,28 @@ class ScheduleSection extends LitElement {
 
     .schedule-item-time {
       color: #135eaab8;
+      font-weight: bold;
     }
 
     .schedule-item-name {
       border-bottom: solid 1px #ddd;
       cursor: pointer;
       position: relative;
+      padding-right: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 
-    .schedule-item-name.sublist ion-icon {
-      position: absolute;
-      right: 0;
+    .schedule-item-name:hover {
+      color: #b72ce6;
     }
 
     .schedule-sublist {
       display: none;
       position: absolute;
-      left: -67px;
+      top: 100%;
+      left: 0;
       border-radius: 10px;
       background: linear-gradient(45deg, #549ddc, #b94de4);
       color: white;
@@ -77,24 +105,74 @@ class ScheduleSection extends LitElement {
       width: 280px;
       font-size: 14px;
       z-index: 10;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
     .schedule-sublist.active {
       display: block;
     }
+
+    .schedule-sublist-name {
+      text-align: left;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .schedule-sublist-author {
+      text-align: right;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    .schedule-sublist-affiliation {
+      font-weight: normal;
+      padding-left: 7px;
+    }
+
+    ion-icon {
+      font-size: 1.25rem;
+      transition: transform 0.3s;
+    }
+
+    .schedule-item-name.open ion-icon {
+      transform: rotate(180deg);
+    }
+
+    @media screen and (max-width: 800px) {
+      #schedule-grid-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+      }
+
+      .schedule-day {
+        width: 90%;
+      }
+    }
   `;
 
-  render() {
-    return html`
-      <section id="schedule">
-        <h1>Schedule</h1>
-        <div id="schedule-grid-container"></div>
-      </section>
-    `;
+  constructor() {
+    super();
+    this.scheduleData = [];
+    this.activeSublist = null;
   }
 
-  firstUpdated() {
+  connectedCallback() {
+    super.connectedCallback();
     this.fetchScheduleData();
+    document.addEventListener('click', this.handleOutsideClick.bind(this));
+  }
+
+  disconnectedCallback() {
+    document.removeEventListener('click', this.handleOutsideClick.bind(this));
+    super.disconnectedCallback();
+  }
+
+  handleOutsideClick(event) {
+    if (!this.contains(event.target)) {
+      this.activeSublist = null;
+      this.requestUpdate();
+    }
   }
 
   async fetchScheduleData() {
@@ -102,107 +180,86 @@ class ScheduleSection extends LitElement {
       const response = await fetch('schedule.json');
       if (!response.ok) throw new Error('Failed to load schedule data');
       const data = await response.json();
-      this.renderSchedule(data);
+      this.scheduleData = data;
     } catch (error) {
       console.error('Error fetching schedule:', error);
     }
   }
 
-  renderSchedule(data) {
-    const scheduleContainer = this.shadowRoot.getElementById('schedule-grid-container');
-    const fragment = document.createDocumentFragment();
-
-    data.forEach(day => {
-      const dayEl = this.createDayElement(day);
-      fragment.appendChild(dayEl);
-    });
-
-    scheduleContainer.appendChild(fragment);
-  }
-
-  createDayElement(day) {
-    const dayEl = document.createElement('div');
-    dayEl.className = 'schedule-day';
-
-    const titleEl = document.createElement('h2');
-    titleEl.textContent = `${day.date} ${day.month}`;
-    const subtitleEl = document.createElement('h3');
-    subtitleEl.textContent = day.day;
-
-    dayEl.appendChild(titleEl);
-    dayEl.appendChild(subtitleEl);
-
-    day.items.forEach(item => {
-      const timeEl = this.createTimeElement(item.time);
-      const nameEl = this.createNameElement(item);
-
-      dayEl.appendChild(timeEl);
-      dayEl.appendChild(nameEl);
-    });
-
-    return dayEl;
-  }
-
-  createTimeElement(time) {
-    const timeEl = document.createElement('span');
-    timeEl.className = 'schedule-item-time';
-    timeEl.textContent = time;
-    return timeEl;
-  }
-
-  createNameElement(item) {
-    const nameEl = document.createElement('span');
-    nameEl.className = 'schedule-item-name';
-    nameEl.textContent = item.name;
-
-    if (item.items) {
-      nameEl.classList.add('sublist');
-      const iconEl = document.createElement('ion-icon');
-      iconEl.setAttribute('name', 'chevron-down-outline');
-      nameEl.appendChild(iconEl);
-
-      nameEl.addEventListener('click', () => {
-        this.toggleSublist(nameEl);
-      });
-
-      const sublistEl = this.createSublistElement(item.items);
-      nameEl.appendChild(sublistEl);
+  toggleSublist(dayDate, itemName) {
+    if (
+      this.activeSublist &&
+      this.activeSublist.dayDate === dayDate &&
+      this.activeSublist.itemName === itemName
+    ) {
+      this.activeSublist = null;
+    } else {
+      this.activeSublist = { dayDate, itemName };
     }
-
-    return nameEl;
   }
 
-  createSublistElement(subitems) {
-    const sublistEl = document.createElement('div');
-    sublistEl.className = 'schedule-sublist';
+  renderSublist(dayDate, itemName, subitems) {
+    const isActive =
+      this.activeSublist &&
+      this.activeSublist.dayDate === dayDate &&
+      this.activeSublist.itemName === itemName;
 
-    subitems.forEach(subitem => {
-      const subitemNameEl = document.createElement('div');
-      subitemNameEl.className = 'schedule-sublist-name';
-      subitemNameEl.textContent = subitem.name;
-
-      const subitemAuthorEl = document.createElement('div');
-      subitemAuthorEl.className = 'schedule-sublist-author';
-      subitemAuthorEl.innerHTML = `${subitem.author} <span class="schedule-sublist-affiliation">(${subitem.affiliation})</span>`;
-
-      sublistEl.appendChild(subitemNameEl);
-      sublistEl.appendChild(subitemAuthorEl);
-    });
-
-    return sublistEl;
+    return html`
+      <div class="schedule-sublist ${isActive ? 'active' : ''}" @click=${e => e.stopPropagation()}>
+        ${subitems.map(
+          subitem => html`
+            <div class="schedule-sublist-name">${subitem.name}</div>
+            <div class="schedule-sublist-author">
+              ${subitem.author}
+              <span class="schedule-sublist-affiliation">(${subitem.affiliation})</span>
+            </div>
+          `
+        )}
+      </div>
+    `;
   }
 
-  toggleSublist(nameEl) {
-    const sublist = nameEl.querySelector('.schedule-sublist');
-    if (sublist) {
-      sublist.classList.toggle('active');
-
-      // Close other active sublists
-      const sublists = this.shadowRoot.querySelectorAll('.schedule-sublist');
-      sublists.forEach(s => {
-        if (s !== sublist) s.classList.remove('active');
-      });
-    }
+  render() {
+    return html`
+      <section id="schedule">
+        <header>
+          <h1>Schedule</h1>
+        </header>
+        <div id="schedule-grid-container">
+          ${this.scheduleData.map(
+            day => html`
+              <div class="schedule-day">
+                <h2>${day.date} ${day.month}</h2>
+                <h3>${day.day}</h3>
+                ${day.items.map(
+                  item => html`
+                    <div>
+                      <span class="schedule-item-time">${item.time}</span>
+                      <div
+                        class="schedule-item-name ${this.activeSublist &&
+                        this.activeSublist.dayDate === day.date &&
+                        this.activeSublist.itemName === item.name
+                          ? 'open'
+                          : ''}"
+                        @click=${() => this.toggleSublist(day.date, item.name)}
+                      >
+                        ${item.name}
+                        ${item.items
+                          ? html`
+                              <ion-icon name="chevron-down-outline"></ion-icon>
+                              ${this.renderSublist(day.date, item.name, item.items)}
+                            `
+                          : ''}
+                      </div>
+                    </div>
+                  `
+                )}
+              </div>
+            `
+          )}
+        </div>
+      </section>
+    `;
   }
 }
 
