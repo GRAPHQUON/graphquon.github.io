@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="schedule.css">
         <link href="https://fonts.googleapis.com/css2?family=Commissioner&family=Lato&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/png" href="favicon.png">
 	</head>
 	<body>
         <div id='nav-container'>
@@ -17,6 +18,11 @@
                 <a href='#contact'>Contact</a>
             </nav>
         </div>
+        <!-- Div for background image for the about section -->
+        <div class='bg' class='full-bleed'>
+            <img src='res/bg1.jpg' />
+        </div>
+
         <div id='logo-container' class='logo-container full-bleed'>
             <!-- The following h1 and h2 elements are read from the javascript code to generate the 3D scene -->
             <img src='res/Graphquon2024.png' class='logo-img' />
@@ -26,16 +32,27 @@
             </div>
             <h2>November 9-10, 2024</h2>
             <div class='btn-container'>
-                <div class='button register' onclick="window.open('https:/\/forms.gle/QCgbsWWqLJgeazjN9')">Register Now</div>
                 <div onclick='window.location="#about"' class='button more-info'>More info ↓</div>
             </div>
         </div>
+
         <div id='about' class='full-bleed'>
             <h1>About the event</h1>
             <p>GRAPHQUON (formerly MOTOGRAPH) is the annual Quebec-Ontario pre-SIGGRAPH workshop, organized by and for the major East-Canadian computer graphics labs. It is an opportunity for students to present their prospective submissions to a friendly, constructively critical audience and to get valuable feedback.</p>
             <div class='btn-container'>
+                <span>Previous Editions:</span>
+                <div class='button prev' onclick="window.open('https:/\/www-labs.iro.umontreal.ca/~bernhard/Motograph18/index.html')">2018</div>
+                <!-- <div class='button prev' onclick="window.open('https:/\/graphquon.github.io/')">2020</div> -->
+                <div class='button prev' onclick="window.open('https:/\/foiegraph2022.github.io/')">2022</div>
+                <div class='button prev' onclick="window.open('https:/\/graphquon2023.github.io/')">2023</div>
+            </div>
+
+            <h1>Registeration is closed now.</h1>
+            <p>GraphQUON 2023 is not open to the public. [Code of Conduct]</p>
+            <p><strong>Student/Postdoc</strong>: Ask your supervisor whether your group is participating.</p>
+            <p><strong>Faculty</strong>: If you have not received an email regarding the registration form, contact us (<a href="mailto:graphquon@etsmtl.ca">graphquon@etsmtl.ca</a>) to get the link to the registration form.</p>
+            <div class='btn-container'>
                 <div onclick='window.location="#schedule"' class='button schedule'>Schedule</div>
-                <div class='button register' onclick="window.open('https:/\/forms.gle/QCgbsWWqLJgeazjN9')">Register</div>
             </div>
         </div>
         <div id='keynote' class='full-bleed'>
@@ -65,7 +82,7 @@
             <h1>Contact</h1>
             <p>Any questions at all? Send us an email!</p>
             <div class='btn-container'>
-                <div class='button contact' onclick="window.open('mailto:sheldon.andrews@etsmtl.ca')" title='gfx.qcon@gmail.com'>Contact</div>
+                <div class='button contact' onclick="window.open('mailto:graphquon@etsmtl.ca')" title='graphquon@etsmtl.ca'>Contact</div>
             </div>
         </div>
 
