@@ -4,7 +4,7 @@ class HeroSection extends LitElement {
   static styles = css`
     section {
       height: 100vh;
-      background: url('../res/bg1.jpg') no-repeat center center/cover;
+      background: url('../../res/bg1.jpg') no-repeat center center/cover;
       position: relative;
       display: flex;
       justify-content: center;
@@ -60,8 +60,9 @@ class HeroSection extends LitElement {
     `;
   }
 
+  // Use document.querySelector to access light DOM elements
   scrollToSection(sectionId) {
-    const section = document.getElementById(sectionId);
+    const section = document.querySelector(`#${sectionId}`);
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
     }

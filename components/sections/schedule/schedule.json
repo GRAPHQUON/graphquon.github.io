@@ -1,0 +1,42 @@
+[
+    {
+        "date": "9",
+        "month": "November",
+        "day": "Saturday",
+        "items": [
+            {
+                "time": "??:??",
+                "name": "TBA"
+            },
+            {
+                "time": "??:??",
+                "name": "TBA",
+                "items":[
+                    {
+                        "time": "??:??",
+                        "name": "TBA"
+                    },
+                    {
+                        "time": "??:??",
+                        "name": "TBA"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "date": "10",
+        "month": "November",
+        "day": "Sunday",
+        "items": [
+            {
+                "time": "??:??",
+                "name": "TBA"
+            },
+            {
+                "time": "??:??",
+                "name": "TBA"
+            }
+        ]
+    }
+]
