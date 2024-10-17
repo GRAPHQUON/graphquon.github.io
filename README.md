@@ -60,19 +60,6 @@ Here is the structure of the repository:
 
 To adapt the website for future editions of GRAPHQUON, you need to update a few files and sections:
 
-### 1. **`index.html`**
-- **Event Information**: Update the event date, location, and general info in the `<h2>` tags inside the `#canvas-container` section.
-- **Keynote Speakers**: Replace the name, image, and bio of keynote speakers.
-- **Registration Links**: Update all registration buttons by modifying elements with the `register` class.
-
-### 2. **`schedule.json`**
-- **Event Schedule**: Update this JSON file to reflect the new event’s sessions, speaker names, and timings.
-
-### 3. **Background Image**
-- **Background Image**: Replace the `res/background.jpg` image with a new background that fits the new event's theme. Remember to compress the image for faster loading times.
-
----
-
 ## 💻 Local Development
 
 This website is straightforward to maintain and develop locally. Using **npm** and **http-server**, you can run a local version of the site to preview changes.
