@@ -64,6 +64,11 @@ class HeroSection extends LitElement {
       margin-top: 1rem;
     }
 
+    .countdown {
+      font-size: 2rem;
+      margin-top: 1.5rem;
+    }
+
     button {
       margin-top: 2rem;
       padding: 1rem 2rem;
@@ -139,6 +144,9 @@ class HeroSection extends LitElement {
           <h1>GRAPHQUON 2024</h1>
           <p>November 9-10, 2024 at École de technologie supérieure</p>
 
+          <!-- Countdown Timer -->
+          <div class="countdown" id="countdown-timer"></div>
+
           <!-- Logo Section -->
           <div class="logo-wrapper">
             <img src="../../res/Graphquon2024.png" alt="Graphquon 2024 Logo" class="logo-img" loading="lazy" />
@@ -155,7 +163,33 @@ class HeroSection extends LitElement {
     `;
   }
 
-  // Use document.querySelector to access light DOM elements and perform smooth scroll
+  firstUpdated() {
+    this.startCountdown();
+  }
+
+  startCountdown() {
+    const eventDate = new Date('November 9, 2024 00:00:00').getTime();
+    const countdownElement = this.shadowRoot.getElementById('countdown-timer');
+
+    const updateCountdown = () => {
+      const now = new Date().getTime();
+      const distance = eventDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdownElement.innerHTML = `Countdown: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+      if (distance < 0) {
+        countdownElement.innerHTML = 'Event has started!';
+      }
+    };
+
+    setInterval(updateCountdown, 1000);
+  }
+
   scrollToSection(sectionId) {
     const section = document.querySelector(`#${sectionId}`);
     if (section) {
