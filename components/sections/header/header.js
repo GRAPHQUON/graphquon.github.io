@@ -46,13 +46,13 @@ class HeaderComponent extends LitElement {
     /* Hover and focus effects for links */
     a:hover,
     a:focus {
-      color: yellow;
+      color: red;
       outline: none;
     }
 
     /* Focus effect with a solid outline */
     a:focus {
-      border-bottom: 2px solid yellow;
+      border-bottom: 2px solid red;
     }
 
     /* Ensures the header doesn't overlap content */

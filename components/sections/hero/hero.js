@@ -27,6 +27,33 @@ class HeroSection extends LitElement {
       text-align: center;
     }
 
+    .logo-wrapper {
+      margin-top: 2rem;
+    }
+
+    .logo-img {
+      width: 200px;
+      height: auto;
+      border-radius: 50%;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .logo-img:hover {
+      transform: scale(1.05);
+    }
+
+    .logo-below {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .logo-below img {
+      width: 40px;
+    }
+
     h1 {
       font-size: 4rem;
       font-weight: bold;
@@ -70,6 +97,14 @@ class HeroSection extends LitElement {
         padding: 0.75rem 1.5rem;
         font-size: 1rem;
       }
+
+      .logo-img {
+        width: 150px;
+      }
+
+      .logo-below img {
+        width: 30px;
+      }
     }
 
     @media (max-width: 480px) {
@@ -85,6 +120,14 @@ class HeroSection extends LitElement {
         padding: 0.5rem 1rem;
         font-size: 0.875rem;
       }
+
+      .logo-img {
+        width: 120px;
+      }
+
+      .logo-below img {
+        width: 25px;
+      }
     }
   `;
 
@@ -95,6 +138,17 @@ class HeroSection extends LitElement {
         <div class="content">
           <h1>GRAPHQUON 2024</h1>
           <p>November 9-10, 2024 at École de technologie supérieure</p>
+
+          <!-- Logo Section -->
+          <div class="logo-wrapper">
+            <img src="../../res/Graphquon2024.png" alt="Graphquon 2024 Logo" class="logo-img" loading="lazy" />
+          </div>
+
+          <div class="logo-below">
+            <img src="../../res/ets_logo.svg" alt="ÉTS Logo" loading="lazy" />
+            <h2>ÉTS</h2>
+          </div>
+
           <button @click="${() => this.scrollToSection('about')}" aria-label="Scroll to About Section">Learn More</button>
         </div>
       </section>
