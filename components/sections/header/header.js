@@ -75,6 +75,39 @@ class HeaderComponent extends LitElement {
     }
   `;
 
+  setupSmoothScrolling() {
+    // Select all navigation links
+    const navLinks = this.querySelectorAll('a');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault(); // Prevent default anchor click behavior
+        const targetId = link.getAttribute('href').substring(1); // Extract target ID
+        const targetElement = document.getElementById(targetId);
+
+        console.log("tests");
+
+        if (targetElement) {
+          // Calculate the offset considering the fixed header
+          const header = this.querySelector('header');
+          const headerHeight = header ? header.offsetHeight : 80; // Fallback to 80px if header not found
+
+          // Get the top position of the target element relative to the document
+          const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+
+          // Calculate the scroll position accounting for the header height
+          const offsetPosition = elementPosition - headerHeight;
+
+          // Smooth scroll to the calculated position
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  }
+
   render() {
     return html`
       <header aria-label="Main Navigation">

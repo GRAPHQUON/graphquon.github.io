@@ -4,7 +4,7 @@ class HeroSection extends LitElement {
   static styles = css`
     section {
       height: 100vh;
-      background: url('../../res/bg1.jpg') no-repeat center center/cover;
+      background: url('res/bg1.jpg') no-repeat center center/cover;
       position: relative;
       display: flex;
       justify-content: center;

@@ -9,10 +9,8 @@ import './sections/footer/footer.js';
 
 class GraphQuonApp extends LitElement {
   static styles = css`
-    /* Optional: Add any global styles specific to GraphQuonApp here */
     :host {
       display: block;
-      /* Ensure the app takes full width */
       width: 100%;
     }
   `;
@@ -20,11 +18,11 @@ class GraphQuonApp extends LitElement {
   render() {
     return html`
       <header-component></header-component>
-      <hero-section></hero-section>
-      <about-section></about-section>
-      <keynote-section></keynote-section>
-      <schedule-section></schedule-section>
-      <contact-section></contact-section>
+      <hero-section id="hero"></hero-section>
+      <about-section id="about"></about-section>
+      <keynote-section id="keynote"></keynote-section>
+      <schedule-section id="schedule"></schedule-section>
+      <contact-section id="contact"></contact-section>
       <footer-component></footer-component>
     `;
   }

@@ -18,11 +18,12 @@ class AboutSection extends LitElement {
       width: 100%;
       height: 100%;
       z-index: 0;
+      background: rgb(212 217 222);
     }
 
     section {
       position: relative;
-      background: rgba(255, 255, 255, 0.85); /* Semi-transparent background to see particles */
+      background: rgb(212 217 222);
       padding: 4rem 2rem;
       border-radius: 15px;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
@@ -30,8 +31,6 @@ class AboutSection extends LitElement {
       max-width: 900px;
       z-index: 1;
     }
-
-    /* Rest of your existing CSS remains unchanged */
 
     h1 {
       font-size: 3rem;
@@ -224,7 +223,7 @@ class AboutSection extends LitElement {
   async loadParticles() {
     // Dynamically import the Particles.js script
     const script = document.createElement('script');
-    script.src = 'lib/particles.min.js'; // Adjust the path if necessary
+    script.src = 'lib/particles.min.js';
     script.async = true;
     script.onload = () => {
       // Initialize particles after the script has loaded
@@ -366,7 +365,7 @@ class AboutSection extends LitElement {
 
           <!-- Horizontal Stepper -->
           <ol class="stepper">
-            <li class="active">
+            <li>
               <a href="https://www-labs.iro.umontreal.ca/~bernhard/Motograph18/index.html" target="_blank" rel="noopener noreferrer">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                   <path
@@ -413,7 +412,6 @@ class AboutSection extends LitElement {
           <!-- Button Links -->
           <div class="btn-container">
             <a href="#schedule" class="btn btn-primary">Schedule</a>
-            <a href="https://forms.gle/Sz1u2spgURcjQcxz9" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Register</a>
           </div>
         </div>
       </section>
