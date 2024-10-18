@@ -4,6 +4,7 @@ class HeaderComponent extends LitElement {
   static styles = css`
     /* Styling for the header */
     header {
+      position: relative;
       background: rgba(38, 38, 38, 0.9);
       position: fixed;
       top: 0;
@@ -57,6 +58,7 @@ class HeaderComponent extends LitElement {
 
     /* Ensures the header doesn't overlap content */
     .spacer {
+      position: relative;
       height: 80px; /* Adjust to header height */
       color: red;
       background: red;

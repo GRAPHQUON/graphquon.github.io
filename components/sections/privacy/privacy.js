@@ -3,6 +3,7 @@ import { LitElement, html, css } from 'https://unpkg.com/lit@2.2.7?module';
 class PrivacyPolicy extends LitElement {
     static styles = css`
     :host {
+      position: relative;
       display: block;
       padding: 2rem;
       font-family: 'Commissioner', sans-serif;

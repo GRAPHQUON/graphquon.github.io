@@ -1,6 +1,7 @@
 import { LitElement, html, css } from "https://unpkg.com/lit@2.2.7?module";
 
 class AboutSection extends LitElement {
+
   static styles = css`
     :host {
       display: block;
@@ -26,7 +27,7 @@ class AboutSection extends LitElement {
       background: rgb(212 217 222);
       padding: 4rem 2rem;
       border-radius: 15px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
       margin: 2rem auto;
       max-width: 900px;
       z-index: 1;
@@ -203,7 +204,6 @@ class AboutSection extends LitElement {
       }
 
       .btn-container {
-        flex-direction: column;
         gap: 0.5rem;
       }
 
@@ -214,10 +214,9 @@ class AboutSection extends LitElement {
     }
   `;
 
+
   render() {
     return html`
-      <!-- Particles.js Container -->
-      <div class="particles-js" id="particles-js"></div>
 
       <section id="about" aria-labelledby="about-heading">
         <div class="container">
@@ -311,15 +310,6 @@ class AboutSection extends LitElement {
           </div>
         </div>
       </section>
-      <script>
-        particlesJS.load(
-          "particles-js",
-          "components/sections/about/particles.json",
-          function () {
-            console.log("Particles.js loaded.");
-          }
-        );
-      </script>
     `;
   }
 }

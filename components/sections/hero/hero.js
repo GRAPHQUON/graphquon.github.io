@@ -3,6 +3,7 @@ import { LitElement, html, css } from 'https://unpkg.com/lit@2.2.7?module';
 class HeroSection extends LitElement {
   static styles = css`
     section {
+      position: relative;
       height: 100vh;
       background: url('res/bg1.jpg') no-repeat center center/cover;
       position: relative;

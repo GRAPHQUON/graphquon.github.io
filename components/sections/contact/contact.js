@@ -4,11 +4,15 @@ class ContactSection extends LitElement {
   static styles = css`
     /* General styles for the section */
     section {
+      position: relative;
+      padding: 2rem;
+      text-align: center;
+      color: white;
+      overflow: hidden; /* Ensure particles stay within the section */
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 2rem;
-      background-color: rgb(212 217 222);
     }
 
     /* Card styles */
@@ -16,12 +20,12 @@ class ContactSection extends LitElement {
       background-color: white; /* bg-white */
       padding: 2rem;
       border-radius: 1rem; /* rounded-lg */
-      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* shadow-lg */
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4); /* shadow-lg */
       text-align: center;
       max-width: 400px; /* Ensure card doesn't get too wide */
       margin: 0 auto;
 
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Subtle shadow */
       transition: box-shadow 0.3s ease; /* Smooth transition for shadow */
     }
 

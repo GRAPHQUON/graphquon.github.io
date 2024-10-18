@@ -19,6 +19,8 @@
     <!-- TailwindCSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="index.css">
+
     <!-- Google Fonts -->
     <link
         href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;700&family=Lato:wght@300;400;700&display=swap"
@@ -40,80 +42,13 @@
 
     <!-- LitElement CDN -->
     <script type="module" src="https://unpkg.com/lit@2.2.7?module"></script>
+    <!-- tsParticles CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.5.3/tsparticles.bundle.min.js"></script>
 
-    <style>
-        /* Floating Action Button (FAB) */
-        .fab {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #007bff;
-            border-radius: 50%;
-            width: 56px;
-            height: 56px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            cursor: pointer;
-            z-index: 1000;
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .fab:hover {
-            background-color: #0056b3;
-        }
-
-        .fab svg {
-            width: 28px;
-            height: 28px;
-            fill: white;
-        }
-
-        /* Floating menu items */
-        .floating-menu {
-            position: fixed;
-            bottom: 80px;
-            right: 30px;
-            background-color: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-            padding: 1rem;
-            display: none;
-            flex-direction: column;
-        }
-
-        .floating-menu a {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin: 0.5rem 0;
-            padding: 0.5rem 1rem;
-            background-color: #007bff;
-            color: white;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .floating-menu a:hover {
-            background-color: #0056b3;
-        }
-
-        .floating-menu a svg {
-            width: 24px;
-            height: 24px;
-        }
-
-        /* Preloader style */
-        #preloader {
-            background-color: rgba(255, 255, 255, 0.9);
-        }
-    </style>
 </head>
 
-<body>
+<body class="relative">
+    <div id="tsparticles" class=""></div>
     <!-- Main Application -->
     <graphquon-app></graphquon-app>
 
@@ -171,11 +106,84 @@
     <!-- Flowbite JS (for interactivity) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
 
-    <!-- Particles.js (for background effects) -->
-    <script src="./lib/particles.min.js"></script>
-
     <script type="module" src="./components/app.js"></script>
     <script src="index.js"></script>
+
+    <!-- tsParticles Initialization -->
+    <script>
+        tsParticles.load("tsparticles", {
+            background: {
+                color: {
+                    value: "#ffffff" // Set to transparent or your preferred background color
+                }
+            },
+            fpsLimit: 60,
+            interactivity: {
+                events: {
+                    onClick: {
+                        enable: true,
+                        mode: "push"
+                    },
+                    onHover: {
+                        enable: true,
+                        mode: "repulse"
+                    },
+                    resize: true
+                },
+                modes: {
+                    push: {
+                        quantity: 4
+                    },
+                    repulse: {
+                        distance: 100,
+                        duration: 0.4
+                    }
+                }
+            },
+            particles: {
+                color: {
+                    value: "#1f2937" // Particle color
+                },
+                links: {
+                    color: "#1f2937",
+                    distance: 150,
+                    enable: true,
+                    opacity: 0.5,
+                    width: 1
+                },
+                collisions: {
+                    enable: false
+                },
+                move: {
+                    direction: "none",
+                    enable: true,
+                    outModes: {
+                        default: "bounce"
+                    },
+                    random: false,
+                    speed: 2,
+                    straight: false
+                },
+                number: {
+                    density: {
+                        enable: true,
+                        area: 800
+                    },
+                    value: 50
+                },
+                opacity: {
+                    value: 0.5
+                },
+                shape: {
+                    type: "circle"
+                },
+                size: {
+                    value: { min: 1, max: 5 }
+                }
+            },
+            detectRetina: true
+        });
+    </script>
 </body>
 
 </html>

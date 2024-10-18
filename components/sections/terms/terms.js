@@ -3,6 +3,7 @@ import { LitElement, html, css } from 'https://unpkg.com/lit@2.2.7?module';
 class TermsOfServiceETS extends LitElement {
   static styles = css`
     :host {
+      position: relative;
       display: block;
       background-color: #f7fafc;
       color: #111827;

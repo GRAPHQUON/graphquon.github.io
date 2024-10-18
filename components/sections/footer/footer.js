@@ -3,6 +3,10 @@ import { LitElement, html, css } from 'https://unpkg.com/lit@2.2.7?module';
 class FooterComponent extends LitElement {
   static styles = css`
     footer {
+      position: relative;
+      text-align: center;
+      color: white;
+      overflow: hidden; /* Ensure particles stay within the section */
       background-color: #2d3748;
       padding: 2rem 1rem;
       color: white;

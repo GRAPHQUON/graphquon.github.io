@@ -10,6 +10,7 @@ class ScheduleSection extends LitElement {
   static styles = css`
     :host {
       display: block;
+      position: relative;
       padding: 2rem;
       font-family: 'Commissioner', sans-serif;
       background-color: #f7fafc;
@@ -55,7 +56,7 @@ class ScheduleSection extends LitElement {
       position: relative;
       width: 300px;
 
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Subtle shadow */
       transition: box-shadow 0.3s ease; /* Smooth transition for shadow */
     }
 
