@@ -12,6 +12,7 @@ class HeaderComponent extends LitElement {
       z-index: 50;
       backdrop-filter: blur(10px);
       transition: background-color 0.3s ease;
+      z-index: 1;
     }
 
     /* Navigation container */
@@ -115,7 +116,7 @@ class HeaderComponent extends LitElement {
     // Scroll to the section with an offset
     const targetSection = document.getElementById(targetId);
     if (targetSection) {
-      const headerOffset = 80; // Define the offset (80px)
+      const headerOffset = 50; // Define the offset (50px)
       const elementPosition = targetSection.getBoundingClientRect().top + window.scrollY;
       const offsetPosition = elementPosition - headerOffset;
 

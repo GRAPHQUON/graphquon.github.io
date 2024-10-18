@@ -23,7 +23,7 @@ class GraphQuonApp extends LitElement {
       <keynote-section id="keynote"></keynote-section>
       <schedule-section id="schedule"></schedule-section>
       <contact-section id="contact"></contact-section>
-      <footer-component></footer-component>
+      <footer-component id="footer"></footer-component>
     `;
   }
 }

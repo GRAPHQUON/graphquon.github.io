@@ -10,6 +10,7 @@ class KeynoteSection extends LitElement {
       text-align: center;
       color: white;
       overflow: hidden; /* Ensure particles stay within the section */
+      z-index: 1;
     }
 
     #particles-js {

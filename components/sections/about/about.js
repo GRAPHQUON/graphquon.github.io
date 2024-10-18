@@ -9,6 +9,7 @@ class AboutSection extends LitElement {
       font-family: "Manrope", Arial, sans-serif;
       position: relative;
       overflow: hidden;
+      z-index: 1;
     }
 
     /* Particles Container */

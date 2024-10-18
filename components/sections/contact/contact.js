@@ -5,7 +5,7 @@ class ContactSection extends LitElement {
     /* General styles for the section */
     section {
       position: relative;
-      padding: 2rem;
+      z-index: 1;
       text-align: center;
       color: white;
       overflow: hidden; /* Ensure particles stay within the section */

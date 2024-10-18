@@ -10,6 +10,7 @@ class FooterComponent extends LitElement {
       background-color: #2d3748;
       padding: 2rem 1rem;
       color: white;
+      z-index: 1;
     }
 
     .footer-container {

@@ -8,6 +8,7 @@ class TermsOfServiceETS extends LitElement {
       background-color: #f7fafc;
       color: #111827;
       font-family: Arial, sans-serif;
+      z-index: 1;
     }
 
     header {

@@ -15,6 +15,7 @@ class ScheduleSection extends LitElement {
       font-family: 'Commissioner', sans-serif;
       background-color: #f7fafc;
       color: #111827;
+      z-index: 1;
     }
 
     header {
