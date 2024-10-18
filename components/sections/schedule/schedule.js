@@ -34,10 +34,10 @@ class ScheduleSection extends LitElement {
       flex-direction: row;
       justify-content: space-around;
       padding: 40px;
-      background-color: white;
+      background-color: rgb(212 217 222);
       color: #252525;
       border-radius: 17px;
-      border: solid 2px #d4d4d4;
+      border: solid 4px #d3d3d3;
       cursor: default;
       flex-wrap: wrap;
     }
@@ -46,14 +46,21 @@ class ScheduleSection extends LitElement {
       grid-template-columns: 60px 200px;
       row-gap: 19px;
       padding: 20px;
-      background-color: white;
+      background-color: rgb(212 217 222);
       color: #252525;
       border-radius: 17px;
-      border: solid 2px #d4d4d4;
+      border: solid 4px #d3d3d3;
       cursor: default;
       margin-bottom: 2rem;
       position: relative;
       width: 300px;
+
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+      transition: box-shadow 0.3s ease; /* Smooth transition for shadow */
+    }
+
+    .schedule-day:hover {
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Increased shadow for hover effect */
     }
 
     .schedule-day h2 {

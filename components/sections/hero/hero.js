@@ -146,11 +146,11 @@ class HeroSection extends LitElement {
 
           <!-- Logo Section -->
           <div class="logo-wrapper">
-            <img src="/res/Graphquon2024.png" alt="Graphquon 2024 Logo" class="logo-img" loading="lazy" />
+            <img src="res/Graphquon2024.png" alt="Graphquon 2024 Logo" class="logo-img" loading="lazy" />
           </div>
 
           <div class="logo-below">
-            <img src="/res/ets_logo.svg" alt="ÉTS Logo" loading="lazy" />
+            <img src="res/ets_logo.svg" alt="ÉTS Logo" loading="lazy" />
             <h2>ÉTS</h2>
           </div>
 
