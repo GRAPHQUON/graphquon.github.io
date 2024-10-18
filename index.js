@@ -1,26 +1,75 @@
-window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY; // Current scroll position
-    const navEl = document.getElementById('nav-container');
-
-    // Add or remove the 'solid' class based on the scroll position
-    if (scrollY > window.innerHeight / 4) {
-        navEl.classList.add('solid', 'bg-gray-800', 'shadow-lg');
-    } else {
-        navEl.classList.remove('solid', 'bg-gray-800', 'shadow-lg');
+// Hide the preloader after the app is loaded
+window.addEventListener('load', function () {
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        preloader.style.display = 'none';
     }
 });
 
-document.querySelectorAll('.scroll-link').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
+// Toggle the floating menu when the FAB is clicked
+document.getElementById('fab').addEventListener('click', () => {
+    const menu = document.getElementById('floating-menu');
+    if (menu.style.display === 'flex') {
+        menu.style.display = 'none';
+    } else {
+        menu.style.display = 'flex';
+    }
+});
 
-        // Get the target section to scroll to
-        const target = document.querySelector(this.getAttribute('data-target'));
+// Smooth scroll to specific sections inside the shadow DOM
+const scrollToSection = (targetId) => {
+    const graphquonApp = document.querySelector("body > graphquon-app");
 
-        // Smooth scroll to the target section
-        window.scrollTo({
-            top: target.offsetTop - 80, // Adjust for the height of the fixed navbar
-            behavior: 'smooth'
+    if (graphquonApp && graphquonApp.shadowRoot) {
+        const targetSection = graphquonApp.shadowRoot.querySelector(`#${targetId}`);
+
+        if (targetSection) {
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+        } else {
+            console.error(`Section ${targetId} not found in shadow DOM.`);
+        }
+    } else {
+        console.error("GraphQuonApp component not found.");
+    }
+};
+
+// Event listeners for floating menu buttons
+document.getElementById('scroll-to-hero').addEventListener('click', () => scrollToSection('hero'));
+document.getElementById('scroll-to-about').addEventListener('click', () => scrollToSection('about'));
+document.getElementById('scroll-to-keynote').addEventListener('click', () => scrollToSection('keynote'));
+document.getElementById('scroll-to-schedule').addEventListener('click', () => scrollToSection('schedule'));
+document.getElementById('scroll-to-contact').addEventListener('click', () => scrollToSection('contact'));
+
+window.addEventListener('navigation-click', (event) => {
+    const targetId = event.detail?.section;
+    if (targetId) {
+        scrollToSection(targetId); // Scroll to the section if custom event is triggered
+    }
+});
+
+// Function to wait for the graphquonApp component to load
+const waitForGraphquonApp = (callback) => {
+    const checkExistence = setInterval(() => {
+        const graphquonApp = document.querySelector('body > graphquon-app');
+        if (graphquonApp) {
+            clearInterval(checkExistence); // Stop checking once the component is found
+            callback(); // Execute the callback function (e.g., scroll to section)
+        }
+    }, 100); // Check every 100ms
+};
+
+// On page load, check if there's a hash in the URL and wait for graphquonApp to load
+window.addEventListener('load', function () {
+    const targetId = window.location.hash.substring(1); // Get the fragment without the '#'
+    if (targetId) {
+        console.log(`Navigating to section: ${targetId}`);
+        // Wait for the graphquonApp component to load before scrolling
+        waitForGraphquonApp(() => {
+            // wait for the graphquonApp component to load before scrolling + 100ms
+            // add a small delay to ensure the component is fully loaded
+            setTimeout(() => {
+                scrollToSection(targetId); // Scroll to the target section once graphquonApp is ready
+            }, 100);
         });
-    });
+    }
 });

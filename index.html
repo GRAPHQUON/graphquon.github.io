@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GRAPHQUON 2024 - Annual Quebec-Ontario Pre-SIGGRAPH Workshop</title>
-    <meta name="description" content="GRAPHQUON is the annual Quebec-Ontario pre-SIGGRAPH workshop for computer graphics students and professionals. Join us on November 9-10, 2024 at École de technologie supérieure.">
+    <meta name="description"
+        content="GRAPHQUON is the annual Quebec-Ontario pre-SIGGRAPH workshop for computer graphics students and professionals. Join us on November 9-10, 2024 at École de technologie supérieure.">
 
     <!-- Open Graph Meta Tags for SEO and Social Sharing -->
     <meta property="og:title" content="GRAPHQUON 2024 - Annual Workshop" />
-    <meta property="og:description" content="Annual Quebec-Ontario Pre-SIGGRAPH workshop for computer graphics students and professionals." />
+    <meta property="og:description"
+        content="Annual Quebec-Ontario Pre-SIGGRAPH workshop for computer graphics students and professionals." />
     <meta property="og:image" content="path_to_your_event_image.jpg" />
     <meta property="og:url" content="https://yourwebsite.com" />
     <meta name="twitter:card" content="summary_large_image">
@@ -18,26 +20,148 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
 
     <!-- Flowbite CSS (optional for UI components) -->
     <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+
+    <!-- Heroicons CDN -->
+    <script src="https://unpkg.com/@heroicons/vue@2.0.11/dist/heroicons.min.js"></script>
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
 
     <!-- Preload Fonts for Faster Rendering -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;700&family=Lato:wght@300;400;700&display=swap" as="style">
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        as="style">
 
     <!-- LitElement CDN -->
     <script type="module" src="https://unpkg.com/lit@2.2.7?module"></script>
+
+    <style>
+        /* Floating Action Button (FAB) */
+        .fab {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            border-radius: 50%;
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            z-index: 1000;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .fab:hover {
+            background-color: #0056b3;
+        }
+
+        .fab svg {
+            width: 28px;
+            height: 28px;
+            fill: white;
+        }
+
+        /* Floating menu items */
+        .floating-menu {
+            position: fixed;
+            bottom: 80px;
+            right: 30px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 1rem;
+            display: none;
+            flex-direction: column;
+        }
+
+        .floating-menu a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 0.5rem 0;
+            padding: 0.5rem 1rem;
+            background-color: #007bff;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .floating-menu a:hover {
+            background-color: #0056b3;
+        }
+
+        .floating-menu a svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Preloader style */
+        #preloader {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+    </style>
 </head>
 
 <body>
     <!-- Main Application -->
     <graphquon-app></graphquon-app>
 
-    <button id="scroll-to-schedule">Scroll to Schedule</button>
+    <!-- Floating Action Button (FAB) -->
+    <div id="fab" class="fab">
+        <!-- Heroicons: Plus Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+        </svg>
+    </div>
+
+    <!-- Floating scroll menu -->
+    <div id="floating-menu" class="floating-menu">
+        <a href="#hero" id="scroll-to-hero">
+            <!-- Heroicons: Home Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l9-9m0 0l9 9m-9-9v18" />
+            </svg> Hero
+        </a>
+        <a href="#about" id="scroll-to-about">
+            <!-- Heroicons: Information Circle Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13 16h-1v-4h-1m1-4h.01M12 12h.01M12 20h.01" />
+            </svg> About
+        </a>
+        <a href="#keynote" id="scroll-to-keynote">
+            <!-- Heroicons: Speakerphone Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M16 8v4m0 0v4m0-4H9m7 4h-1l2 4M9 8h1m0 0h2m-2-4H7m2 4h-2" />
+            </svg> Keynote
+        </a>
+        <a href="#schedule" id="scroll-to-schedule">
+            <!-- Heroicons: Calendar Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M8 7V4m8 3V4m-6 8h6m6 6V8m0 12a2 2 0 01-2 2H6a2 2 0 01-2-2V8m16-4a2 2 0 00-2-2H6a2 2 0 00-2 2v16m12-12h6" />
+            </svg> Schedule
+        </a>
+        <a href="#contact" id="scroll-to-contact">
+            <!-- Heroicons: Phone Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 10l6 6m-6 0a2 2 0 002 2h12a2 2 0 002-2l-6-6m-6 0H4m10 0v2" />
+            </svg> Contact
+        </a>
+    </div>
 
     <!-- Preloader -->
     <div id="preloader" class="fixed inset-0 bg-white flex items-center justify-center">
@@ -51,14 +175,7 @@
     <script src="./lib/particles.min.js"></script>
 
     <script type="module" src="./components/app.js"></script>
-
-    <script>
-        // Hide the preloader after the app is loaded
-        window.addEventListener('load', function () {
-            const preloader = document.getElementById('preloader');
-            preloader.style.display = 'none';
-        });
-    </script>
+    <script src="index.js"></script>
 </body>
 
 </html>

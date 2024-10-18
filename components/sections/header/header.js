@@ -58,8 +58,6 @@ class HeaderComponent extends LitElement {
     /* Ensures the header doesn't overlap content */
     .spacer {
       height: 80px; /* Adjust to header height */
-      color: red;
-      background: red;
     }
 
     /* Mobile responsive menu */
@@ -81,15 +79,41 @@ class HeaderComponent extends LitElement {
         <nav>
           <div class="logo" aria-label="Site Logo">GRAPHQUON</div>
           <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#keynote">Keynote</a>
-            <a href="#schedule">Schedule</a>
-            <a href="#contact">Contact</a>
+            <a href="#about" class="scroll-link" @click=${this.handleClick}>About</a>
+            <a href="#keynote" class="scroll-link" @click=${this.handleClick}>Keynote</a>
+            <a href="#schedule" class="scroll-link" @click=${this.handleClick}>Schedule</a>
+            <a href="#contact" class="scroll-link" @click=${this.handleClick}>Contact</a>
           </div>
         </nav>
       </header>
       <div class="spacer"></div> <!-- This spacer prevents content overlap due to the fixed header -->
     `;
+  }
+
+  // Method to handle click events on the navigation links
+  handleClick(event) {
+    event.preventDefault(); // Prevent the default anchor behavior
+
+    // Get the target ID from the href attribute
+    const targetId = event.target.getAttribute('href').substring(1);
+
+    // Log the target ID to console
+    console.log(`Navigating to section: ${targetId}`);
+
+    // Dispatch a custom event to the window
+    const customEvent = new CustomEvent('navigation-click', {
+      detail: { section: targetId },
+      bubbles: true, // Allows the event to bubble up through the DOM
+      composed: true, // Allows the event to pass through the shadow DOM boundary
+    });
+
+    window.dispatchEvent(customEvent);
+
+    // Optionally scroll to the section
+    const targetSection = document.getElementById(targetId);
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 }
 
