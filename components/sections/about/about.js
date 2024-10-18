@@ -155,7 +155,7 @@ class AboutSection extends LitElement {
 
     /* Footer Styles */
     .card-footer {
-      background-image: url('path-to-background-image.jpg');
+      background-image: url("path-to-background-image.jpg");
       background-size: cover;
       background-position: center;
       color: white;
@@ -214,21 +214,10 @@ class AboutSection extends LitElement {
     }
   `;
 
-  // Lifecycle method to load Particles.js and initialize it
-  firstUpdated() {
-    this.particlesJS();
-  }
-
-  particlesJS() {
-    particlesJS.load("particles-js", "components//particles.json", function () {
-      console.log("Particles.js loaded.");
-    });
-  }
-
   render() {
     return html`
       <!-- Particles.js Container -->
-      <div id="particles-js"></div>
+      <div class="particles-js" id="particles-js"></div>
 
       <section id="about" aria-labelledby="about-heading">
         <div class="container">
@@ -241,15 +230,21 @@ class AboutSection extends LitElement {
             audience and to receive valuable feedback.
           </p>
 
-          <p>
-            Previous Editions:
-          </p>
+          <p>Previous Editions:</p>
 
           <!-- Horizontal Stepper -->
           <ol class="stepper">
             <li>
-              <a href="https://www-labs.iro.umontreal.ca/~bernhard/Motograph18/index.html" target="_blank" rel="noopener noreferrer">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+              <a
+                href="https://www-labs.iro.umontreal.ca/~bernhard/Motograph18/index.html"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
                   <path
                     d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"
                   />
@@ -260,8 +255,16 @@ class AboutSection extends LitElement {
             </li>
 
             <li>
-              <a href="https://foiegraph2022.github.io/" target="_blank" rel="noopener noreferrer">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+              <a
+                href="https://foiegraph2022.github.io/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
                   <path
                     d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"
                   />
@@ -272,8 +275,16 @@ class AboutSection extends LitElement {
             </li>
 
             <li>
-              <a href="https://graphquon2023.github.io/" target="_blank" rel="noopener noreferrer">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+              <a
+                href="https://graphquon2023.github.io/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
                   <path
                     d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"
                   />
@@ -285,10 +296,13 @@ class AboutSection extends LitElement {
           </ol>
 
           <p>
-            Student/Postdoc: Ask your supervisor whether your group is participating.
+            Student/Postdoc: Ask your supervisor whether your group is
+            participating.
           </p>
           <p>
-            Faculty: If you have not received an email regarding the registration form, contact us (graphquon@etsmtl.ca) to get the link to the registration form.
+            Faculty: If you have not received an email regarding the
+            registration form, contact us (graphquon@etsmtl.ca) to get the link
+            to the registration form.
           </p>
 
           <!-- Button Links -->
@@ -297,7 +311,15 @@ class AboutSection extends LitElement {
           </div>
         </div>
       </section>
-      <script type="module" src="./components/app.js"></script>
+      <script>
+        particlesJS.load(
+          "particles-js",
+          "components/sections/about/particles.json",
+          function () {
+            console.log("Particles.js loaded.");
+          }
+        );
+      </script>
     `;
   }
 }
