@@ -157,7 +157,7 @@ class HeroSection extends LitElement {
           <!-- Countdown Timer -->
           <div class="countdown" id="countdown-timer"></div>
 
-          <button @click="${() => this.scrollToSection('about')}" aria-label="Scroll to About Section">Learn More</button>
+          <button @click="${() => this.scrollToSection('about')}" aria-haspopup="dialog" aria-controls="aboutModal" aria-label="Scroll to About Section">Learn More</button>
         </div>
       </section>
     `;

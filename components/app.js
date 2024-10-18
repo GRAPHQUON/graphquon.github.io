@@ -8,6 +8,15 @@ import './sections/contact/contact.js';
 import './sections/footer/footer.js';
 
 class GraphQuonApp extends LitElement {
+  static styles = css`
+    /* Optional: Add any global styles specific to GraphQuonApp here */
+    :host {
+      display: block;
+      /* Ensure the app takes full width */
+      width: 100%;
+    }
+  `;
+
   render() {
     return html`
       <header-component></header-component>

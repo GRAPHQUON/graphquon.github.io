@@ -60,9 +60,9 @@ class FooterComponent extends LitElement {
     }
 
     .footer-links {
-      margin-top: 1rem;
-      display: flex;
+      margin: 1rem;
       gap: 1rem;
+      text-align: center;
     }
 
     .footer-links a {
@@ -136,7 +136,9 @@ class FooterComponent extends LitElement {
         <!-- Bottom Row - Footer Links -->
         <div class="footer-links" aria-label="Footer Links">
           <a href="/privacy.html" aria-label="Privacy Policy">Privacy Policy</a>
+          |
           <a href="/terms.html" aria-label="Terms and Conditions">Terms and Conditions</a>
+          |
           <a href="#contact" aria-label="Contact Us">Contact Us</a>
         </div>
 

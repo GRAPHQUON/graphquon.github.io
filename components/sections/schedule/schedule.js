@@ -43,7 +43,6 @@ class ScheduleSection extends LitElement {
     }
 
     .schedule-day {
-      display: grid;
       grid-template-columns: 60px 200px;
       row-gap: 19px;
       padding: 20px;
@@ -63,6 +62,7 @@ class ScheduleSection extends LitElement {
       font-size: 2rem;
       font-weight: bold;
       color: #2b6cb0;
+      padding: 8px;
     }
 
     .schedule-day h3 {
@@ -81,7 +81,8 @@ class ScheduleSection extends LitElement {
       border-bottom: solid 1px #ddd;
       cursor: pointer;
       position: relative;
-      padding-right: 25px;
+      padding-right: 24px;
+      padding-bottom: 8px;
       display: flex;
       align-items: center;
       justify-content: space-between;

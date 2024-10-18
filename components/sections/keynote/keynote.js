@@ -1,6 +1,7 @@
 import { LitElement, html, css } from 'https://unpkg.com/lit@2.2.7?module';
 
 class KeynoteSection extends LitElement {
+
   static styles = css`
     section {
       position: relative;
@@ -97,119 +98,8 @@ class KeynoteSection extends LitElement {
     }
   `;
 
-  firstUpdated() {
-    // Initialize particles.js in the background after the component is first rendered
-    particlesJS('particles-js', {
-      particles: {
-        number: {
-          value: 100,
-          density: {
-            enable: true,
-            value_area: 800
-          }
-        },
-        color: {
-          value: '#ffffff'
-        },
-        shape: {
-          type: 'circle',
-          stroke: {
-            width: 0,
-            color: '#000000'
-          },
-          polygon: {
-            nb_sides: 5
-          }
-        },
-        opacity: {
-          value: 0.5,
-          random: false,
-          anim: {
-            enable: false,
-            speed: 1,
-            opacity_min: 0.1,
-            sync: false
-          }
-        },
-        size: {
-          value: 3,
-          random: true,
-          anim: {
-            enable: false,
-            speed: 40,
-            size_min: 0.1,
-            sync: false
-          }
-        },
-        line_linked: {
-          enable: true,
-          distance: 150,
-          color: '#ffffff',
-          opacity: 0.4,
-          width: 1
-        },
-        move: {
-          enable: true,
-          speed: 6,
-          direction: 'none',
-          random: false,
-          straight: false,
-          out_mode: 'out',
-          bounce: false,
-          attract: {
-            enable: false,
-            rotateX: 600,
-            rotateY: 1200
-          }
-        }
-      },
-      interactivity: {
-        detect_on: 'canvas',
-        events: {
-          onhover: {
-            enable: true,
-            mode: 'repulse'
-          },
-          onclick: {
-            enable: true,
-            mode: 'push'
-          },
-          resize: true
-        },
-        modes: {
-          grab: {
-            distance: 400,
-            line_linked: {
-              opacity: 1
-            }
-          },
-          bubble: {
-            distance: 400,
-            size: 40,
-            duration: 2,
-            opacity: 8,
-            speed: 3
-          },
-          repulse: {
-            distance: 200,
-            duration: 0.4
-          },
-          push: {
-            particles_nb: 4
-          },
-          remove: {
-            particles_nb: 2
-          }
-        }
-      },
-      retina_detect: true
-    });
-  }
-
   render() {
     return html`
-    <script src="https://cdn.jsdelivr.net/npm/particlesjs@2.2.3/dist/particles.min.js
-    "></script>
       <section id="keynote" aria-labelledby="keynote-heading">
         <!-- Particle.js Background -->
         <div id="particles-js"></div>
@@ -217,11 +107,11 @@ class KeynoteSection extends LitElement {
         <h1 id="keynote-heading">Keynote Speakers</h1>
         <div class="grid">
           <div class="speaker-card" aria-label="Keynote Speaker 1">
-            <img src="/res/speaker1.jpg" alt="Photo of Keynote Speaker 1" tabindex="0" />
+            <img src="/res/speaker1.jpg" alt="Photo of Keynote Speaker 1" loading="lazy" tabindex="0" />
             <h3>Speaker 1 - TBA</h3>
           </div>
           <div class="speaker-card" aria-label="Keynote Speaker 2">
-            <img src="/res/speaker2.jpg" alt="Photo of Keynote Speaker 2" tabindex="0" />
+            <img src="/res/speaker2.jpg" alt="Photo of Keynote Speaker 2" loading="lazy" tabindex="0" />
             <h3>Speaker 2 - TBA</h3>
           </div>
         </div>
