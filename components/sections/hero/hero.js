@@ -191,12 +191,6 @@ class HeroSection extends LitElement {
     setInterval(updateCountdown, 1000);
   }
 
-  scrollToSection(sectionId) {
-    const section = document.querySelector(`#${sectionId}`);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
 }
 
 customElements.define('hero-section', HeroSection);

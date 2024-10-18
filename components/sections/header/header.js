@@ -81,7 +81,7 @@ class HeaderComponent extends LitElement {
     return html`
       <header aria-label="Main Navigation">
         <nav>
-          <div href="#home" class="logo" aria-label="Site Logo">GRAPHQUON</div>
+          <a href="#home" class="logo" aria-label="Site Logo" @click=${this.handleClick}>GRAPHQUON</div>
           <div class="nav-links">
             <a href="#about" class="scroll-link" @click=${this.handleClick}>About</a>
             <a href="#keynote" class="scroll-link" @click=${this.handleClick}>Keynote</a>
