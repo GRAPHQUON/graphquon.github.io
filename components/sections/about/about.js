@@ -306,11 +306,43 @@ class AboutSection extends LitElement {
 
           <!-- Button Links -->
           <div class="btn-container">
-            <a href="#schedule" class="btn btn-primary">Schedule</a>
+            <a href="#schedule" class="btn btn-primary" @click=${this.handleClick}>Schedule</a>
           </div>
         </div>
       </section>
     `;
+  }
+
+  handleClick(event) {
+    event.preventDefault(); // Prevent the default anchor behavior
+
+    // Get the target ID from the href attribute
+    const targetId = event.target.getAttribute('href').substring(1);
+
+    // Log the target ID to console
+    console.log(`Navigating to section: ${targetId}`);
+
+    // Dispatch a custom event to the window
+    const customEvent = new CustomEvent('navigation-click', {
+      detail: { section: targetId },
+      bubbles: true, // Allows the event to bubble up through the DOM
+      composed: true, // Allows the event to pass through the shadow DOM boundary
+    });
+
+    window.dispatchEvent(customEvent);
+
+    // Scroll to the section with an offset
+    const targetSection = document.getElementById(targetId);
+    if (targetSection) {
+      const headerOffset = 80; // Define the offset (80px)
+      const elementPosition = targetSection.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
   }
 }
 

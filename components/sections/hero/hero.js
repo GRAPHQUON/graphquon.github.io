@@ -135,6 +135,39 @@ class HeroSection extends LitElement {
         width: 25px;
       }
     }
+      .btn {
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 0.375rem;
+      text-transform: uppercase;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: linear-gradient(45deg, #38b2ac, #81e6d9);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(45deg, #2c7a7b, #4fd1c5);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: linear-gradient(45deg, #3182ce, #63b3ed);
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      background: linear-gradient(45deg, #2b6cb0, #4299e1);
+      transform: translateY(-2px);
+    }
   `;
 
   render() {
@@ -158,7 +191,6 @@ class HeroSection extends LitElement {
           <!-- Countdown Timer -->
           <div class="countdown" id="countdown-timer"></div>
 
-          <button @click="${() => this.scrollToSection('about')}" aria-haspopup="dialog" aria-controls="aboutModal" aria-label="Scroll to About Section">Learn More</button>
         </div>
       </section>
     `;
@@ -190,7 +222,6 @@ class HeroSection extends LitElement {
 
     setInterval(updateCountdown, 1000);
   }
-
 }
 
 customElements.define('hero-section', HeroSection);
