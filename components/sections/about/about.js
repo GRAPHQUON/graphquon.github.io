@@ -3,35 +3,23 @@ import { LitElement, html, css } from "https://unpkg.com/lit@2.2.7?module";
 class AboutSection extends LitElement {
 
   static styles = css`
-    :host {
-      display: block;
-      padding: 0; /* Removed padding to accommodate particles background */
-      font-family: "Manrope", Arial, sans-serif;
-      position: relative;
-      overflow: hidden;
-      z-index: 1;
-    }
-
-    /* Particles Container */
-    #particles-js {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      background: rgb(212 217 222);
-    }
 
     section {
       position: relative;
-      background: rgb(212 217 222);
-      padding: 4rem 2rem;
-      border-radius: 15px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-      margin: 2rem auto;
-      max-width: 900px;
       z-index: 1;
+      text-align: center;
+      color: white;
+      overflow: hidden; /* Ensure particles stay within the section */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    div.container {
+      background: rgb(212 217 222);
+      padding: 2rem;
+      border-radius: 1rem;
     }
 
     h1 {
