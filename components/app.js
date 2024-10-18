@@ -17,7 +17,7 @@ class GraphQuonApp extends LitElement {
 
   render() {
     return html`
-      <header-component></header-component>
+      <header-component id="home"></header-component>
       <hero-section id="hero"></hero-section>
       <about-section id="about"></about-section>
       <keynote-section id="keynote"></keynote-section>

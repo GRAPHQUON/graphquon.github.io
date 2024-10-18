@@ -58,6 +58,8 @@ class HeaderComponent extends LitElement {
     /* Ensures the header doesn't overlap content */
     .spacer {
       height: 80px; /* Adjust to header height */
+      color: red;
+      background: red;
     }
 
     /* Mobile responsive menu */
@@ -77,7 +79,7 @@ class HeaderComponent extends LitElement {
     return html`
       <header aria-label="Main Navigation">
         <nav>
-          <div class="logo" aria-label="Site Logo">GRAPHQUON</div>
+          <div href="#home" class="logo" aria-label="Site Logo">GRAPHQUON</div>
           <div class="nav-links">
             <a href="#about" class="scroll-link" @click=${this.handleClick}>About</a>
             <a href="#keynote" class="scroll-link" @click=${this.handleClick}>Keynote</a>
