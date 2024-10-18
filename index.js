@@ -16,7 +16,7 @@ document.getElementById('fab').addEventListener('click', () => {
     }
 });
 
-// Smooth scroll to specific sections inside the shadow DOM
+// Smooth scroll to specific sections inside the shadow DOM with an offset
 const scrollToSection = (targetId) => {
     const graphquonApp = document.querySelector("body > graphquon-app");
 
@@ -24,7 +24,16 @@ const scrollToSection = (targetId) => {
         const targetSection = graphquonApp.shadowRoot.querySelector(`#${targetId}`);
 
         if (targetSection) {
-            targetSection.scrollIntoView({ behavior: 'smooth' });
+            // Calculate the position of the section and apply the offset (-80px)
+            const headerOffset = 80; // 80px offset for fixed header
+            const sectionPosition = targetSection.getBoundingClientRect().top + window.scrollY;
+            const offsetPosition = sectionPosition - headerOffset;
+
+            // Scroll to the calculated position with smooth scrolling
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
         } else {
             console.error(`Section ${targetId} not found in shadow DOM.`);
         }
@@ -65,8 +74,7 @@ window.addEventListener('load', function () {
         console.log(`Navigating to section: ${targetId}`);
         // Wait for the graphquonApp component to load before scrolling
         waitForGraphquonApp(() => {
-            // wait for the graphquonApp component to load before scrolling + 100ms
-            // add a small delay to ensure the component is fully loaded
+            // Wait for the graphquonApp component to load before scrolling + 100ms
             setTimeout(() => {
                 scrollToSection(targetId); // Scroll to the target section once graphquonApp is ready
             }, 100);

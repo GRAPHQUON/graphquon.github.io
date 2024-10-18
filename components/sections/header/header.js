@@ -90,7 +90,6 @@ class HeaderComponent extends LitElement {
     `;
   }
 
-  // Method to handle click events on the navigation links
   handleClick(event) {
     event.preventDefault(); // Prevent the default anchor behavior
 
@@ -109,12 +108,20 @@ class HeaderComponent extends LitElement {
 
     window.dispatchEvent(customEvent);
 
-    // Optionally scroll to the section
+    // Scroll to the section with an offset
     const targetSection = document.getElementById(targetId);
     if (targetSection) {
-      targetSection.scrollIntoView({ behavior: 'smooth' });
+      const headerOffset = 80; // Define the offset (80px)
+      const elementPosition = targetSection.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
     }
   }
+
 }
 
 customElements.define('header-component', HeaderComponent);
