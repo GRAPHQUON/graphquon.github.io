@@ -9,7 +9,7 @@ class AboutSection extends LitElement {
       z-index: 1;
       text-align: center;
       color: white;
-      overflow: hidden; /* Ensure particles stay within the section */
+      overflow: hidden;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -49,7 +49,6 @@ class AboutSection extends LitElement {
       margin: 2rem 0;
     }
 
-    /* Horizontal Stepper Styles */
     .stepper {
       display: flex;
       justify-content: center;
@@ -93,6 +92,7 @@ class AboutSection extends LitElement {
 
     .stepper div {
       margin-top: 0.5rem;
+      color: black;
     }
 
     .stepper .date {
