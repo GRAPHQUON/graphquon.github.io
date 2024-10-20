@@ -121,10 +121,12 @@ class FooterComponent extends LitElement {
             <div class="previous-years">
               <h5>Previous Years</h5>
               <ul>
+                <li><a href="https://graphquon.github.io/">Graphquon 2023</a></li>
                 <li><a href="https://foiegraph2022.github.io/">FoieGraph 2022</a></li>
                 <li><a href="https://tomatograph2021.github.io/">Tomatograph 2021</a></li>
                 <li><a href="https://graphquon.github.io/">GraphQUON 2020</a></li>
                 <li><a href="https://cs.uwaterloo.ca/~c2batty/MOTOGRAPH19/">MOTOGRAPH 2019</a></li>
+                <li><a href="https://www-labs.iro.umontreal.ca/~bernhard/Motograph18/index.html">MOTOGRAPH 2018</a></li>
               </ul>
             </div>
           </div>
