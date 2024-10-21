@@ -12,7 +12,7 @@ class HeaderComponent extends LitElement {
       z-index: 50;
       backdrop-filter: blur(10px);
       transition: background-color 0.3s ease;
-      z-index: 1;
+      z-index: 1000;
     }
 
     /* Navigation container */
