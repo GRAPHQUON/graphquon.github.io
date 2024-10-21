@@ -1,0 +1,22 @@
+name: Check URLs
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  urlchecker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install link-checker
+        run: npm install -g linkinator
+
+      - name: Run link check
+        run: linkinator --recurse . --skip "localhost"

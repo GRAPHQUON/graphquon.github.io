@@ -1,0 +1,46 @@
+[
+    {
+        "date": "9",
+        "month": "November",
+        "day": "Saturday",
+        "items": [
+            {
+                "time": "09:00 AM",
+                "name": "Opening Ceremony"
+            },
+            {
+                "time": "10:00 AM",
+                "name": "Keynote: The Future of Graph Processing",
+                "items":[
+                    {
+                        "time": "10:15 AM",
+                        "name": "Subsession 1: Innovations in Graph Theory"
+                    },
+                    {
+                        "time": "10:45 AM",
+                        "name": "Subsession 2: Practical Applications of Graphs"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "date": "10",
+        "month": "November",
+        "day": "Sunday",
+        "items": [
+            {
+                "time": "09:00 AM",
+                "name": "Workshop: Advanced Graph Algorithms"
+            },
+            {
+                "time": "11:00 AM",
+                "name": "Panel Discussion: Ethical Considerations in Graph Data"
+            },
+            {
+                "time": "01:00 PM",
+                "name": "Closing Remarks"
+            }
+        ]
+    }
+]
