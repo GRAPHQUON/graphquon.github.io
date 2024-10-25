@@ -143,7 +143,7 @@ class KeynoteSection extends LitElement {
         <div class="grid">
           <div class="speaker-card" aria-label="Lesley Istead" data-animate="left">
             <img src="res/lesley.jpg" alt="Photo of Lesley Istead" loading="lazy" tabindex="0" />
-            <h3>Lesley Istead, Carlton University</h3>
+            <h3>Lesley Istead, Carleton University</h3>
           </div>
           <div class="speaker-card" aria-label="Masha Shugrina " data-animate="right">
             <img src="res/masha.jpg" alt="Photo of Masha Shugrina " loading="lazy" tabindex="0" />
