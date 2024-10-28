@@ -68,7 +68,7 @@ class ContactSection extends LitElement {
 
   render() {
     return html`
-      <section id="contact" aria-labelledby="contact-heading">
+      <section id="contact">
         <div class="card">
           <h1 id="contact-heading">Contact Us</h1>
           <p>Have any questions? Feel free to send us an email!</p>
