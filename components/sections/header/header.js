@@ -106,8 +106,8 @@ class HeaderComponent extends LitElement {
     // Dispatch a custom event to the window
     const customEvent = new CustomEvent('navigation-click', {
       detail: { section: targetId },
-      bubbles: true, // Allows the event to bubble up through the DOM
-      composed: true, // Allows the event to pass through the shadow DOM boundary
+      bubbles: true,
+      composed: true,
     });
 
     window.dispatchEvent(customEvent);
