@@ -9,10 +9,9 @@ class HeaderComponent extends LitElement {
       position: fixed;
       top: 0;
       width: 100%;
-      z-index: 50;
       backdrop-filter: blur(10px);
       transition: background-color 0.3s ease;
-      z-index: 1000;
+      z-index: 2;
     }
 
     /* Navigation container */
