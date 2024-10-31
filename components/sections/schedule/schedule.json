@@ -5,22 +5,86 @@
         "day": "Saturday",
         "items": [
             {
-                "time": "??:??",
-                "name": "TBA"
+                "time": "08:30 - 09:00",
+                "name": "Arrival (Breakfast)"
             },
             {
-                "time": "??:??",
-                "name": "TBA",
-                "items":[
+                "time": "09:00 - 09:20",
+                "name": "Opening"
+            },
+            {
+                "time" : "09:30 - 10:30",
+                "name" : "Student presentations",
+                "items" : [
                     {
-                        "time": "??:??",
-                        "name": "TBA"
+                        "author" : "Quoc-Minh Ton-That",
+                        "affilation" : "École de technologie supérieure"
                     },
                     {
-                        "time": "??:??",
-                        "name": "TBA"
+                        "author" : "Melissa Katz",
+                        "affilation" : "McGill University"
+                    },
+                    {
+                        "author" : "Darsh Kaushik",
+                        "affilation" : "MILA - Université de Montréal"
                     }
                 ]
+            },
+            {
+                "time" : "10:30 - 11:00",
+                "name" : "Break"
+            },
+            {
+                "time" : "11:00 - 12:00",
+                "name" : "Student presentations",
+                "items" : [
+                    {
+                        "author" : "Justin Benoist",
+                        "affilation" : "École de technologie supérieure"
+                    },
+                    {
+                        "author" : "Arthur Delon",
+                        "affilation" : "University of Sherbrooke"
+                    },
+                    {
+                        "author" : "Joel Pelletier-Guenette",
+                        "affilation" : "École de technologie supérieure"
+                    }
+                ]
+            },
+            {
+                "time" : "12:00 - 14:00",
+                "name" : "Lunch"
+            },
+            {
+                "time" : "14:00 - 15:00",
+                "name" : "Keynote Masha Shugrina (Nvidia)"
+            },
+            {
+                "time" : "15:00 - 15:15",
+                "name" : "Break"
+            },
+            {
+                "time" : "15:15 - 16:00",
+                "name" : "Student presentations",
+                "items" : [
+                    {
+                        "author" : "Abhishek Madan",
+                        "affilation" : "University of Toronto"
+                    },
+                    {
+                        "author" : "Clara Kim",
+                        "affilation" : "University of Waterloo"
+                    }
+                ]
+            },
+            {
+                "time" : "16:00 - 16:30",
+                "name" : "Faculty presentation"
+            },
+            {
+                "time" : "16:30",
+                "name" : "Workshop Dinner + Trivia Night"
             }
         ]
     },
@@ -30,16 +94,72 @@
         "day": "Sunday",
         "items": [
             {
-                "time": "??:??",
-                "name": "TBA"
+                "time": "08:30 - 09:00",
+                "name": "Arrival (Breakfast)"
             },
             {
-                "time": "??:??",
-                "name": "TBA"
+                "time" : "09:00 - 10:30",
+                "name" : "Student presentations",
+                "items" : [
+                    {
+                        "author" : "Victor Rong",
+                        "affilation" : "University of Toronto"
+                    },
+                    {
+                        "author" : "Ryusuke Sugimoto",
+                        "affilation" : "University of Waterloo"
+                    },
+                    {
+                        "author" : "Yue Chang",
+                        "affilation" : "University of Toronto"
+                    },
+                    {
+                        "author" : "Ege Ciklabakkal",
+                        "affilation" : "University of Waterloo"
+                    }
+                ]
             },
             {
-                "time": "??:??",
-                "name": "TBA"
+                "time" : "10:30 - 11:00",
+                "name" : "Break"
+            },
+            {
+                "time" : "11:00 - 12:00",
+                "name" : "Keynote Lesley"
+            },
+            {
+                "time" : "12:00 - 14:00",
+                "name" : "Lunch"
+            },
+            {
+                "time" : "14:00 - 14:30",
+                "name" : "Faculty presentation"
+            },
+            {
+                "time" : "14:30 - 15:00",
+                "name" : "Round table internship"
+            },
+            {
+                "time" : "15:00 - 15:30",
+                "name" : "Break"
+            },
+            {
+                "time" : "15:30 - 16:10",
+                "name" : "Student presentations",
+                "items" : [
+                    {
+                        "author" : "Alex Hoang-Cao",
+                        "affilation" : "École de technologie supérieure"
+                    },
+                    {
+                        "author" : "Ivan Puhachov",
+                        "affilation" : "Universite de Montreal"
+                    }
+                ]
+            },
+            {
+                "time" : "16:20 - 16:30",
+                "name" : "Closing"
             }
         ]
     }
