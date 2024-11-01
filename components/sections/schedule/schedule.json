@@ -18,15 +18,17 @@
                 "items" : [
                     {
                         "author" : "Quoc-Minh Ton-That",
-                        "affilation" : "École de technologie supérieure"
+                        "affilation" : "École de technologie supérieure",
+                        "link": "https://www.q-minh.com/"
                     },
                     {
                         "author" : "Melissa Katz",
-                        "affilation" : "McGill University"
+                        "affilation" : "McGill University",
                     },
                     {
                         "author" : "Darsh Kaushik",
-                        "affilation" : "MILA - Université de Montréal"
+                        "affilation" : "MILA - Université de Montréal",
+                        "link": "https://mila.quebec/en/directory/darsh-kaushik"
                     }
                 ]
             },
@@ -40,7 +42,8 @@
                 "items" : [
                     {
                         "author" : "Justin Benoist",
-                        "affilation" : "École de technologie supérieure"
+                        "affilation" : "École de technologie supérieure",
+                        "link": "https://www.linkedin.com/in/justin-benoist"
                     },
                     {
                         "author" : "Arthur Delon",
@@ -48,7 +51,8 @@
                     },
                     {
                         "author" : "Joel Pelletier-Guenette",
-                        "affilation" : "École de technologie supérieure"
+                        "affilation" : "École de technologie supérieure",
+                        "link": "https://www.linkedin.com/in/joelpelletierguenette"
                     }
                 ]
             },
@@ -58,7 +62,8 @@
             },
             {
                 "time" : "14:00 - 15:00",
-                "name" : "Keynote Masha Shugrina (Nvidia)"
+                "name" : "Keynote Masha Shugrina (Nvidia)",
+                "link": "https://shumash.com/"
             },
             {
                 "time" : "15:00 - 15:15",
@@ -70,11 +75,13 @@
                 "items" : [
                     {
                         "author" : "Abhishek Madan",
-                        "affilation" : "University of Toronto"
+                        "affilation" : "University of Toronto",
+                        "link": "https://www.dgp.toronto.edu/~amadan/"
                     },
                     {
                         "author" : "Clara Kim",
-                        "affilation" : "University of Waterloo"
+                        "affilation" : "University of Waterloo",
+                        
                     }
                 ]
             },
@@ -103,19 +110,23 @@
                 "items" : [
                     {
                         "author" : "Victor Rong",
-                        "affilation" : "University of Toronto"
+                        "affilation" : "University of Toronto",
+                        "link": "https://www.lessvrong.com/"
                     },
                     {
                         "author" : "Ryusuke Sugimoto",
-                        "affilation" : "University of Waterloo"
+                        "affilation" : "University of Waterloo",
+                        "link": "https://rsugimoto.net/"
                     },
                     {
                         "author" : "Yue Chang",
-                        "affilation" : "University of Toronto"
+                        "affilation" : "University of Toronto",
+                        "link" : "https://changy1506.github.io/"
                     },
                     {
                         "author" : "Ege Ciklabakkal",
-                        "affilation" : "University of Waterloo"
+                        "affilation" : "University of Waterloo",
+                        "link" : "https://cs.uwaterloo.ca/~meciklab/"
                     }
                 ]
             },
@@ -149,11 +160,13 @@
                 "items" : [
                     {
                         "author" : "Alex Hoang-Cao",
-                        "affilation" : "École de technologie supérieure"
+                        "affilation" : "École de technologie supérieure",
+                        "link": "https://www.linkedin.com/in/alex-hoang-cao/?locale=fr_FR"
                     },
                     {
                         "author" : "Ivan Puhachov",
-                        "affilation" : "Universite de Montreal"
+                        "affilation" : "Universite de Montreal",
+                        "link": "https://puhachov.xyz/"
                     }
                 ]
             },
