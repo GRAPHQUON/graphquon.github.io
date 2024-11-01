@@ -36,7 +36,7 @@ class ScheduleSection extends LitElement {
       flex-direction: row;
       justify-content: space-around;
       padding: 40px;
-      background-color: rgb(212 217 222);
+      background-color: rgb(212, 217, 222);
       color: #252525;
       border-radius: 17px;
       border: solid 4px #d3d3d3;
@@ -48,7 +48,7 @@ class ScheduleSection extends LitElement {
       grid-template-columns: 60px 200px;
       row-gap: 19px;
       padding: 20px;
-      background-color: rgb(212 217 222);
+      background-color: rgb(212, 217, 222);
       color: #252525;
       border-radius: 17px;
       border: solid 4px #d3d3d3;
@@ -97,6 +97,17 @@ class ScheduleSection extends LitElement {
       justify-content: space-between;
     }
 
+    .schedule-item-name a {
+      color: inherit;
+      text-decoration: none;
+      flex: 1; /* Ensure link takes available space */
+    }
+
+    .schedule-item-name a:hover {
+      color: #b72ce6;
+      text-decoration: underline;
+    }
+
     .schedule-item-name:hover {
       color: #b72ce6;
     }
@@ -132,6 +143,15 @@ class ScheduleSection extends LitElement {
       text-align: right;
       margin-bottom: 15px;
       font-weight: bold;
+    }
+
+    .schedule-sublist-author a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .schedule-sublist-author a:hover {
+      text-decoration: underline;
     }
 
     .schedule-sublist-affiliation {
@@ -219,7 +239,9 @@ class ScheduleSection extends LitElement {
         ${subitems.map(
           subitem => html`
             <div class="schedule-sublist-author">
-              ${subitem.author}
+              ${subitem.link
+                ? html`<a href="${subitem.link}" target="_blank" rel="noopener noreferrer">${subitem.author}</a>`
+                : subitem.author}
               <span class="schedule-sublist-affiliation">(${subitem.affiliation})</span>
             </div>
           `
@@ -252,7 +274,9 @@ class ScheduleSection extends LitElement {
                           : ''}"
                         @click=${() => this.toggleSublist(day.date, item.name)}
                       >
-                        ${item.name}
+                        ${item.link
+                          ? html`<a href="${item.link}" target="_blank" rel="noopener noreferrer">${item.name}</a>`
+                          : html`${item.name}`}
                         ${item.items
                           ? html`
                               <ion-icon name="chevron-down-outline"></ion-icon>
