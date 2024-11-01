@@ -1,179 +1,178 @@
 [
-    {
-        "date": "9",
-        "month": "November",
-        "day": "Saturday",
+  {
+    "date": "9",
+    "month": "November",
+    "day": "Saturday",
+    "items": [
+      {
+        "time": "08:30 - 09:00",
+        "name": "Arrival (Breakfast)"
+      },
+      {
+        "time": "09:00 - 09:20",
+        "name": "Opening"
+      },
+      {
+        "time": "09:30 - 10:30",
+        "name": "Student presentations",
         "items": [
-            {
-                "time": "08:30 - 09:00",
-                "name": "Arrival (Breakfast)"
-            },
-            {
-                "time": "09:00 - 09:20",
-                "name": "Opening"
-            },
-            {
-                "time" : "09:30 - 10:30",
-                "name" : "Student presentations",
-                "items" : [
-                    {
-                        "author" : "Quoc-Minh Ton-That",
-                        "affilation" : "École de technologie supérieure",
-                        "link": "https://www.q-minh.com/"
-                    },
-                    {
-                        "author" : "Melissa Katz",
-                        "affilation" : "McGill University",
-                    },
-                    {
-                        "author" : "Darsh Kaushik",
-                        "affilation" : "MILA - Université de Montréal",
-                        "link": "https://mila.quebec/en/directory/darsh-kaushik"
-                    }
-                ]
-            },
-            {
-                "time" : "10:30 - 11:00",
-                "name" : "Break"
-            },
-            {
-                "time" : "11:00 - 12:00",
-                "name" : "Student presentations",
-                "items" : [
-                    {
-                        "author" : "Justin Benoist",
-                        "affilation" : "École de technologie supérieure",
-                        "link": "https://www.linkedin.com/in/justin-benoist"
-                    },
-                    {
-                        "author" : "Arthur Delon",
-                        "affilation" : "University of Sherbrooke"
-                    },
-                    {
-                        "author" : "Joel Pelletier-Guenette",
-                        "affilation" : "École de technologie supérieure",
-                        "link": "https://www.linkedin.com/in/joelpelletierguenette"
-                    }
-                ]
-            },
-            {
-                "time" : "12:00 - 14:00",
-                "name" : "Lunch"
-            },
-            {
-                "time" : "14:00 - 15:00",
-                "name" : "Keynote Masha Shugrina (Nvidia)",
-                "link": "https://shumash.com/"
-            },
-            {
-                "time" : "15:00 - 15:15",
-                "name" : "Break"
-            },
-            {
-                "time" : "15:15 - 16:00",
-                "name" : "Student presentations",
-                "items" : [
-                    {
-                        "author" : "Abhishek Madan",
-                        "affilation" : "University of Toronto",
-                        "link": "https://www.dgp.toronto.edu/~amadan/"
-                    },
-                    {
-                        "author" : "Clara Kim",
-                        "affilation" : "University of Waterloo",
-                        
-                    }
-                ]
-            },
-            {
-                "time" : "16:00 - 16:30",
-                "name" : "Faculty presentation"
-            },
-            {
-                "time" : "16:30",
-                "name" : "Workshop Dinner + Trivia Night"
-            }
+          {
+            "author": "Quoc-Minh Ton-That",
+            "affiliation": "École de technologie supérieure",
+            "link": "https://www.q-minh.com/"
+          },
+          {
+            "author": "Melissa Katz",
+            "affiliation": "McGill University"
+          },
+          {
+            "author": "Darsh Kaushik",
+            "affiliation": "MILA - Université de Montréal",
+            "link": "https://mila.quebec/en/directory/darsh-kaushik"
+          }
         ]
-    },
-    {
-        "date": "10",
-        "month": "November",
-        "day": "Sunday",
+      },
+      {
+        "time": "10:30 - 11:00",
+        "name": "Break"
+      },
+      {
+        "time": "11:00 - 12:00",
+        "name": "Student presentations",
         "items": [
-            {
-                "time": "08:30 - 09:00",
-                "name": "Arrival (Breakfast)"
-            },
-            {
-                "time" : "09:00 - 10:30",
-                "name" : "Student presentations",
-                "items" : [
-                    {
-                        "author" : "Victor Rong",
-                        "affilation" : "University of Toronto",
-                        "link": "https://www.lessvrong.com/"
-                    },
-                    {
-                        "author" : "Ryusuke Sugimoto",
-                        "affilation" : "University of Waterloo",
-                        "link": "https://rsugimoto.net/"
-                    },
-                    {
-                        "author" : "Yue Chang",
-                        "affilation" : "University of Toronto",
-                        "link" : "https://changy1506.github.io/"
-                    },
-                    {
-                        "author" : "Ege Ciklabakkal",
-                        "affilation" : "University of Waterloo",
-                        "link" : "https://cs.uwaterloo.ca/~meciklab/"
-                    }
-                ]
-            },
-            {
-                "time" : "10:30 - 11:00",
-                "name" : "Break"
-            },
-            {
-                "time" : "11:00 - 12:00",
-                "name" : "Keynote Lesley"
-            },
-            {
-                "time" : "12:00 - 14:00",
-                "name" : "Lunch"
-            },
-            {
-                "time" : "14:00 - 14:30",
-                "name" : "Faculty presentation"
-            },
-            {
-                "time" : "14:30 - 15:00",
-                "name" : "Round table internship"
-            },
-            {
-                "time" : "15:00 - 15:30",
-                "name" : "Break"
-            },
-            {
-                "time" : "15:30 - 16:10",
-                "name" : "Student presentations",
-                "items" : [
-                    {
-                        "author" : "Alex Hoang-Cao",
-                        "affilation" : "École de technologie supérieure",
-                        "link": "https://www.linkedin.com/in/alex-hoang-cao/?locale=fr_FR"
-                    },
-                    {
-                        "author" : "Ivan Puhachov",
-                        "affilation" : "Universite de Montreal",
-                        "link": "https://puhachov.xyz/"
-                    }
-                ]
-            },
-            {
-                "time" : "16:20 - 16:30",
-                "name" : "Closing"
-            }
+          {
+            "author": "Justin Benoist",
+            "affiliation": "École de technologie supérieure",
+            "link": "https://www.linkedin.com/in/justin-benoist"
+          },
+          {
+            "author": "Arthur Delon",
+            "affiliation": "University of Sherbrooke"
+          },
+          {
+            "author": "Joel Pelletier-Guenette",
+            "affiliation": "École de technologie supérieure",
+            "link": "https://www.linkedin.com/in/joelpelletierguenette"
+          }
         ]
-    }
+      },
+      {
+        "time": "12:00 - 14:00",
+        "name": "Lunch"
+      },
+      {
+        "time": "14:00 - 15:00",
+        "name": "Keynote Masha Shugrina (NVIDIA)",
+        "link": "https://shumash.com/"
+      },
+      {
+        "time": "15:00 - 15:15",
+        "name": "Break"
+      },
+      {
+        "time": "15:15 - 16:00",
+        "name": "Student presentations",
+        "items": [
+          {
+            "author": "Abhishek Madan",
+            "affiliation": "University of Toronto",
+            "link": "https://www.dgp.toronto.edu/~amadan/"
+          },
+          {
+            "author": "Clara Kim",
+            "affiliation": "University of Waterloo"
+          }
+        ]
+      },
+      {
+        "time": "16:00 - 16:30",
+        "name": "Faculty presentation"
+      },
+      {
+        "time": "16:30",
+        "name": "Workshop Dinner + Trivia Night"
+      }
+    ]
+  },
+  {
+    "date": "10",
+    "month": "November",
+    "day": "Sunday",
+    "items": [
+      {
+        "time": "08:30 - 09:00",
+        "name": "Arrival (Breakfast)"
+      },
+      {
+        "time": "09:00 - 10:30",
+        "name": "Student presentations",
+        "items": [
+          {
+            "author": "Victor Rong",
+            "affiliation": "University of Toronto",
+            "link": "https://www.lessvrong.com/"
+          },
+          {
+            "author": "Ryusuke Sugimoto",
+            "affiliation": "University of Waterloo",
+            "link": "https://rsugimoto.net/"
+          },
+          {
+            "author": "Yue Chang",
+            "affiliation": "University of Toronto",
+            "link": "https://changy1506.github.io/"
+          },
+          {
+            "author": "Ege Ciklabakkal",
+            "affiliation": "University of Waterloo",
+            "link": "https://cs.uwaterloo.ca/~meciklab/"
+          }
+        ]
+      },
+      {
+        "time": "10:30 - 11:00",
+        "name": "Break"
+      },
+      {
+        "time": "11:00 - 12:00",
+        "name": "Keynote Lesley"
+      },
+      {
+        "time": "12:00 - 14:00",
+        "name": "Lunch"
+      },
+      {
+        "time": "14:00 - 14:30",
+        "name": "Faculty presentation"
+      },
+      {
+        "time": "14:30 - 15:00",
+        "name": "Round table internship"
+      },
+      {
+        "time": "15:00 - 15:30",
+        "name": "Break"
+      },
+      {
+        "time": "15:30 - 16:10",
+        "name": "Student presentations",
+        "items": [
+          {
+            "author": "Alex Hoang-Cao",
+            "affiliation": "École de technologie supérieure",
+            "link": "https://www.linkedin.com/in/alex-hoang-cao/?locale=fr_FR"
+          },
+          {
+            "author": "Ivan Puhachov",
+            "affiliation": "Université de Montréal",
+            "link": "https://puhachov.xyz/"
+          }
+        ]
+      },
+      {
+        "time": "16:20 - 16:30",
+        "name": "Closing"
+      }
+    ]
+  }
 ]
