@@ -181,14 +181,29 @@ class HeroSection extends LitElement {
       background: linear-gradient(45deg, #2b6cb0, #4299e1);
       transform: translateY(-2px);
     }
+
+    /* Loading Indicator */
+    .loading {
+      font-size: 2rem;
+      color: white;
+      margin-top: 2rem;
+    }
+
+    /* Error Message */
+    .error-message {
+      font-size: 1.5rem;
+      color: red;
+      margin-top: 2rem;
+    }
   `;
 
   static properties = {
     scheduleData: { type: Array },
-    currentSection: { type: String }, // 'loading', 'countdown', 'event', 'ended'
+    currentSection: { type: String }, // 'loading', 'countdown', 'event', 'ended', 'error'
     currentEventName: { type: String },
     currentEventTime: { type: String },
     countdownText: { type: String },
+    errorMessage: { type: String },
   };
 
   constructor() {
@@ -198,7 +213,9 @@ class HeroSection extends LitElement {
     this.currentEventName = '';
     this.currentEventTime = '';
     this.countdownText = '';
+    this.errorMessage = '';
     this.countdownInterval = null;
+    this.updateInterval = null;
   }
 
   render() {
@@ -220,52 +237,54 @@ class HeroSection extends LitElement {
           </div>
 
           <!-- Dynamic Content -->
-          <div
-            class="countdown ${this.currentSection === 'countdown' ? 'visible' : ''}"
-            id="countdown-timer"
-          >
-            ${this.countdownText}
-          </div>
+          ${this.currentSection === 'loading'
+            ? html`<div class="loading">Loading...</div>`
+            : this.currentSection === 'error'
+            ? html`<div class="error-message">${this.errorMessage}</div>`
+            : html`
+                <div
+                  class="countdown ${this.currentSection === 'countdown' ? 'visible' : ''}"
+                  id="countdown-timer"
+                >
+                  ${this.countdownText}
+                </div>
 
-          <div
-            class="event-info ${this.currentSection === 'event' ? 'visible' : ''}"
-          >
-            Ongoing: ${this.currentEventName}<br />
-            Happening now from ${this.currentEventTime}
-          </div>
+                <div
+                  class="event-info ${this.currentSection === 'event' ? 'visible' : ''}"
+                >
+                  <strong>Ongoing:</strong> ${this.currentEventName}<br />
+                  <strong>Happening now:</strong> ${this.currentEventTime}
+                </div>
 
-          <div
-            class="ended-message ${this.currentSection === 'ended' ? 'visible' : ''}"
-          >
-            Thank You for Joining Us!<br />
-            The event has ended. We hope to see you next year!
-          </div>
+                <div
+                  class="ended-message ${this.currentSection === 'ended' ? 'visible' : ''}"
+                >
+                  Thank You for Joining Us!<br />
+                  The event has ended. We hope to see you next year!
+                </div>
+              `}
         </div>
       </section>
     `;
   }
 
-  static properties = {
-    scheduleData: { type: Array },
-  };
-
   firstUpdated() {
     this.loadScheduleAndUpdateSection();
-    // Update the section every minute to keep the status current
-    this.updateInterval = setInterval(() => this.updateSectionBasedOnTime(), 60000);
   }
 
   async loadScheduleAndUpdateSection() {
     try {
-      const response = await fetch('schedule.json'); // Adjust the path as necessary
+      const response = await fetch('schedule.json'); // Ensure the path is correct
       if (!response.ok) throw new Error('Failed to load schedule data');
       const scheduleData = await response.json();
       this.scheduleData = scheduleData;
       this.updateSectionBasedOnTime();
+      // Start the interval after loading schedule
+      this.updateInterval = setInterval(() => this.updateSectionBasedOnTime(), 1000);
     } catch (error) {
       console.error('Error loading schedule:', error);
-      // Optionally, set a specific section for errors
-      this.currentSection = 'ended'; // Fallback
+      this.currentSection = 'error';
+      this.errorMessage = 'Unable to load event schedule. Please try again later.';
     }
   }
 
@@ -353,8 +372,12 @@ class HeroSection extends LitElement {
 
   startCountdown(eventDate) {
     this.countdownText = '';
-    this.countdownVisible = true;
-    this.updateCountdown(eventDate); // Initial call
+    this.updateCountdown(eventDate);
+
+    // Clear any existing countdown interval
+    if (this.countdownInterval) {
+      clearInterval(this.countdownInterval);
+    }
 
     this.countdownInterval = setInterval(() => {
       this.updateCountdown(eventDate);
@@ -368,7 +391,7 @@ class HeroSection extends LitElement {
     if (distance < 0) {
       this.countdownText = 'Event is starting soon!';
       this.clearCountdown();
-      this.updateSectionBasedOnTime(); // Re-evaluate the section
+      this.updateSectionBasedOnTime();
       return;
     }
 
@@ -385,7 +408,6 @@ class HeroSection extends LitElement {
       clearInterval(this.countdownInterval);
       this.countdownInterval = null;
     }
-    this.countdownVisible = false;
     this.countdownText = '';
   }
 
