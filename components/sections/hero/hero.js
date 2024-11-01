@@ -1,3 +1,4 @@
+// hero-section.js
 import { LitElement, html, css } from 'https://unpkg.com/lit@2.2.7?module';
 
 class HeroSection extends LitElement {
@@ -6,11 +7,12 @@ class HeroSection extends LitElement {
       position: relative;
       height: 100vh;
       background: url('res/bg1.jpg') no-repeat center center/cover;
-      position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
       z-index: 1;
+      color: white;
+      text-align: center;
     }
 
     .overlay {
@@ -24,9 +26,9 @@ class HeroSection extends LitElement {
 
     .content {
       position: relative;
-      color: white;
       z-index: 10;
-      text-align: center;
+      max-width: 800px;
+      padding: 2rem;
     }
 
     .logo-wrapper {
@@ -66,9 +68,18 @@ class HeroSection extends LitElement {
       margin-top: 1rem;
     }
 
-    .countdown {
+    .countdown,
+    .event-info,
+    .ended-message {
       font-size: 2rem;
       margin-top: 1.5rem;
+      display: none; /* Hidden by default */
+    }
+
+    .countdown.visible,
+    .event-info.visible,
+    .ended-message.visible {
+      display: block; /* Show when appropriate */
     }
 
     button {
@@ -106,7 +117,7 @@ class HeroSection extends LitElement {
       }
 
       .logo-img {
-        width: 500px;
+        width: 400px;
       }
 
       .logo-below img {
@@ -129,14 +140,15 @@ class HeroSection extends LitElement {
       }
 
       .logo-img {
-        width: 500px;
+        width: 300px;
       }
 
       .logo-below img {
         width: 25px;
       }
     }
-      .btn {
+
+    .btn {
       padding: 0.75rem 1.5rem;
       border: none;
       border-radius: 0.375rem;
@@ -171,6 +183,24 @@ class HeroSection extends LitElement {
     }
   `;
 
+  static properties = {
+    scheduleData: { type: Array },
+    currentSection: { type: String }, // 'loading', 'countdown', 'event', 'ended'
+    currentEventName: { type: String },
+    currentEventTime: { type: String },
+    countdownText: { type: String },
+  };
+
+  constructor() {
+    super();
+    this.scheduleData = [];
+    this.currentSection = 'loading'; // Initial state
+    this.currentEventName = '';
+    this.currentEventTime = '';
+    this.countdownText = '';
+    this.countdownInterval = null;
+  }
+
   render() {
     return html`
       <section>
@@ -189,39 +219,178 @@ class HeroSection extends LitElement {
             <h2>ÉTS</h2>
           </div>
 
-          <!-- Countdown Timer -->
-          <div class="countdown" id="countdown-timer"></div>
+          <!-- Dynamic Content -->
+          <div
+            class="countdown ${this.currentSection === 'countdown' ? 'visible' : ''}"
+            id="countdown-timer"
+          >
+            ${this.countdownText}
+          </div>
 
+          <div
+            class="event-info ${this.currentSection === 'event' ? 'visible' : ''}"
+          >
+            Ongoing: ${this.currentEventName}<br />
+            Happening now from ${this.currentEventTime}
+          </div>
+
+          <div
+            class="ended-message ${this.currentSection === 'ended' ? 'visible' : ''}"
+          >
+            Thank You for Joining Us!<br />
+            The event has ended. We hope to see you next year!
+          </div>
         </div>
       </section>
     `;
   }
 
   firstUpdated() {
-    this.startCountdown();
+    this.loadScheduleAndUpdateSection();
+    // Update the section every minute to keep the status current
+    this.updateInterval = setInterval(() => this.updateSectionBasedOnTime(), 60000);
   }
 
-  startCountdown() {
-    const eventDate = new Date('November 9, 2024 00:00:00').getTime();
-    const countdownElement = this.shadowRoot.getElementById('countdown-timer');
+  async loadScheduleAndUpdateSection() {
+    try {
+      const response = await fetch('/schedule.json'); // Adjust the path as necessary
+      if (!response.ok) throw new Error('Failed to load schedule data');
+      const scheduleData = await response.json();
+      this.scheduleData = scheduleData;
+      this.updateSectionBasedOnTime();
+    } catch (error) {
+      console.error('Error loading schedule:', error);
+      // Optionally, set a specific section for errors
+      this.currentSection = 'ended'; // Fallback
+    }
+  }
 
-    const updateCountdown = () => {
-      const now = new Date().getTime();
-      const distance = eventDate - now;
+  updateSectionBasedOnTime() {
+    const now = new Date();
+    let found = false;
 
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    // Iterate through each day and event to find the current or next event
+    for (const day of this.scheduleData) {
+      for (const event of day.items) {
+        const { startDate, endDate } = this.getEventDateRange(day, event);
+        if (!startDate || !endDate) continue;
 
-      countdownElement.innerHTML = `Countdown: ${days}d ${hours}h ${minutes}m ${seconds}s`;
-
-      if (distance < 0) {
-        countdownElement.innerHTML = 'Event has started!';
+        if (now >= startDate && now <= endDate) {
+          // Current event
+          this.currentSection = 'event';
+          this.currentEventName = event.name;
+          this.currentEventTime = event.time;
+          this.clearCountdown();
+          found = true;
+          break;
+        } else if (now < startDate && !found) {
+          // Next upcoming event
+          this.currentSection = 'countdown';
+          this.startCountdown(startDate);
+          found = true;
+          break;
+        }
       }
-    };
+      if (found) break;
+    }
 
-    setInterval(updateCountdown, 1000);
+    if (!found) {
+      // All events have passed
+      this.currentSection = 'ended';
+      this.clearCountdown();
+    }
+  }
+
+  getEventDateRange(day, event) {
+    const [startTimeStr, endTimeStr] = event.time.split(' - ');
+    const startDate = this.parseDateTime(day, startTimeStr);
+    let endDate = null;
+
+    if (endTimeStr) {
+      endDate = this.parseDateTime(day, endTimeStr);
+    } else {
+      // If no end time is provided, assume a default duration (e.g., 1 hour)
+      endDate = new Date(startDate.getTime() + 60 * 60 * 1000);
+    }
+
+    return { startDate, endDate };
+  }
+
+  parseDateTime(day, timeStr) {
+    const [hours, minutes] = timeStr.split(':').map(Number);
+    if (isNaN(hours) || isNaN(minutes)) return null;
+
+    const year = 2024; // Adjust as needed
+    const month = this.getMonthNumber(day.month);
+    const date = Number(day.date);
+
+    if (month === null || isNaN(date)) return null;
+
+    return new Date(year, month, date, hours, minutes, 0);
+  }
+
+  getMonthNumber(monthName) {
+    const months = {
+      January: 0,
+      February: 1,
+      March: 2,
+      April: 3,
+      May: 4,
+      June: 5,
+      July: 6,
+      August: 7,
+      September: 8,
+      October: 9,
+      November: 10,
+      December: 11,
+    };
+    return months[monthName] !== undefined ? months[monthName] : null;
+  }
+
+  startCountdown(eventDate) {
+    this.countdownText = '';
+    this.countdownVisible = true;
+    this.updateCountdown(eventDate); // Initial call
+
+    this.countdownInterval = setInterval(() => {
+      this.updateCountdown(eventDate);
+    }, 1000);
+  }
+
+  updateCountdown(eventDate) {
+    const now = new Date().getTime();
+    const distance = eventDate.getTime() - now;
+
+    if (distance < 0) {
+      this.countdownText = 'Event is starting soon!';
+      this.clearCountdown();
+      this.updateSectionBasedOnTime(); // Re-evaluate the section
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    this.countdownText = `Countdown: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+  }
+
+  clearCountdown() {
+    if (this.countdownInterval) {
+      clearInterval(this.countdownInterval);
+      this.countdownInterval = null;
+    }
+    this.countdownVisible = false;
+    this.countdownText = '';
+  }
+
+  disconnectedCallback() {
+    this.clearCountdown();
+    if (this.updateInterval) {
+      clearInterval(this.updateInterval);
+    }
+    super.disconnectedCallback();
   }
 }
 

@@ -6,16 +6,6 @@ window.addEventListener('load', function () {
     }
 });
 
-// Toggle the floating menu when the FAB is clicked
-document.getElementById('fab').addEventListener('click', () => {
-    const menu = document.getElementById('floating-menu');
-    if (menu.style.display === 'flex') {
-        menu.style.display = 'none';
-    } else {
-        menu.style.display = 'flex';
-    }
-});
-
 // Smooth scroll to specific sections inside the shadow DOM with an offset
 const scrollToSection = (targetId) => {
     const graphquonApp = document.querySelector("body > graphquon-app");
@@ -42,17 +32,10 @@ const scrollToSection = (targetId) => {
     }
 };
 
-// Event listeners for floating menu buttons
-document.getElementById('scroll-to-hero').addEventListener('click', () => scrollToSection('hero'));
-document.getElementById('scroll-to-about').addEventListener('click', () => scrollToSection('about'));
-document.getElementById('scroll-to-keynote').addEventListener('click', () => scrollToSection('keynote'));
-document.getElementById('scroll-to-schedule').addEventListener('click', () => scrollToSection('schedule'));
-document.getElementById('scroll-to-contact').addEventListener('click', () => scrollToSection('contact'));
-
 window.addEventListener('navigation-click', (event) => {
     const targetId = event.detail?.section;
     if (targetId) {
-        scrollToSection(targetId); // Scroll to the section if custom event is triggered
+        scrollToSection(targetId);
     }
 });
 
@@ -61,10 +44,10 @@ const waitForGraphquonApp = (callback) => {
     const checkExistence = setInterval(() => {
         const graphquonApp = document.querySelector('body > graphquon-app');
         if (graphquonApp) {
-            clearInterval(checkExistence); // Stop checking once the component is found
-            callback(); // Execute the callback function (e.g., scroll to section)
+            clearInterval(checkExistence);
+            callback();
         }
-    }, 100); // Check every 100ms
+    }, 100);
 };
 
 // On page load, check if there's a hash in the URL and wait for graphquonApp to load

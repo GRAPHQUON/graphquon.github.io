@@ -81,7 +81,7 @@ class HeaderComponent extends LitElement {
     return html`
       <header aria-label="Main Navigation">
         <nav>
-          <a href="#home" class="logo" aria-label="Site Logo" @click=${this.handleClick}>GRAPHQUON</div>
+          <a href="#home" class="logo" aria-label="Site Logo" @click=${this.handleClick}>GRAPHQUON</a>
           <div class="nav-links">
             <a href="#about" class="scroll-link" @click=${this.handleClick}>About</a>
             <a href="#keynote" class="scroll-link" @click=${this.handleClick}>Keynote</a>
@@ -126,6 +126,9 @@ class HeaderComponent extends LitElement {
     }
   }
 
+  sendEmail() {
+    window.location.href = 'mailto:graphquon@etsmtl.ca';
+  }
 }
 
 customElements.define('header-component', HeaderComponent);
