@@ -218,7 +218,6 @@ class ScheduleSection extends LitElement {
       <div class="schedule-sublist ${isActive ? 'active' : ''}" @click=${e => e.stopPropagation()}>
         ${subitems.map(
           subitem => html`
-            <div class="schedule-sublist-name">${subitem.name}</div>
             <div class="schedule-sublist-author">
               ${subitem.author}
               <span class="schedule-sublist-affiliation">(${subitem.affiliation})</span>
