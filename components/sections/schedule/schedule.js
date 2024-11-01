@@ -6,13 +6,17 @@ class ScheduleSection extends LitElement {
     scheduleData: { type: Array },
   };
 
+  constructor() {
+    super();
+    this.scheduleData = [];
+  }
+
   static styles = css`
     :host {
       display: block;
       position: relative;
       padding: 2rem;
       font-family: 'Commissioner', sans-serif;
-      background-color: #f7fafc;
       color: #111827;
       z-index: 1;
     }
@@ -35,10 +39,7 @@ class ScheduleSection extends LitElement {
       flex-direction: row;
       justify-content: space-around;
       padding: 40px;
-      background-color: rgb(212, 217, 222);
       color: #252525;
-      border-radius: 17px;
-      border: solid 4px #d3d3d3;
       cursor: default;
       flex-wrap: wrap;
     }
@@ -166,186 +167,21 @@ class ScheduleSection extends LitElement {
     }
   `;
 
-  constructor() {
-    super();
-    this.scheduleData = [
-      {
-        date: "9",
-        month: "November",
-        day: "Saturday",
-        items: [
-          {
-            time: "08:30 - 09:00",
-            name: "Arrival (Breakfast)"
-          },
-          {
-            time: "09:00 - 09:20",
-            name: "Opening"
-          },
-          {
-            time: "09:30 - 10:30",
-            name: "Student presentations",
-            items: [
-              {
-                author: "Quoc-Minh Ton-That",
-                affiliation: "École de technologie supérieure",
-                link: "https://www.q-minh.com/"
-              },
-              {
-                author: "Melissa Katz",
-                affiliation: "McGill University"
-              },
-              {
-                author: "Darsh Kaushik",
-                affiliation: "MILA - Université de Montréal",
-                link: "https://mila.quebec/en/directory/darsh-kaushik"
-              }
-            ]
-          },
-          {
-            time: "10:30 - 11:00",
-            name: "Break"
-          },
-          {
-            time: "11:00 - 12:00",
-            name: "Student presentations",
-            items: [
-              {
-                author: "Justin Benoist",
-                affiliation: "École de technologie supérieure",
-                link: "https://www.linkedin.com/in/justin-benoist"
-              },
-              {
-                author: "Arthur Delon",
-                affiliation: "University of Sherbrooke"
-              },
-              {
-                author: "Joel Pelletier-Guenette",
-                affiliation: "École de technologie supérieure",
-                link: "https://www.linkedin.com/in/joelpelletierguenette"
-              }
-            ]
-          },
-          {
-            time: "12:00 - 14:00",
-            name: "Lunch"
-          },
-          {
-            time: "14:00 - 15:00",
-            name: "Keynote Masha Shugrina (NVIDIA)",
-            link: "https://shumash.com/"
-          },
-          {
-            time: "15:00 - 15:15",
-            name: "Break"
-          },
-          {
-            time: "15:15 - 16:00",
-            name: "Student presentations",
-            items: [
-              {
-                author: "Abhishek Madan",
-                affiliation: "University of Toronto",
-                link: "https://www.dgp.toronto.edu/~amadan/"
-              },
-              {
-                author: "Clara Kim",
-                affiliation: "University of Waterloo"
-              }
-            ]
-          },
-          {
-            time: "16:00 - 16:30",
-            name: "Faculty presentation"
-          },
-          {
-            time: "16:30",
-            name: "Workshop Dinner + Trivia Night"
-          }
-        ]
-      },
-      {
-        date: "10",
-        month: "November",
-        day: "Sunday",
-        items: [
-          {
-            time: "08:30 - 09:00",
-            name: "Arrival (Breakfast)"
-          },
-          {
-            time: "09:00 - 10:30",
-            name: "Student presentations",
-            items: [
-              {
-                author: "Victor Rong",
-                affiliation: "University of Toronto",
-                link: "https://www.lessvrong.com/"
-              },
-              {
-                author: "Ryusuke Sugimoto",
-                affiliation: "University of Waterloo",
-                link: "https://rsugimoto.net/"
-              },
-              {
-                author: "Yue Chang",
-                affiliation: "University of Toronto",
-                link: "https://changy1506.github.io/"
-              },
-              {
-                author: "Ege Ciklabakkal",
-                affiliation: "University of Waterloo",
-                link: "https://cs.uwaterloo.ca/~meciklab/"
-              }
-            ]
-          },
-          {
-            time: "10:30 - 11:00",
-            name: "Break"
-          },
-          {
-            time: "11:00 - 12:00",
-            name: "Keynote Lesley Istead (Cartlon University)"
-          },
-          {
-            time: "12:00 - 14:00",
-            name: "Lunch"
-          },
-          {
-            time: "14:00 - 14:30",
-            name: "Faculty presentation"
-          },
-          {
-            time: "14:30 - 15:00",
-            name: "Round table internship"
-          },
-          {
-            time: "15:00 - 15:30",
-            name: "Break"
-          },
-          {
-            time: "15:30 - 16:10",
-            name: "Student presentations",
-            items: [
-              {
-                author: "Alex Hoang-Cao",
-                affiliation: "École de technologie supérieure",
-                link: "https://www.linkedin.com/in/alex-hoang-cao/?locale=fr_FR"
-              },
-              {
-                author: "Ivan Puhachov",
-                affiliation: "Université de Montréal",
-                link: "https://puhachov.xyz/"
-              }
-            ]
-          },
-          {
-            time: "16:20 - 16:30",
-            name: "Closing"
-          }
-        ]
-      }
-    ];
+  firstUpdated() {
+    this.loadScheduleAndUpdateSection();
+  }
+
+  async loadScheduleAndUpdateSection() {
+    try {
+      const response = await fetch('schedule.json'); // Adjust the path as necessary
+      if (!response.ok) throw new Error('Failed to load schedule data');
+      const scheduleData = await response.json();
+      this.scheduleData = scheduleData;
+    } catch (error) {
+      console.error('Error loading schedule:', error);
+      // Optionally, set a specific section for errors
+      this.currentSection = 'ended'; // Fallback
+    }
   }
 
   renderSublist(subitems) {
@@ -368,6 +204,19 @@ class ScheduleSection extends LitElement {
   }
 
   render() {
+    if (!this.scheduleData || this.scheduleData.length === 0) {
+      return html`
+        <section id="schedule">
+          <header>
+            <h1>Schedule</h1>
+          </header>
+          <div id="schedule-grid-container">
+            <p>Loading schedule...</p>
+          </div>
+        </section>
+      `;
+    }
+
     return html`
       <section id="schedule">
         <header>

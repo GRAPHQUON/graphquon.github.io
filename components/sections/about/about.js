@@ -210,7 +210,7 @@ class AboutSection extends LitElement {
       <section id="about" aria-labelledby="about-heading">
         <div class="container">
           <h1 id="about-heading">About the Event</h1>
-          <p>
+          <p style="text-align: justify;">
             GRAPHQUON (formerly MOTOGRAPH) is the annual Quebec-Ontario
             pre-SIGGRAPH workshop, organized by and for the major East-Canadian
             computer graphics labs. It is an opportunity for students to present
@@ -333,10 +333,6 @@ class AboutSection extends LitElement {
             to the registration form.
           </p>
 
-          <!-- Button Links -->
-          <div class="btn-container">
-            <a href="#schedule" class="btn btn-primary" @click=${this.handleClick}>Schedule</a>
-          </div>
         </div>
       </section>
     `;

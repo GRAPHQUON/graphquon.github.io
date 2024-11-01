@@ -245,6 +245,10 @@ class HeroSection extends LitElement {
     `;
   }
 
+  static properties = {
+    scheduleData: { type: Array },
+  };
+
   firstUpdated() {
     this.loadScheduleAndUpdateSection();
     // Update the section every minute to keep the status current
@@ -253,7 +257,7 @@ class HeroSection extends LitElement {
 
   async loadScheduleAndUpdateSection() {
     try {
-      const response = await fetch('/schedule.json'); // Adjust the path as necessary
+      const response = await fetch('schedule.json'); // Adjust the path as necessary
       if (!response.ok) throw new Error('Failed to load schedule data');
       const scheduleData = await response.json();
       this.scheduleData = scheduleData;

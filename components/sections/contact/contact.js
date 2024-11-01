@@ -12,7 +12,7 @@ class ContactSection extends LitElement {
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 2rem;
+      padding: 4rem;
     }
 
     /* Card styles */
@@ -20,7 +20,6 @@ class ContactSection extends LitElement {
       background-color: white; /* bg-white */
       padding: 2rem;
       border-radius: 1rem; /* rounded-lg */
-      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4); /* shadow-lg */
       text-align: center;
       max-width: 400px; /* Ensure card doesn't get too wide */
       margin: 0 auto;
