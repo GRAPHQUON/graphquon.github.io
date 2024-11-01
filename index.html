@@ -59,11 +59,6 @@
         <div class="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full text-blue-500"></div>
     </div>
 
-    <!-- Footer with Visit Count -->
-    <footer class="bg-gray-800 text-white p-4 text-center">
-        <p>Page Visits: <span id="visit-count">...</span></p>
-    </footer>
-
     <!-- Flowbite JS (for interactivity) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
 
@@ -142,20 +137,6 @@
 
         // Initialize the Three.js scene
         initThreeJS();
-    </script>
-
-    <!-- CountAPI Integration for Visit Count -->
-    <script>
-        function updateVisitCount() {
-            fetch("https://api.countapi.xyz/hit/graphquon.github.io/visits")
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById("visit-count").innerText = data.value;
-                })
-                .catch(error => console.error('Error fetching visit count:', error));
-        }
-
-        document.addEventListener("DOMContentLoaded", updateVisitCount);
     </script>
 
 </body>
