@@ -6,9 +6,7 @@ class KeynoteSection extends LitElement {
     section {
       position: relative;
       padding: 2rem;
-      background: linear-gradient(to right, #ed64a6, #f6e05e);
       text-align: center;
-      color: white;
       overflow: hidden; /* Ensure particles stay within the section */
       z-index: 1;
     }
@@ -94,7 +92,6 @@ class KeynoteSection extends LitElement {
     h3 {
       margin-top: 1rem;
       font-size: 1.5rem;
-      color: #ffffff;
     }
 
     /* Accessibility focus style for images */
@@ -136,20 +133,17 @@ class KeynoteSection extends LitElement {
   render() {
     return html`
       <section id="keynote" aria-labelledby="keynote-heading">
-        <!-- Particle.js Background -->
-        <div id="particles-js"></div>
 
-        <h1 id="keynote-heading">Keynote Speakers</h1>
+        <h1 id="keynote-heading">Speakers</h1>
         <div class="grid">
-          <div class="speaker-card" aria-label="Lesley Istead" data-animate="left">
-            <img src="res/lesley.jpg" alt="Photo of Lesley Istead" loading="lazy" tabindex="0" />
-            <h3>Lesley Istead, Carleton University</h3>
-          </div>
           <div class="speaker-card" aria-label="Masha Shugrina " data-animate="right">
             <img src="res/masha.jpg" alt="Photo of Masha Shugrina " loading="lazy" tabindex="0" />
             <h3>Masha Shugrina, Nvidia</h3>
           </div>
-          <!-- Add more speaker cards as needed -->
+          <div class="speaker-card" aria-label="Lesley Istead" data-animate="left">
+            <img src="res/lesley.jpg" alt="Photo of Lesley Istead" loading="lazy" tabindex="0" />
+            <h3>Lesley Istead, Carleton University</h3>
+          </div>
         </div>
       </section>
     `;

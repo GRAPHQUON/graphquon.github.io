@@ -9,10 +9,9 @@ class HeaderComponent extends LitElement {
       position: fixed;
       top: 0;
       width: 100%;
-      z-index: 50;
       backdrop-filter: blur(10px);
       transition: background-color 0.3s ease;
-      z-index: 1000;
+      z-index: 2;
     }
 
     /* Navigation container */
@@ -82,7 +81,7 @@ class HeaderComponent extends LitElement {
     return html`
       <header aria-label="Main Navigation">
         <nav>
-          <a href="#home" class="logo" aria-label="Site Logo" @click=${this.handleClick}>GRAPHQUON</div>
+          <a href="#home" class="logo" aria-label="Site Logo" @click=${this.handleClick}>GRAPHQUON</a>
           <div class="nav-links">
             <a href="#about" class="scroll-link" @click=${this.handleClick}>About</a>
             <a href="#keynote" class="scroll-link" @click=${this.handleClick}>Keynote</a>
@@ -107,8 +106,8 @@ class HeaderComponent extends LitElement {
     // Dispatch a custom event to the window
     const customEvent = new CustomEvent('navigation-click', {
       detail: { section: targetId },
-      bubbles: true, // Allows the event to bubble up through the DOM
-      composed: true, // Allows the event to pass through the shadow DOM boundary
+      bubbles: true,
+      composed: true,
     });
 
     window.dispatchEvent(customEvent);
@@ -127,6 +126,9 @@ class HeaderComponent extends LitElement {
     }
   }
 
+  sendEmail() {
+    window.location.href = 'mailto:graphquon@etsmtl.ca';
+  }
 }
 
 customElements.define('header-component', HeaderComponent);

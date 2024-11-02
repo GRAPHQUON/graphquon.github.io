@@ -4,8 +4,12 @@ import 'https://cdn.jsdelivr.net/npm/ionicons@5.5.2/dist/ionicons/ionicons.esm.j
 class ScheduleSection extends LitElement {
   static properties = {
     scheduleData: { type: Array },
-    activeSublist: { type: Object },
   };
+
+  constructor() {
+    super();
+    this.scheduleData = [];
+  }
 
   static styles = css`
     :host {
@@ -13,7 +17,6 @@ class ScheduleSection extends LitElement {
       position: relative;
       padding: 2rem;
       font-family: 'Commissioner', sans-serif;
-      background-color: #f7fafc;
       color: #111827;
       z-index: 1;
     }
@@ -36,26 +39,22 @@ class ScheduleSection extends LitElement {
       flex-direction: row;
       justify-content: space-around;
       padding: 40px;
-      background-color: rgb(212 217 222);
       color: #252525;
-      border-radius: 17px;
-      border: solid 4px #d3d3d3;
       cursor: default;
       flex-wrap: wrap;
     }
 
     .schedule-day {
-      grid-template-columns: 60px 200px;
-      row-gap: 19px;
+      display: flex;
+      flex-direction: column;
       padding: 20px;
-      background-color: rgb(212 217 222);
+      background-color: rgb(212, 217, 222);
       color: #252525;
       border-radius: 17px;
       border: solid 4px #d3d3d3;
       cursor: default;
       margin-bottom: 2rem;
       position: relative;
-      width: 300px;
 
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Subtle shadow */
       transition: box-shadow 0.3s ease; /* Smooth transition for shadow */
@@ -66,72 +65,78 @@ class ScheduleSection extends LitElement {
     }
 
     .schedule-day h2 {
-      grid-column: 1 / 3;
       margin: 0;
       font-size: 2rem;
       font-weight: bold;
       color: #2b6cb0;
-      padding: 8px;
+      padding: 8px 0;
+      text-align: center;
     }
 
     .schedule-day h3 {
-      grid-column: 1 / 3;
-      margin: 0;
+      margin: 0 0 1rem 0;
       font-size: 1.5rem;
       color: #b72ce4;
+      text-align: center;
+    }
+
+    .schedule-item {
+      margin-bottom: 1rem;
     }
 
     .schedule-item-time {
       color: #135eaab8;
       font-weight: bold;
+      display: block;
+      margin-bottom: 0.5rem;
     }
 
     .schedule-item-name {
       border-bottom: solid 1px #ddd;
-      cursor: pointer;
-      position: relative;
       padding-right: 24px;
       padding-bottom: 8px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      user-select: none;
+      position: relative;
     }
 
-    .schedule-item-name:hover {
+    .schedule-item-name a {
+      color: inherit;
+      text-decoration: none;
+      flex: 1;
+    }
+
+    .schedule-item-name a:hover {
       color: #b72ce6;
+      text-decoration: underline;
     }
 
     .schedule-sublist {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
+      margin-top: 10px;
       border-radius: 10px;
       background: linear-gradient(45deg, #549ddc, #b94de4);
       color: white;
       border: none;
       padding: 20px;
-      padding-bottom: 0;
-      width: 280px;
-      font-size: 14px;
       z-index: 10;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
-    .schedule-sublist.active {
-      display: block;
-    }
-
-    .schedule-sublist-name {
+    .schedule-sublist-author {
       text-align: left;
       margin-bottom: 10px;
       font-weight: bold;
     }
 
-    .schedule-sublist-author {
-      text-align: right;
-      margin-bottom: 15px;
-      font-weight: bold;
+    .schedule-sublist-author a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .schedule-sublist-author a:hover {
+      text-decoration: underline;
     }
 
     .schedule-sublist-affiliation {
@@ -144,9 +149,10 @@ class ScheduleSection extends LitElement {
       transition: transform 0.3s;
     }
 
-    .schedule-item-name.open ion-icon {
+    /* Remove rotation since sublists are always open */
+    /* .schedule-item-name.open ion-icon {
       transform: rotate(180deg);
-    }
+    } */
 
     @media screen and (max-width: 800px) {
       #schedule-grid-container {
@@ -161,65 +167,34 @@ class ScheduleSection extends LitElement {
     }
   `;
 
-  constructor() {
-    super();
-    this.scheduleData = [];
-    this.activeSublist = null;
+  firstUpdated() {
+    this.loadScheduleAndUpdateSection();
   }
 
-  connectedCallback() {
-    super.connectedCallback();
-    this.fetchScheduleData();
-    document.addEventListener('click', this.handleOutsideClick.bind(this));
-  }
-
-  disconnectedCallback() {
-    document.removeEventListener('click', this.handleOutsideClick.bind(this));
-    super.disconnectedCallback();
-  }
-
-  handleOutsideClick(event) {
-    if (!this.contains(event.target)) {
-      this.activeSublist = null;
-      this.requestUpdate();
-    }
-  }
-
-  async fetchScheduleData() {
+  async loadScheduleAndUpdateSection() {
     try {
-      const response = await fetch('components/sections/schedule/schedule.json');
+      const response = await fetch('schedule.json'); // Adjust the path as necessary
       if (!response.ok) throw new Error('Failed to load schedule data');
-      const data = await response.json();
-      this.scheduleData = data;
+      const scheduleData = await response.json();
+      this.scheduleData = scheduleData;
     } catch (error) {
-      console.error('Error fetching schedule:', error);
+      console.error('Error loading schedule:', error);
+      // Optionally, set a specific section for errors
+      this.currentSection = 'ended'; // Fallback
     }
   }
 
-  toggleSublist(dayDate, itemName) {
-    if (
-      this.activeSublist &&
-      this.activeSublist.dayDate === dayDate &&
-      this.activeSublist.itemName === itemName
-    ) {
-      this.activeSublist = null;
-    } else {
-      this.activeSublist = { dayDate, itemName };
-    }
-  }
-
-  renderSublist(dayDate, itemName, subitems) {
-    const isActive =
-      this.activeSublist &&
-      this.activeSublist.dayDate === dayDate &&
-      this.activeSublist.itemName === itemName;
-
+  renderSublist(subitems) {
     return html`
-      <div class="schedule-sublist ${isActive ? 'active' : ''}" @click=${e => e.stopPropagation()}>
+      <div class="schedule-sublist">
         ${subitems.map(
           subitem => html`
             <div class="schedule-sublist-author">
-              ${subitem.author}
+              ${subitem.link
+                ? html`<a href="${subitem.link}" target="_blank" rel="noopener noreferrer"
+                    >${subitem.author}</a
+                  >`
+                : html`${subitem.author}`}
               <span class="schedule-sublist-affiliation">(${subitem.affiliation})</span>
             </div>
           `
@@ -229,6 +204,19 @@ class ScheduleSection extends LitElement {
   }
 
   render() {
+    if (!this.scheduleData || this.scheduleData.length === 0) {
+      return html`
+        <section id="schedule">
+          <header>
+            <h1>Schedule</h1>
+          </header>
+          <div id="schedule-grid-container">
+            <p>Loading schedule...</p>
+          </div>
+        </section>
+      `;
+    }
+
     return html`
       <section id="schedule">
         <header>
@@ -242,24 +230,24 @@ class ScheduleSection extends LitElement {
                 <h3>${day.day}</h3>
                 ${day.items.map(
                   item => html`
-                    <div>
+                    <div class="schedule-item">
                       <span class="schedule-item-time">${item.time}</span>
-                      <div
-                        class="schedule-item-name ${this.activeSublist &&
-                        this.activeSublist.dayDate === day.date &&
-                        this.activeSublist.itemName === item.name
-                          ? 'open'
-                          : ''}"
-                        @click=${() => this.toggleSublist(day.date, item.name)}
-                      >
-                        ${item.name}
+                      <div class="schedule-item-name">
+                        ${item.link
+                          ? html`<a
+                              href="${item.link}"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              >${item.name}</a
+                            >`
+                          : html`${item.name}`}
                         ${item.items
                           ? html`
                               <ion-icon name="chevron-down-outline"></ion-icon>
-                              ${this.renderSublist(day.date, item.name, item.items)}
                             `
                           : ''}
                       </div>
+                      ${item.items ? this.renderSublist(item.items) : ''}
                     </div>
                   `
                 )}
