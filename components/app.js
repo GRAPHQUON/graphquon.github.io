@@ -5,6 +5,7 @@ import './sections/about/about.js';
 import './sections/keynote/keynote.js';
 import './sections/schedule/schedule.js';
 import './sections/contact/contact.js';
+import './sections/sponsors/sponsors.js';
 import './sections/footer/footer.js';
 
 class GraphQuonApp extends LitElement {
@@ -23,6 +24,7 @@ class GraphQuonApp extends LitElement {
       <keynote-section id="keynote"></keynote-section>
       <schedule-section id="schedule"></schedule-section>
       <contact-section id="contact"></contact-section>
+      <sponsors-section id="sponsors"></sponsors-section>
       <footer-component id="footer"></footer-component>
     `;
   }

@@ -241,11 +241,6 @@ class ScheduleSection extends LitElement {
                               >${item.name}</a
                             >`
                           : html`${item.name}`}
-                        ${item.items
-                          ? html`
-                              <ion-icon name="chevron-down-outline"></ion-icon>
-                            `
-                          : ''}
                       </div>
                       ${item.items ? this.renderSublist(item.items) : ''}
                     </div>

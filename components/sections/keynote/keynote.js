@@ -71,11 +71,6 @@ class KeynoteSection extends LitElement {
       transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     }
 
-    .speaker-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    }
-
     img {
       width: 200px;
       height: 200px;

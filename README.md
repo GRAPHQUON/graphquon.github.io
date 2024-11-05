@@ -117,7 +117,8 @@ GRAPHQUON’s codebase is built for easy updates to accommodate future events. T
 1. **Update Content Files**:
    - **Homepage**: Modify `index.html` to reflect the new event's details.
    - **Event Schedule**: Edit `schedule.json` with the latest event schedule and speaker information.
-   
+   - **Event Schedule**: Edit `sponsors.json` with the latest sponsors information.
+
 2. **Update Assets**:
    - **Images and Media**: Replace or add new images in the `res/` directory as needed.
    - **3D Models and Textures**: Update or add new models and textures in the `components/background/` directory.
