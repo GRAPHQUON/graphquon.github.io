@@ -55,7 +55,13 @@ class HeroSection extends LitElement {
     }
 
     .logo-below img {
-      width: 40px;
+      width: 150px;
+      height: auto;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .logo-below img:hover {
+      transform: scale(1.05);
     }
 
     h1 {
@@ -224,7 +230,7 @@ class HeroSection extends LitElement {
         <div class="overlay"></div>
         <div class="content">
           <h1>GRAPHQUON 2024</h1>
-          <p>November 9-10, 2024 at École de technologie supérieure</p>
+          <p>November 9-10, 2024</p>
 
           <!-- Logo Section -->
           <div class="logo-wrapper">
@@ -233,7 +239,6 @@ class HeroSection extends LitElement {
 
           <div class="logo-below">
             <img src="res/ets_logo.svg" alt="ÉTS Logo" loading="lazy" />
-            <h2>ÉTS</h2>
           </div>
 
           <!-- Dynamic Content -->
