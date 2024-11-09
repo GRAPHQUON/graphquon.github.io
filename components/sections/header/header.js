@@ -71,7 +71,7 @@ class HeaderComponent extends LitElement {
       }
 
       a {
-        padding: 1rem;
+        padding: 0.5rem;
         font-size: 1.2rem;
       }
     }
