@@ -196,6 +196,9 @@ class ScheduleSection extends LitElement {
                   >`
                 : html`${subitem.author}`}
               <span class="schedule-sublist-affiliation">(${subitem.affiliation})</span>
+              ${subitem.award
+                ? html`<span style="margin-left: 8px; color: gold;">${subitem.award}</span>`
+                : ''}
             </div>
           `
         )}
