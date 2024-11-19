@@ -68,7 +68,6 @@ class HeaderComponent extends LitElement {
     @media (max-width: 768px) {
       nav {
         flex-direction: column;
-        width: 100%;
       }
 
       a {
