@@ -189,7 +189,7 @@ class AboutSection extends LitElement {
 
       .stepper li {
         width: 100%;
-        max-width: 250px;
+        max-width: 200px;
       }
 
       .btn-container {
@@ -210,7 +210,7 @@ class AboutSection extends LitElement {
       <section id="about" aria-labelledby="about-heading">
         <div class="container">
           <h1 id="about-heading">About the Event</h1>
-          <p style="text-align: justify;">
+          <p style="text-align: center;">
             GRAPHQUON (formerly MOTOGRAPH) is the annual Quebec-Ontario
             pre-SIGGRAPH workshop, organized by and for the major East-Canadian
             computer graphics labs. It is an opportunity for students to present
@@ -218,7 +218,7 @@ class AboutSection extends LitElement {
             audience and to receive valuable feedback.
           </p>
 
-          <p>Previous Editions:</p>
+          <p style="text-align: center;">Previous Editions:</p>
 
           <!-- Horizontal Stepper -->
           <ol class="stepper">
