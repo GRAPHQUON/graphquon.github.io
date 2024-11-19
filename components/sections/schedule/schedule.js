@@ -162,7 +162,7 @@ class ScheduleSection extends LitElement {
       }
 
       .schedule-day {
-        width: 90%;
+        width: 85%;
       }
     }
   `;
