@@ -3,7 +3,6 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/GRAPHQUON/graphquon.github.io)
 ![GitHub license](https://img.shields.io/github/license/GRAPHQUON/graphquon.github.io)
 ![GitHub contributors](https://img.shields.io/github/contributors/GRAPHQUON/graphquon.github.io)
-![Website visits](https://img.shields.io/badge/dynamic/json?color=blue&label=Visits&query=value&url=https://api.countapi.xyz/hit/GRAPHQUON/graphquon.github.io)
 
 Welcome to the **GRAPHQUON** website repository! GRAPHQUON serves as an event hub for the technology and creative industries. Formerly known as **MOTOGRAPH**, our platform is designed to be flexible and easily adaptable for future GRAPHQUON events. Hosted on **GitHub Pages**, the site automatically deploys from the `main` branch with every push, ensuring seamless updates.
 
@@ -30,7 +29,7 @@ For each GRAPHQUON event, ensure the following details are clearly included:
 1. **Where**: Specify the event's location, whether it's a physical venue or an online platform link for virtual events.
 2. **When**: Provide clear dates and times, including time zones for online events.
 3. **Who**: List key speakers, panelists, and hosts to generate interest and attract attendees.
-4. **Conversations Over Good Food**: Highlight any special meal-based networking sessions, such as luncheons, dinners, or coffee breaks, to encourage informal discussions and deeper networking opportunities.
+4. **Conversations Over Good Food**: Highlight any special meal-based networking sessions, such as luncheons, dinners, or coffee breaks, to encourage informal and feedback discussions and deeper networking opportunities.
 
 ---
 
@@ -47,7 +46,7 @@ cd graphquon.github.io
 
 ### 2. Install Dependencies
 
-Ensure you have **npm** installed. Then, install the necessary packages:
+Ensure you have **[npm](https://github.com/nvm-sh/nvm)** installed. Then, install the necessary packages:
 
 ```bash
 npm install
@@ -105,9 +104,9 @@ The repository is organized as follows:
 ├── particles.json             # Particle effects configuration
 ├── privacy.html               # Privacy policy page
 ├── schedule.json              # Event schedule data
+├── schedule.json              # Event schedule data
 └── terms.html                 # Terms and conditions page
 ```
-
 ---
 
 ## 🔄 Updating for Future Events
@@ -117,7 +116,6 @@ GRAPHQUON’s codebase is built for easy updates to accommodate future events. T
 1. **Update Content Files**:
    - **Homepage**: Modify `index.html` to reflect the new event's details.
    - **Event Schedule**: Edit `schedule.json` with the latest event schedule and speaker information.
-   - **Event Schedule**: Edit `sponsors.json` with the latest sponsors information.
 
 2. **Update Assets**:
    - **Images and Media**: Replace or add new images in the `res/` directory as needed.
@@ -161,15 +159,17 @@ Developing locally allows you to preview and test changes before making them liv
 4. **Open in Browser**:
    Navigate to `http://localhost:8080` to view the site.
 
-> **Note**: For live reloading and a smoother development experience, consider using the **Live Server** extension in Visual Studio Code.
+> **Note**: For live reloading and a smoother development experience, consider using the **[Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)** extension in Visual Studio Code.
 
 5. **Make Changes**:
    - Edit HTML, CSS, JavaScript, or JSON files as needed.
-   - Save your changes and refresh the browser to see updates in real time.
+   - Save your changes
+   - Refresh the browser to see updates in real time.
 
 6. **Lint and Test**:
    - Ensure your code adheres to project standards.
-   - Test interactive elements and responsiveness across different devices.
+   - Test interactive elements
+   - Responsiveness across different devices (Mobile, PC, Tablet)
 
 ---
 
@@ -178,15 +178,8 @@ Developing locally allows you to preview and test changes before making them liv
 The site is deployed via **GitHub Pages**, ensuring that any push to the `main` branch automatically redeploys the latest version. Follow these steps to deploy your changes:
 
 1. **Commit Your Changes**:
-   ```bash
-   git add .
-   git commit -m "Your commit message"
-   ```
 
 2. **Push to GitHub**:
-   ```bash
-   git push origin main
-   ```
 
 3. **Automatic Deployment**:
    - GitHub Pages will detect the push to the `main` branch.
@@ -215,32 +208,14 @@ We welcome contributions from the community! To contribute:
    - Click the **Fork** button at the top right of the repository page.
 
 2. **Clone Your Fork**:
-   ```bash
-   git clone https://github.com/your-username/graphquon.github.io.git
-   cd graphquon.github.io
-   ```
 
 3. **Create a New Branch**:
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
 
 4. **Make Your Changes**:
    - Implement your feature or bug fix.
    - Ensure your code follows the project's coding standards.
 
-5. **Commit Your Changes**:
-   ```bash
-   git add .
-   git commit -m "Add your detailed commit message"
-   ```
-
-6. **Push to Your Fork**:
-   ```bash
-   git push origin feature/your-feature-name
-   ```
-
-7. **Open a Pull Request**:
+5. **Open a Pull Request**:
    - Navigate to your fork on GitHub.
    - Click **Compare & pull request**.
    - Provide a clear description of your changes and submit the pull request.
