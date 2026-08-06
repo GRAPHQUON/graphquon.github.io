@@ -110,7 +110,7 @@ class TermsOfServiceETS extends LitElement {
 
           <h2>Privacy</h2>
           <p>
-            We respect your privacy. Personal information collected during registration will be used solely for event-related purposes and will not be shared with third parties without your consent. Please refer to our <a href="/privacy-policy" target="_blank">Privacy Policy</a> for more details.
+            We respect your privacy. Personal information collected during registration will be used solely for event-related purposes and will not be shared with third parties without your consent. Please refer to our <a href="privacy.html" target="_blank">Privacy Policy</a> for more details.
           </p>
 
           <h2>Liability</h2>

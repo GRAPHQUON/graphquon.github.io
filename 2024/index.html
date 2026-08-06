@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRAPHQUON 2024 - Annual Quebec-Ontario Pre-SIGGRAPH Workshop</title>
+    <meta name="description"
+        content="GRAPHQUON is the annual Quebec-Ontario pre-SIGGRAPH workshop for computer graphics students and professionals. Join us on November 9-10, 2024 at École de technologie supérieure.">
+
+    <!-- Open Graph Meta Tags for SEO and Social Sharing -->
+    <meta property="og:title" content="GRAPHQUON 2024 - Annual Workshop" />
+    <meta property="og:description"
+        content="Annual Quebec-Ontario Pre-SIGGRAPH workshop for computer graphics students and professionals." />
+    <meta property="og:image" content="path_to_your_event_image.jpg" />
+    <meta property="og:url" content="https://yourwebsite.com" />
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- TailwindCSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="index.css">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Flowbite CSS (optional for UI components) -->
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+
+    <!-- Heroicons CDN -->
+    <script src="https://unpkg.com/@heroicons/vue@2.0.11/dist/heroicons.min.js"></script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Preload Fonts for Faster Rendering -->
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        as="style">
+
+    <!-- LitElement CDN -->
+    <script type="module" src="https://unpkg.com/lit@2.2.7?module"></script>
+    <!-- tsParticles CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.5.3/tsparticles.bundle.min.js"></script>
+
+</head>
+
+<body class="relative">
+    <!-- Three.js Canvas -->
+    <canvas id="bg-canvas" style="z-index: 1; position: fixed; top: 0; left: 0;"></canvas>
+
+    <!-- Main Application -->
+    <graphquon-app></graphquon-app>
+
+    <!-- Preloader -->
+    <div id="preloader" class="fixed inset-0 bg-white flex items-center justify-center">
+        <div class="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full text-blue-500"></div>
+    </div>
+
+    <!-- Flowbite JS (for interactivity) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+
+    <script type="module" src="./components/app.js"></script>
+    <script src="index.js"></script>
+
+    <!-- Three.js Simple Rotating Cube Scene -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        // Initialize Three.js Scene
+        let scene, camera, renderer;
+        let cubeLeft, cubeRight;
+
+        function initThreeJS() {
+            // Create Scene
+            scene = new THREE.Scene();
+
+            scene.background = new THREE.Color(0xfffffff);
+
+            // Create Camera
+            camera = new THREE.PerspectiveCamera(
+                75,
+                window.innerWidth / window.innerHeight,
+                0.1,
+                1000
+            );
+            camera.position.z = 5;
+
+            // Create Renderer
+            renderer = new THREE.WebGLRenderer({
+                canvas: document.getElementById('bg-canvas'),
+                alpha: true,
+                antialias: true
+            });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(window.devicePixelRatio);
+
+            // Create Left Cube
+            const geometryLeft = new THREE.BoxGeometry();
+            const materialLeft = new THREE.MeshBasicMaterial({ color: 0x00ff00, wireframe: true });
+            cubeLeft = new THREE.Mesh(geometryLeft, materialLeft);
+            cubeLeft.position.x = -5; // Position to the left
+            scene.add(cubeLeft);
+
+            // Create Right Cube
+            const geometryRight = new THREE.BoxGeometry();
+            const materialRight = new THREE.MeshBasicMaterial({ color: 0x0000ff, wireframe: true });
+            cubeRight = new THREE.Mesh(geometryRight, materialRight);
+            cubeRight.position.x = 5; // Position to the right
+            scene.add(cubeRight);
+
+            // Handle Window Resize
+            window.addEventListener('resize', onWindowResize, false);
+
+            // Start Animation
+            animate();
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+
+            // Rotate Left Cube
+            cubeLeft.rotation.x += 0.01;
+            cubeLeft.rotation.y += 0.01;
+
+            // Rotate Right Cube
+            cubeRight.rotation.x += 0.01;
+            cubeRight.rotation.y += 0.01;
+
+            renderer.render(scene, camera);
+        }
+
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        // Initialize the Three.js scene
+        initThreeJS();
+    </script>
+
+</body>
+
+</html>

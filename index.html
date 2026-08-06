@@ -1,146 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GRAPHQUON 2024 - Annual Quebec-Ontario Pre-SIGGRAPH Workshop</title>
-    <meta name="description"
-        content="GRAPHQUON is the annual Quebec-Ontario pre-SIGGRAPH workshop for computer graphics students and professionals. Join us on November 9-10, 2024 at École de technologie supérieure.">
-
-    <!-- Open Graph Meta Tags for SEO and Social Sharing -->
-    <meta property="og:title" content="GRAPHQUON 2024 - Annual Workshop" />
-    <meta property="og:description"
-        content="Annual Quebec-Ontario Pre-SIGGRAPH workshop for computer graphics students and professionals." />
-    <meta property="og:image" content="path_to_your_event_image.jpg" />
-    <meta property="og:url" content="https://yourwebsite.com" />
-    <meta name="twitter:card" content="summary_large_image">
-
-    <!-- TailwindCSS CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="index.css">
-
-    <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;700&family=Lato:wght@300;400;700&display=swap"
-        rel="stylesheet">
-
-    <!-- Flowbite CSS (optional for UI components) -->
-    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
-
-    <!-- Heroicons CDN -->
-    <script src="https://unpkg.com/@heroicons/vue@2.0.11/dist/heroicons.min.js"></script>
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="favicon.png">
-
-    <!-- Preload Fonts for Faster Rendering -->
-    <link rel="preload"
-        href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;700&family=Lato:wght@300;400;700&display=swap"
-        as="style">
-
-    <!-- LitElement CDN -->
-    <script type="module" src="https://unpkg.com/lit@2.2.7?module"></script>
-    <!-- tsParticles CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.5.3/tsparticles.bundle.min.js"></script>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GRAPHQUON 2026 - Quebec-Ontario Pre-SIGGRAPH Workshop</title>
+  <meta name="description" content="GRAPHQUON 2026 is the annual Quebec-Ontario pre-SIGGRAPH workshop for computer graphics researchers, students, and industry professionals.">
+  <meta property="og:title" content="GRAPHQUON 2026">
+  <meta property="og:description" content="Annual Quebec-Ontario pre-SIGGRAPH workshop.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="index.css?v=4">
 </head>
+<body>
+  <nav class="site-nav" aria-label="Page sections">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#program">Program</a></li>
+      <li><a href="#keynotes">Keynotes</a></li>
+      <li><a href="#registration">Registration</a></li>
+      <li><a href="#organization">Organization</a></li>
+      <li><a href="#previous">Previous</a></li>
+    </ul>
+  </nav>
 
-<body class="relative">
-    <!-- Three.js Canvas -->
-    <canvas id="bg-canvas" style="z-index: 1; position: fixed; top: 0; left: 0;"></canvas>
+  <header class="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <img src="QU.png" alt="" class="bg-logo">
+      <img src="ON.png" alt="" class="bg-logo">
+      <img src="QU.png" alt="" class="bg-logo">
+      <img src="ON.png" alt="" class="bg-logo">
+      <img src="QU.png" alt="" class="bg-logo">
+      <img src="ON.png" alt="" class="bg-logo">
+    </div>
+    <div class="hero-inner">
+      <div class="hero-row">
+        <div class="hero-copy">          
+          <h1>GRAPHQUON 2026</h1>
+        </div>
+      </div>
+    </div>
+  </header>
 
-    <!-- Main Application -->
-    <graphquon-app></graphquon-app>
+  <div class="subtitle-bar" role="note" aria-label="Event date and location">
+    <p class="subtitle">McGill University, Montreal, Quebec, October 23-24, 2026</p>
+  </div>
 
-    <!-- Preloader -->
-    <div id="preloader" class="fixed inset-0 bg-white flex items-center justify-center">
-        <div class="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full text-blue-500"></div>
+  <div class="wrap">
+    <div class="info-strip" aria-label="Key event details">
+      <div class="info-item">
+        <strong>Location</strong>
+        <span>McConnell Building, Room TBA</span>
+      </div>
+      <div class="info-item">
+        <strong>Registration Deadline</strong>
+        <span>TBA</span>
+      </div>
     </div>
 
-    <!-- Flowbite JS (for interactivity) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+    <main>
+      <section id="about">
+        <h2>About</h2>
+		<p>GRAPHQUON is the annual Quebec–Ontario pre-SIGGRAPH workshop, organized by and for computer graphics research labs across the region. The workshop provides students and researchers a friendly, constructively critical venue to present ongoing work and prospective submissions, receive valuable feedback prior to paper deadlines, and build lasting cross-institutional connections.</p>
+		<p>The date of the workshop is earlier than previous editions to permit more time for participants to improve their work before submission based on the feedback received.</p>
+      </section>
 
-    <script type="module" src="./components/app.js"></script>
-    <script src="index.js"></script>
+      <section id="program">
+        <h2>Program</h2>
+        <p>The program for GRAPHQUON 2026 will include keynotes, student talks, and other activities.  A preliminary schedule will be available soon, 
+			and a final schedule with assigned presentation slots will be posted after registraiton closes.  Note that titles and abstracts will not be posted on the web so as to preserve anonymity for works that are about to be submitted.
+		</p>        
+      </section>
 
-    <!-- Three.js Simple Rotating Cube Scene -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script>
-        // Initialize Three.js Scene
-        let scene, camera, renderer;
-        let cubeLeft, cubeRight;
+      <section id="keynotes">
+        <h2>Keynotes</h2>
+        <p>Keynote speakers for 2026 will be announced soon. We aim to feature speakers spanning animation, rendering, simulation, geometry processing, and machine learning for graphics.</p>
+      </section>
 
-        function initThreeJS() {
-            // Create Scene
-            scene = new THREE.Scene();
+      <section id="registration">
+        <h2>Registration</h2>
+        <p>Registration details, deadlines, and participation limits will be posted here.</p>
+        <ul>
+          <li>Interested in attending? Contact your thesis supervisor and check this page for updates.</li>
+          <li>Space for presentations may be limited to maintain a focused workshop environment.</li>
+          <li>Additional logistical information will follow with the registration announcement.</li>
+        </ul>
+      </section>
 
-            scene.background = new THREE.Color(0xfffffff);
+      <section id="organization">
+        <h2>Organization</h2>
+        <table class="org-table" aria-label="Organization roles">
+          <tbody>
+            <tr>
+              <th scope="row">Chair</th>
+              <td><a href="https://www.cs.mcgill.ca/~kry/" target="_blank" rel="noopener noreferrer">Paul Kry</a></td>
+            </tr>
+            <tr>
+              <th scope="row">Web Chair</th>
+              <td><a href="https://melissa2661.github.io/" target="_blank" rel="noopener noreferrer">Melissa Katz</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
 
-            // Create Camera
-            camera = new THREE.PerspectiveCamera(
-                75,
-                window.innerWidth / window.innerHeight,
-                0.1,
-                1000
-            );
-            camera.position.z = 5;
+      <section id="previous">
+        <h2>Previous</h2>
+        <p>Earlier editions of this workshop and related events can be found at the following links:</p>
+        
+		<ul>
+		<li><a href="https://www.dgp.toronto.edu/graphquon/" target="_blank" rel="noopener noreferrer">GRAPHQUON 2025, University of Toronto, Toronto (November 15-16)</a></li>
+		<li><a href="2024/index.html" target="_blank" rel="noopener noreferrer">GRAPHQUON 2024, École de technologie supérieure, Montreal (November 9-10)</a></li>
+		<li><a href="https://graphquon2023.github.io/" target="_blank" rel="noopener noreferrer">GRAPHQUON 2023, University of Waterloo, Waterloo (December 2-3)</a></li>
+		<li><a href="https://foiegraph2022.github.io/" target="_blank" rel="noopener noreferrer">FOIEGRAPH 2022, Université de Montréal, Montreal (November 11-12)</a></li>
+		<li><a href="https://tomatograph2021.github.io/" target="_blank" rel="noopener noreferrer">TOMATOGRAPH 2021, University of Toronto, Toronto (December 3-4)</a></li>
+		<li><a href="https://cs.uwaterloo.ca/~c2batty/MOTOGRAPH19/" target="_blank" rel="noopener noreferrer">MOTOGRAPH 2019, University of Waterloo, Waterloo (December 7-8)</a></li>
+		<li><a href="https://web.archive.org/web/20260608051617/https://www-labs.iro.umontreal.ca/~bernhard/Motograph18/index.html" target="_blank" rel="noopener noreferrer">MOTOGRAPH 2018, Université de Montréal, Montreal (November 17-18)</a></li>
+		<li><a href="https://www.cs.mcgill.ca/~kry/mfgw14/" target="_blank" rel="noopener noreferrer">MFGW 2014, McGill University, Montreal (October 20)</a></li>
+		<li><a href="https://www.cs.mcgill.ca/~kry/mfgr12/" target="_blank" rel="noopener noreferrer">MFGR 2012, McGill University, Montreal (November 1)</a></li>
+		</ul>
+      </section>
+    </main>
 
-            // Create Renderer
-            renderer = new THREE.WebGLRenderer({
-                canvas: document.getElementById('bg-canvas'),
-                alpha: true,
-                antialias: true
-            });
-            renderer.setSize(window.innerWidth, window.innerHeight);
-            renderer.setPixelRatio(window.devicePixelRatio);
-
-            // Create Left Cube
-            const geometryLeft = new THREE.BoxGeometry();
-            const materialLeft = new THREE.MeshBasicMaterial({ color: 0x00ff00, wireframe: true });
-            cubeLeft = new THREE.Mesh(geometryLeft, materialLeft);
-            cubeLeft.position.x = -5; // Position to the left
-            scene.add(cubeLeft);
-
-            // Create Right Cube
-            const geometryRight = new THREE.BoxGeometry();
-            const materialRight = new THREE.MeshBasicMaterial({ color: 0x0000ff, wireframe: true });
-            cubeRight = new THREE.Mesh(geometryRight, materialRight);
-            cubeRight.position.x = 5; // Position to the right
-            scene.add(cubeRight);
-
-            // Handle Window Resize
-            window.addEventListener('resize', onWindowResize, false);
-
-            // Start Animation
-            animate();
-        }
-
-        function animate() {
-            requestAnimationFrame(animate);
-
-            // Rotate Left Cube
-            cubeLeft.rotation.x += 0.01;
-            cubeLeft.rotation.y += 0.01;
-
-            // Rotate Right Cube
-            cubeRight.rotation.x += 0.01;
-            cubeRight.rotation.y += 0.01;
-
-            renderer.render(scene, camera);
-        }
-
-        function onWindowResize() {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        }
-
-        // Initialize the Three.js scene
-        initThreeJS();
-    </script>
-
+  </div>
 </body>
-
 </html>
