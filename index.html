@@ -8,7 +8,7 @@
   <meta property="og:title" content="GRAPHQUON 2026">
   <meta property="og:description" content="Annual Quebec-Ontario pre-SIGGRAPH workshop.">
   <meta property="og:type" content="website">
-  <link rel="stylesheet" href="index.css?v=4">
+  <link rel="stylesheet" href="index.css?v=5">
 </head>
 <body>
   <nav class="site-nav" aria-label="Page sections">
@@ -131,6 +131,12 @@
     const navToggle = document.querySelector('.nav-toggle');
     const siteNav = document.querySelector('.site-nav');
     const navLinks = document.querySelectorAll('.site-nav a');
+    const navBreak = 820;
+
+    const closeMenu = () => {
+      navToggle.setAttribute('aria-expanded', 'false');
+      siteNav.classList.remove('is-open');
+    };
 
     if (navToggle && siteNav) {
       navToggle.addEventListener('click', () => {
@@ -141,11 +147,16 @@
 
       navLinks.forEach((link) => {
         link.addEventListener('click', () => {
-          if (window.innerWidth <= 700) {
-            navToggle.setAttribute('aria-expanded', 'false');
-            siteNav.classList.remove('is-open');
+          if (window.innerWidth <= navBreak) {
+            closeMenu();
           }
         });
+      });
+
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > navBreak) {
+          closeMenu();
+        }
       });
     }
   </script>
