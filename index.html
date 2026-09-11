@@ -8,11 +8,17 @@
   <meta property="og:title" content="GRAPHQUON 2026">
   <meta property="og:description" content="Annual Quebec-Ontario pre-SIGGRAPH workshop.">
   <meta property="og:type" content="website">
-  <link rel="stylesheet" href="index.css?v=4">
+  <link rel="stylesheet" href="index.css?v=5">
 </head>
 <body>
   <nav class="site-nav" aria-label="Page sections">
-    <ul>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav-list" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span class="sr-only">Toggle menu</span>
+    </button>
+    <ul id="site-nav-list">
       <li><a href="#about">About</a></li>
       <li><a href="#program">Program</a></li>
       <li><a href="#keynotes">Keynotes</a></li>
@@ -41,14 +47,14 @@
   </header>
 
   <div class="subtitle-bar" role="note" aria-label="Event date and location">
-    <p class="subtitle">McGill University, Montreal, Quebec, October 23-25, 2026</p>
+    <p class="subtitle">McGill University, October 23-25, 2026</p>
   </div>
 
   <div class="wrap">
     <div class="info-strip" aria-label="Key event details">
       <div class="info-item">
         <strong>Location</strong>
-        <span>McConnell Building, Room TBA</span>
+        <span>McConnell, Room TBA</span>
       </div>
       <div class="info-item">
         <strong>Registration Deadline</strong>
@@ -106,15 +112,16 @@
         <p>Earlier editions of this workshop and related events can be found at the following links:</p>
         
 		<ul>
-		<li><a href="https://www.dgp.toronto.edu/graphquon/" target="_blank" rel="noopener noreferrer">GRAPHQUON 2025, University of Toronto, Toronto (November 15-16)</a></li>
-		<li><a href="2024/index.html" target="_blank" rel="noopener noreferrer">GRAPHQUON 2024, École de technologie supérieure, Montreal (November 9-10)</a></li>
-		<li><a href="https://graphquon2023.github.io/" target="_blank" rel="noopener noreferrer">GRAPHQUON 2023, University of Waterloo, Waterloo (December 2-3)</a></li>
-		<li><a href="https://foiegraph2022.github.io/" target="_blank" rel="noopener noreferrer">FOIEGRAPH 2022, Université de Montréal, Montreal (November 11-12)</a></li>
-		<li><a href="https://tomatograph2021.github.io/" target="_blank" rel="noopener noreferrer">TOMATOGRAPH 2021, University of Toronto, Toronto (December 3-4)</a></li>
-		<li><a href="https://cs.uwaterloo.ca/~c2batty/MOTOGRAPH19/" target="_blank" rel="noopener noreferrer">MOTOGRAPH 2019, University of Waterloo, Waterloo (December 7-8)</a></li>
-		<li><a href="https://web.archive.org/web/20260608051617/https://www-labs.iro.umontreal.ca/~bernhard/Motograph18/index.html" target="_blank" rel="noopener noreferrer">MOTOGRAPH 2018, Université de Montréal, Montreal (November 17-18)</a></li>
-		<li><a href="https://www.cs.mcgill.ca/~kry/mfgw14/" target="_blank" rel="noopener noreferrer">MFGW 2014, McGill University, Montreal (October 20)</a></li>
-		<li><a href="https://www.cs.mcgill.ca/~kry/mfgr12/" target="_blank" rel="noopener noreferrer">MFGR 2012, McGill University, Montreal (November 1)</a></li>
+		<li><a href="https://www.dgp.toronto.edu/graphquon/" target="_blank" rel="noopener noreferrer">GRAPHQUON 2025, University of Toronto (November 15-16)</a></li>
+		<li><a href="2024/index.html" target="_blank" rel="noopener noreferrer">GRAPHQUON 2024, École de technologie supérieure (November 9-10)</a></li>
+		<li><a href="https://graphquon2023.github.io/" target="_blank" rel="noopener noreferrer">GRAPHQUON 2023, University of Waterloo (December 2-3)</a></li>
+		<li><a href="https://foiegraph2022.github.io/" target="_blank" rel="noopener noreferrer">FOIEGRAPH 2022, Université de Montréal (November 11-12)</a></li>
+		<li><a href="https://tomatograph2021.github.io/" target="_blank" rel="noopener noreferrer">TOMATOGRAPH 2021, University of Toronto (December 3-4)</a></li>
+		<li><a href="https://cs.uwaterloo.ca/~c2batty/MOTOGRAPH19/" target="_blank" rel="noopener noreferrer">MOTOGRAPH 2019, University of Waterloo (December 7-8)</a></li>
+		<li><a href="https://web.archive.org/web/20260608051617/https://www-labs.iro.umontreal.ca/~bernhard/Motograph18/index.html" target="_blank" rel="noopener noreferrer">MOTOGRAPH 2018, Université de Montréal (November 17-18)</a></li>
+    <li>TOMOGRAPH 2017, University of Toronto (December 9-10)</li>
+		<li><a href="https://www.cs.mcgill.ca/~kry/mfgw14/" target="_blank" rel="noopener noreferrer">MFGW 2014, McGill University (October 20)</a></li>
+		<li><a href="https://www.cs.mcgill.ca/~kry/mfgr12/" target="_blank" rel="noopener noreferrer">MFGR 2012, McGill University (November 1)</a></li>
 		</ul>
       </section>
     </main>
@@ -134,5 +141,39 @@
       </div>
     </div>
   </footer>
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const siteNav = document.querySelector('.site-nav');
+    const navLinks = document.querySelectorAll('.site-nav a');
+    const navBreak = 820;
+
+    const closeMenu = () => {
+      navToggle.setAttribute('aria-expanded', 'false');
+      siteNav.classList.remove('is-open');
+    };
+
+    if (navToggle && siteNav) {
+      navToggle.addEventListener('click', () => {
+        const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', String(!expanded));
+        siteNav.classList.toggle('is-open', !expanded);
+      });
+
+      navLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+          if (window.innerWidth <= navBreak) {
+            closeMenu();
+          }
+        });
+      });
+
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > navBreak) {
+          closeMenu();
+        }
+      });
+    }
+  </script>
+
 </body>
 </html>
