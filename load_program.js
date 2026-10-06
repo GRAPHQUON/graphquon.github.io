@@ -1,5 +1,5 @@
 // Please modify this to first date of conference:
-const initialDate = "2024-11-09";
+const initialDate = "2026-10-24";
 
 // Please modify data below to change the program.
 // Minimal keys required for the calendar to work:
@@ -7,35 +7,34 @@ const initialDate = "2024-11-09";
 
 const program_data = {
   food : [
-    { title  : 'Breakfast'       , day : 0, startTime  : '08:30' , endTime    : '09:00'  },
-    { title  : 'Lunch'           , day : 0, startTime  : '12:00' , endTime    : '14:00' },
-    { title  : 'Dinner + Trivia' , day : 0, startTime  : '16:30' , endTime    : '17:00' },
+    { title  : 'Coffee'       , day : 0, startTime  : '09:30' , endTime    : '10:30'  },
+    { title  : 'Lunch'        , day : 0, startTime  : '12:30' , endTime    : '14:00'  },
+    { title  : 'Coffee'       , day : 0, startTime  : '15:00' , endTime    : '15:30'  },
+    { title  : 'Coffee'       , day : 0, startTime  : '17:00' , endTime    : '18:00'  },
+    { title  : 'Milton Co-op' , day : 0, startTime  : '18:00' , endTime    : '21:00'  },
 
-    { title  : 'Breakfast'  , day : 1, startTime  : '08:30'  , endTime    : '09:00'  },
-    { title  : 'Lunch'      , day : 1, startTime  : '12:00' , endTime    : '14:00' },
+    { title  : 'Coffee'       , day : 1, startTime  : '09:30' , endTime    : '10:00'  },
+    { title  : 'Coffee'       , day : 1, startTime  : '11:30' , endTime    : '12:00'  },
+    { title  : 'Lunch'        , day : 1, startTime  : '13:00' , endTime    : '14:30'  },
+    { title  : 'Coffee'       , day : 1, startTime  : '16:00' , endTime    : '16:30'  },
     
   ],
   
   admin: [
-    { title  : 'Opening'             , day : 0, startTime  : '09:00'  , endTime    : '09:20'  },
-    { title  : 'Faculty presentation', day : 0, startTime  : '16:00' , endTime    : '16:30' },
-    
-    { title  : 'Faculty presentation', day : 1, startTime  : '14:00' , endTime    : '14:30' },
-    { title  : 'Round table'         , day : 1, startTime  : '14:30' , endTime    : '15:00' },
-    { title  : 'Closing'             , day : 1, startTime  : '16:20' , endTime    : '16:30' },
+    { title  : 'Opening'             , day : 0, startTime  : '10:30'  , endTime    : '11:00'  },
+    { title  : 'Closing'             , day : 1, startTime  : '16:30' , endTime    : '17:00' },
         
   ],
   keynotes: [
-    { title  : 'Keynote Masha Shugrina', day : 0, startTime  : '14:00',  endTime    : '15:00' },
-    { title  : 'Keynote Lesley Istead', day : 1, startTime  : '11:00',  endTime    : '12:00' },
+    { title  : 'Keynote 1', day : 0, startTime  : '14:00',  endTime    : '15:00' },
+    { title  : 'Keynote 2', day : 1, startTime  : '12:00',  endTime    : '13:00' },
     
   ],
   paperSessions:[
-    { title  : 'Presentations 1', day : 0, startTime  : '09:30', endTime    : '10:30' },
-    { title  : 'Presentations 2', day : 0, startTime  : '11:00', endTime    : '12:00' },
-    { title  : 'Presentations 3', day : 0, startTime  : '15:15', endTime    : '16:00' },
-    { title  : 'Presentations 4', day : 1, startTime  : '09:00', endTime    : '10:30' },
-    { title  : 'Presentations 5', day : 1, startTime  : '15:30', endTime    : '16:10' },
+    { title  : 'Geometry Processing session'   , day : 0, startTime  : '11:00', endTime    : '12:30' },
+    { title  : 'Simulation session'        , day : 0, startTime  : '15:30', endTime    : '17:00' },
+    { title  : 'Character animation session'  , day : 1, startTime  : '10:00', endTime    : '11:30' },
+    { title  : 'Rendering session'  , day : 1, startTime  : '14:30', endTime    : '16:00' },
   ]
 }
 
@@ -82,10 +81,10 @@ function setUpCalendar(){
       
 
       // COLOURS (easier to edit this way)
-      const FoodColor                 = 'rgb(227, 227, 227)';
-      const SessionColor              = 'rgb(48, 163, 61)';
-      const KeynoteColor              = 'rgb(197, 83, 66)';
-      const OtherColor                = 'rgb(53, 162, 213)';
+      const FoodColor                 = 'rgb(220, 235, 232)';
+      const SessionColor              = 'rgb(153, 235, 163)';
+      const KeynoteColor              = 'rgb(153, 241, 255)';
+      const OtherColor                = 'rgb(226, 117, 8)';
 
       // EVENTS
       const FoodEvents = program_data.food.map(event => objectToValidEvent(event))
