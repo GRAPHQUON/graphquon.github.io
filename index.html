@@ -14,12 +14,19 @@
 </head>
 <body>
   <nav class="site-nav" aria-label="Page sections">
-    <ul>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav-list" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span class="sr-only">Toggle menu</span>
+    </button>
+    <ul id="site-nav-list">
       <li><a href="#about">About</a></li>
       <li><a href="#program">Program</a></li>
       <li><a href="#keynotes">Keynotes</a></li>
       <li><a href="#registration">Registration</a></li>
       <li><a href="#organization">Organization</a></li>
+      <li><a href="#sponsors">Sponsors</a></li>
       <li><a href="#previous">Previous</a></li>
     </ul>
   </nav>
@@ -43,7 +50,7 @@
   </header>
 
   <div class="subtitle-bar" role="note" aria-label="Event date and location">
-    <p class="subtitle">McGill University, Montreal, Quebec, October 23-25, 2026</p>
+    <p class="subtitle">McGill University, October 23-25, 2026</p>
   </div>
 
   <div class="wrap">
@@ -54,7 +61,7 @@
       </div>
       <div class="info-item">
         <strong>Registration Deadline</strong>
-        <span>TBA</span>
+        <span>October 7th, 2026</span>
       </div>
     </div>
 
@@ -80,11 +87,11 @@
 
       <section id="registration">
         <h2>Registration</h2>
-        <p>Registration details, deadlines, and participation limits will be posted here.</p>
+        <p>Registration is now <b>open</b>! Please fill out <a href="https://forms.gle/RcAZE6jE4K3vJFJF8" target="_blank" rel="noopener noreferrer">this form</a> to register. </p>
+        <p>The deadline to register is <b>October 7th</b>. Late registrations may be considered on a case-by-case basis.</p>
         <ul>
-          <li>Interested in attending? Contact your thesis supervisor and check this page for updates.</li>
+          <li>Interested in attending? Contact your thesis supervisor.</li>
           <li>Space for presentations may be limited to maintain a focused workshop environment.</li>
-          <li>Additional logistical information will follow with the registration announcement.</li>
         </ul>
       </section>
 
@@ -97,11 +104,36 @@
               <td><a href="https://www.cs.mcgill.ca/~kry/" target="_blank" rel="noopener noreferrer">Paul Kry</a></td>
             </tr>
             <tr>
-              <th scope="row">Web Chair</th>
+              <th scope="row">Communications Chair</th>
               <td><a href="https://melissa2661.github.io/" target="_blank" rel="noopener noreferrer">Melissa Katz</a></td>
             </tr>
+            <tr>
+              <th scope="row">Networking Chair</th>
+              <td><a href="https://averystraumann.github.io/portfolio-website/" target="_blank" rel="noopener noreferrer">Avery Straumann</a></td>
+            </tr>
+            <tr>
+              <th scope="row">Logistics Chairs</th>
+              <td><a href="https://mcavazotti.github.io/" target="_blank" rel="noopener noreferrer">Matheus Cavazotti</a>, Rikin Gurditta</td>
+              
+            </tr>
+            <!-- <tr>
+              <th scope="row">Volunteers</th>
+              <td>Bob</td>
+            </tr> -->
           </tbody>
         </table>
+      </section>
+
+      <section id="sponsors">
+        <h2>Sponsors</h2>
+        <div class="sponsor-logos">
+        <a href="https://www.ubisoft.com/fr-fr/studio/laforge" target="_blank" rel="noopener noreferrer" aria-label="Ubisoft">
+          <img src="La_Forge.png" alt="Ubisoft Laforge logo" loading="lazy">
+        </a>
+        <a href="https://www.sidefx.com/" target="_blank" rel="noopener noreferrer" aria-label="SideFX">
+          <img src="SideFX.png" alt="SideFX logo" loading="lazy">
+        </a>
+      </div>
       </section>
 
       <section id="previous">
@@ -109,19 +141,62 @@
         <p>Earlier editions of this workshop and related events can be found at the following links:</p>
         
 		<ul>
-		<li><a href="https://www.dgp.toronto.edu/graphquon/" target="_blank" rel="noopener noreferrer">GRAPHQUON 2025, University of Toronto, Toronto (November 15-16)</a></li>
-		<li><a href="2024/index.html" target="_blank" rel="noopener noreferrer">GRAPHQUON 2024, École de technologie supérieure, Montreal (November 9-10)</a></li>
-		<li><a href="https://graphquon2023.github.io/" target="_blank" rel="noopener noreferrer">GRAPHQUON 2023, University of Waterloo, Waterloo (December 2-3)</a></li>
-		<li><a href="https://foiegraph2022.github.io/" target="_blank" rel="noopener noreferrer">FOIEGRAPH 2022, Université de Montréal, Montreal (November 11-12)</a></li>
-		<li><a href="https://tomatograph2021.github.io/" target="_blank" rel="noopener noreferrer">TOMATOGRAPH 2021, University of Toronto, Toronto (December 3-4)</a></li>
-		<li><a href="https://cs.uwaterloo.ca/~c2batty/MOTOGRAPH19/" target="_blank" rel="noopener noreferrer">MOTOGRAPH 2019, University of Waterloo, Waterloo (December 7-8)</a></li>
-		<li><a href="https://web.archive.org/web/20260608051617/https://www-labs.iro.umontreal.ca/~bernhard/Motograph18/index.html" target="_blank" rel="noopener noreferrer">MOTOGRAPH 2018, Université de Montréal, Montreal (November 17-18)</a></li>
-		<li><a href="https://www.cs.mcgill.ca/~kry/mfgw14/" target="_blank" rel="noopener noreferrer">MFGW 2014, McGill University, Montreal (October 20)</a></li>
-		<li><a href="https://www.cs.mcgill.ca/~kry/mfgr12/" target="_blank" rel="noopener noreferrer">MFGR 2012, McGill University, Montreal (November 1)</a></li>
+		<li><a href="https://www.dgp.toronto.edu/graphquon/" target="_blank" rel="noopener noreferrer">GRAPHQUON 2025, University of Toronto (November 15-16)</a></li>
+		<li><a href="2024/index.html" target="_blank" rel="noopener noreferrer">GRAPHQUON 2024, École de technologie supérieure (November 9-10)</a></li>
+		<li><a href="https://graphquon2023.github.io/" target="_blank" rel="noopener noreferrer">GRAPHQUON 2023, University of Waterloo (December 2-3)</a></li>
+		<li><a href="https://foiegraph2022.github.io/" target="_blank" rel="noopener noreferrer">FOIEGRAPH 2022, Université de Montréal (November 11-12)</a></li>
+		<li><a href="https://tomatograph2021.github.io/" target="_blank" rel="noopener noreferrer">TOMATOGRAPH 2021, University of Toronto (December 3-4)</a></li>
+		<li><a href="https://cs.uwaterloo.ca/~c2batty/MOTOGRAPH19/" target="_blank" rel="noopener noreferrer">MOTOGRAPH 2019, University of Waterloo (December 7-8)</a></li>
+		<li><a href="https://web.archive.org/web/20260608051617/https://www-labs.iro.umontreal.ca/~bernhard/Motograph18/index.html" target="_blank" rel="noopener noreferrer">MOTOGRAPH 2018, Université de Montréal (November 17-18)</a></li>
+        <li>TOMOGRAPH 2017, University of Toronto (December 9-10)</li>
+		<li><a href="https://www.cs.mcgill.ca/~kry/mfgw14/" target="_blank" rel="noopener noreferrer">MFGW 2014, McGill University (October 20)</a></li>
+		<li><a href="https://www.cs.mcgill.ca/~kry/mfgr12/" target="_blank" rel="noopener noreferrer">MFGR 2012, McGill University (November 1)</a></li>
 		</ul>
       </section>
     </main>
 
   </div>
+
+  <footer class="site-footer" aria-label="Footer">
+    <div class="footer-inner">
+      <div class="footer-copy">
+        <p class="footer-label">Graphquon 2026</p>
+      </div>
+    </div>
+  </footer>
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const siteNav = document.querySelector('.site-nav');
+    const navLinks = document.querySelectorAll('.site-nav a');
+    const navBreak = 820;
+
+    const closeMenu = () => {
+      navToggle.setAttribute('aria-expanded', 'false');
+      siteNav.classList.remove('is-open');
+    };
+
+    if (navToggle && siteNav) {
+      navToggle.addEventListener('click', () => {
+        const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', String(!expanded));
+        siteNav.classList.toggle('is-open', !expanded);
+      });
+
+      navLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+          if (window.innerWidth <= navBreak) {
+            closeMenu();
+          }
+        });
+      });
+
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > navBreak) {
+          closeMenu();
+        }
+      });
+    }
+  </script>
+
 </body>
 </html>
