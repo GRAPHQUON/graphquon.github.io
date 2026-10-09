@@ -10,6 +10,8 @@
   --menu-bg: #111111;
   --menu-border: #000000;
   --section-bg: #111111;
+  --rainbow-gradient: linear-gradient(120deg, #ff2055 0% 12.5%, #ff6a00 12.5% 25%, #ffcd00 25% 37.5%, #2ac940 37.5% 50%, #00a7ff 50% 62.5%, #2d5dff 62.5% 75%, #6a3dff 75% 87.5%, #ff2f8f 87.5% 100%);
+  --stripe-pattern: repeating-linear-gradient(-24deg, rgba(255, 255, 255, 0.22) 0 14px, rgba(255, 255, 255, 0) 14px 28px);
   --max: 920px;
   --nav-h: 44px;
   --nav-break: 820px;
@@ -206,18 +208,7 @@ a:hover {
 .hero {
   position: relative;
   overflow: hidden;
-  background:
-    linear-gradient(
-      120deg,
-      #ff2055 0% 12.5%,
-      #ff6a00 12.5% 25%,
-      #ffcd00 25% 37.5%,
-      #2ac940 37.5% 50%,
-      #00a7ff 50% 62.5%,
-      #2d5dff 62.5% 75%,
-      #6a3dff 75% 87.5%,
-      #ff2f8f 87.5% 100%
-    );
+  background: var(--rainbow-gradient);
   background-size: 220% 220%;
   background-repeat: repeat;
   animation: rainbowShift 120s ease-in-out infinite alternate;
@@ -227,12 +218,7 @@ a:hover {
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    repeating-linear-gradient(
-      -24deg,
-      rgba(255, 255, 255, 0.22) 0 14px,
-      rgba(255, 255, 255, 0) 14px 28px
-    );
+  background: var(--stripe-pattern);
   mix-blend-mode: soft-light;
   pointer-events: none;
 }
@@ -486,12 +472,23 @@ h2 {
 }
 
 h3 {
-  margin: 8px 0 2px;
+  display: inline-block;
+  margin: 8px 0 8px;
   font-size: 0.9rem;
-  font-weight: 600;
-  letter-spacing: 0.03em;
+  font-weight: 1400;
+  letter-spacing: 0.00em;
   text-transform: uppercase;
-  color: #2c3344;
+  color: #000;
+  background-image: var(--stripe-pattern), var(--rainbow-gradient);
+  background-size: 100% 100%, 220% 220%;
+  animation: rainbowShift 120s ease-in-out infinite alternate;
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+
+#program > h3,
+#program > h3 ~ * {
+  margin-left: 25px;
 }
 
 .org-table {
@@ -549,7 +546,7 @@ li {
 .program-grid {
   display: grid;
   grid-template-columns: minmax(92px, 126px) 1fr;
-  border: 1px solid var(--line);
+  border: 2px solid var(--line);
   border-bottom: 0;
   margin-top: 8px;
   background: #fff;
@@ -561,13 +558,13 @@ li {
 .program-grid dd {
   margin: 0;
   padding: 10px 12px;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 2px solid var(--line);
 }
 
 .program-grid dt {
   font-weight: 700;
   color: #2c3344;
-  background: #f7faff;
+  background: #e7eaef;
 }
 
 .program-grid dd {
@@ -623,7 +620,8 @@ li {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero {
+  .hero,
+  h3 {
     animation: none;
   }
 
