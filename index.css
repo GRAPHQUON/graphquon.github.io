@@ -487,8 +487,21 @@ h3 {
 }
 
 #program > h3,
-#program > h3 ~ * {
+#program > h3 ~ *,
+#program > details.day {
   margin-left: 25px;
+}
+
+details.day > summary {
+  cursor: pointer;
+}
+
+details.day > summary h3 {
+  margin-left: 0;
+}
+
+details.day[open] > summary {
+  margin-bottom: 8px;
 }
 
 .org-table {
@@ -559,6 +572,14 @@ li {
   margin: 0;
   padding: 10px 12px;
   border-bottom: 2px solid var(--line);
+}
+
+.program-grid dd p {
+  margin: 0 0 4px;
+}
+
+.program-grid dd p:last-child {
+  margin-bottom: 0;
 }
 
 .program-grid dt {

@@ -76,9 +76,10 @@
         <h2>Program</h2>
         <p>The schedule is not yet final (please check again for changes). Note that titles and abstracts of student presentations will not be posted so as to preserve anonymity for works that are about to be submitted.</p>
 
-        <h3>Friday, October 23</h3>
+        <details class="day" data-date="2026-10-23" open>
+        <summary><h3>Friday, October 23</h3></summary>
         
-        <p>For those who arrive early Friday, you are welcome to attend the School of Computer Science Colloquium. The available extra seating is quite limited given the number of computer science students who will be attending, so please send an <a href="mailto:kry@cs.mcgill.ca?subject=RSVP%20for%20GRAPHQUON%202026%20Colloquium">RSVP</a> if you would like to attend.</p>
+        <p>For those who arrive early Friday, you are welcome to attend the School of Computer Science Colloquium. The available extra seating is quite limited given the number of computer science students who will be attending, so an <a href="mailto:kry@cs.mcgill.ca?subject=RSVP%20for%20GRAPHQUON%202026%20Colloquium">RSVP</a> is requested from anyone who would like to attend.</p>
         
         <dl class="program-grid">
           <dt>15:30-16:30</dt>
@@ -87,7 +88,7 @@
             <p><em><a href="https://www.cs.mcgill.ca/events/388">Not Dead Yet? Is Physics-based Animation the Key to World Models?</a></em></p>
             <p>David I. W. Levin, University of Toronto</p>
           
-            <p> The talk will be followed by a small reception in ENGMC 100N.</p>
+            <p><a href="mailto:kry@cs.mcgill.ca?subject=RSVP%20for%20GRAPHQUON%202026%20Colloquium">RSVP</a> (space is limited). The talk will be followed by a small reception in ENGMC 100N.</p>
           </dd>          
           <dt>Friday Evening</dt>
           <dd>
@@ -95,8 +96,10 @@
             <p>Participants arriving early on Friday are encouraged to coordinate through the GRAPHQUON Slack channel. See your registration confirmation email for the link to join the Slack.</p>
           </dd>
         </dl>
+        </details>
 
-        <h3>Saturday, October 24</h3>
+        <details class="day" data-date="2026-10-24" open>
+        <summary><h3>Saturday, October 24</h3></summary>
 
           <dl class="program-grid">
           <dt>8:30</dt>
@@ -107,8 +110,7 @@
           <dd>
             <p><strong>Opening Remarks</strong> - Paul Kry</p>
             <p><strong>Geometry</strong> - Chair TBA</p>
-            <p></p>
-            First Last<br>
+                        <p>            First Last<br>
             First Last<br>
             First Last<br>
             First Last</p>
@@ -117,7 +119,7 @@
           <dt>11:00-12:30</dt>
           <dd>
             <p><strong>Animation</strong> - Chair TBA</p>
-            <p></p>
+                        <p>
             First Last<br>
             First Last<br>
             First Last<br>
@@ -127,8 +129,7 @@
           <dt>13:30-15:00</dt>
           <dd>
             <p><strong>Rendering</strong> - Chair TBA</p>
-            <p></p>
-            First Last<br>
+                        <p>            First Last<br>
             First Last<br>
             First Last<br>
             First Last</p>
@@ -143,7 +144,7 @@
           <dt>16:30-18:00</dt>
           <dd>
             <p><strong>Milton Coop Bar via Kondiaronk Belvedere </strong> <a href="https://maps.app.goo.gl/vpH7ypBKm2kjHSBf9"> - Map</a></p>
-            <p>Optional longer walk up mountain (150 m elevation gain) to the lookout for sunset and a view of the city, weather permitting.  
+            <p>Optional longer walk up mountain (150 m elevation gain) to the lookout for sunset and a view of the city,             weather permitting.</p>
           </dd>
           <dt>18:00</dt>
           <dd>
@@ -151,13 +152,14 @@
             <p>Short description to go here.</p>  
           </dd>
         </dl>
+        </details>
 
-
-        <h3>Sunday, October 25</h3>
+        <details class="day" data-date="2026-10-25" open>
+        <summary><h3>Sunday, October 25</h3></summary>
 
         <dl class="program-grid">
           <dt>9:00-9:30</dt>
-          <dd><p><strong>Coffee</strong></p>
+          <dd><p><strong>Coffee</strong></p></dd>
           <dt>9:30-10:30</dt>
           <dd>
             <p><strong>GRAPHQUON Panel</strong></p>
@@ -168,7 +170,7 @@
           <dt>11:00-12:30</dt>
           <dd>
             <p><strong>Animation</strong> - Chair TBA</p>
-            <p></p>
+                        <p>
             First Last<br>
             First Last<br>
             First Last<br>
@@ -178,12 +180,11 @@
           </dd>
           <dt>12:30</dt>
           <dd>
-            <p><strong>Neworking and Departures</strong>
-              <p>Informal lunch plans to be made by anyone who does not have an early departure. </p>
-          </dd>
-          </dd>
-          </dl>
-
+            <p><strong>            Neworking and Departures</strong></p>
+                        <p>Informal lunch plans to be made by anyone who does not have an early departure. </p>
+                      </dd>
+                    </dl>
+        </details>
       </section>
 
       <section id="keynotes">
@@ -270,6 +271,16 @@
     </div>
   </footer>
   <script>
+    // Collapse program days that are before today (local time)
+    (() => {
+      const now = new Date();
+      const today = [now.getFullYear(), now.getMonth() + 1, now.getDate()]
+        .map((n) => String(n).padStart(2, '0')).join('-');
+      document.querySelectorAll('details.day[data-date]').forEach((d) => {
+        if (d.dataset.date < today) d.removeAttribute('open');
+      });
+    })();
+
     const navToggle = document.querySelector('.nav-toggle');
     const siteNav = document.querySelector('.site-nav');
     const navLinks = document.querySelectorAll('.site-nav a');
