@@ -8,7 +8,10 @@
   <meta property="og:title" content="GRAPHQUON 2026">
   <meta property="og:description" content="Annual Quebec-Ontario pre-SIGGRAPH workshop.">
   <meta property="og:type" content="website">
-  <link rel="stylesheet" href="index.css?v=5">
+  <link rel="icon" href="fav.ico" type="image/x-icon">
+  <link rel="stylesheet" href="index.css?v=4">
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
+  <script src="load_program.js"></script>
 </head>
 <body>
   <nav class="site-nav" aria-label="Page sections">
@@ -21,7 +24,7 @@
     <ul id="site-nav-list">
       <li><a href="#about">About</a></li>
       <li><a href="#program">Program</a></li>
-      <li><a href="#keynotes">Keynotes</a></li>
+      <li><a href="#keynotes">Keynote</a></li>
       <li><a href="#registration">Registration</a></li>
       <li><a href="#organization">Organization</a></li>
       <li><a href="#sponsors">Sponsors</a></li>
@@ -55,7 +58,7 @@
     <div class="info-strip" aria-label="Key event details">
       <div class="info-item">
         <strong>Location</strong>
-        <span>McConnell, Room TBA</span>
+        <span><a href="https://maps.app.goo.gl/csnbnB84NUK8WqHc7">Burnside Hall</a> 1B45</span>
       </div>
       <div class="info-item">
         <strong>Registration Deadline</strong>
@@ -72,24 +75,136 @@
 
       <section id="program">
         <h2>Program</h2>
-        <p>The program for GRAPHQUON 2026 will include keynotes, student talks, and other activities.  A preliminary schedule will be available soon, 
-			and a final schedule with assigned presentation slots will be posted after registration closes.  Note that titles and abstracts will not be posted on the web so as to preserve anonymity for works that are about to be submitted.
-		</p>        
+        <p>The schedule is possibly not yet final (please check again for changes). Note that titles and abstracts of student presentations will not be posted so as to preserve anonymity for works that are about to be submitted.  This year's format follows tradition.  Each session nominmally consist of 4 talks, with each being a <em>maximum</em> of 10 minutes.  Talks will be given back to back without any questions, with remainder of the session consisting of a structured discussion format that ensures that all presenters receive valuable feedback. </p>
+
+        <details class="day" data-date="2026-10-23" open>
+        <summary><h3>Friday, October 23</h3></summary>
+        
+        <p>For those who arrive early Friday, you are welcome to attend the School of Computer Science Colloquium. The available extra seating is quite limited given the number of computer science students who will be attending, so an <a href="mailto:kry@cs.mcgill.ca?subject=RSVP%20for%20GRAPHQUON%202026%20Colloquium">RSVP</a> is requested from anyone who would like to attend.</p>
+        
+        <dl class="program-grid">
+          <dt>15:30-16:30</dt>
+          <dd>
+            <p><strong>School of Computer Science Colloquium</strong> - <a href="https://maps.app.goo.gl/Y3u9NXHDA26R9xQk9">McConnell Engineering</a> 11</p>
+            <p><em><a href="https://www.cs.mcgill.ca/events/388">Not Dead Yet? Is Physics-based Animation the Key to World Models?</a></em></p>
+            <p>David I. W. Levin, University of Toronto</p>
+          
+            <p><a href="mailto:kry@cs.mcgill.ca?subject=RSVP%20for%20GRAPHQUON%202026%20Colloquium">RSVP</a> (space is limited). The talk will be followed by a small reception in ENGMC 100N.</p>
+          </dd>          
+          <dt>Friday Evening</dt>
+          <dd>
+            <p><strong>Networking</strong></p>
+            <p>Participants arriving early on Friday are encouraged to coordinate through the GRAPHQUON Slack channel. See your registration confirmation email for the link to join the Slack.</p>
+          </dd>
+        </dl>
+        </details>
+
+        <details class="day" data-date="2026-10-24" open>
+        <summary><h3>Saturday, October 24</h3></summary>
+
+          <dl class="program-grid">
+          <dt>8:30</dt>
+          <dd>
+            <p><strong>Coffee, Registration</strong> - <a href="https://maps.app.goo.gl/csnbnB84NUK8WqHc7">Burnside Hall</a> 1B45</p>
+          </dd>
+          <dt>9:00-10:30</dt>
+          <dd>
+            <p><strong>Opening Remarks</strong> - Paul Kry, McGill University</p>
+            <p><strong>Geometry</strong> - Chair TBA</p>
+            <p>
+            Jing Ren, Université de Montréal<br>
+            Chenbo Jiang, McGill University<br>
+            David Cha, University of Waterloo<br>
+            Ashwath Shetty,	Université de Montréal</p>
+          </dd>
+          <dt>10:30-11:00</dt><dd><p><strong>Break</strong></p></dd>
+          <dt>11:00-12:30</dt>
+          <dd>
+            <p><strong>Animation</strong> - Chair TBA</p>
+            <p>
+            Yuze Fu, , University of Toronto<br>
+            Alex Tian Ye Xu, University of Toronto<br>
+            William Dracopoulos, McGill University<br>
+            Zhecheng Wang, University of Toronto</p>
+          </dd>
+          <dt>12:30-13:30</dt><dd><p><strong>Lunch</strong> - Provided</p></dd>
+          <dt>13:30-15:00</dt>
+          <dd>
+            <p><strong>Rendering</strong> - Chair TBA</p>
+            <p>Matthew Georgy, Université de Montréal<br>
+            Euan Hughes, École de technologie supérieure<br>
+            Justin Benoist, École de technologie supérieure<br>
+            Christophe Bolduc, Université Laval</p>
+          </dd>
+          <dt>15:00-15:30</dt><dd><p><strong>Break</strong></p></dd>
+          <dt>15:30-16:30</dt>
+          <dd>
+            <p><strong>GRAPHQUON Keynote</strong></p>
+            <p><em><a href="#keynotes">Bridging the Entertainment-Research Gap</a></em></p>
+            <p>J.P. Lewis, Electronic Arts</p>
+          </dd>
+          <dt>16:30-18:00</dt>
+          <dd>
+            <p><strong>Milton Coop Bar via Kondiaronk Belvedere </strong> - <a href="https://maps.app.goo.gl/vpH7ypBKm2kjHSBf9">Map</a></p>
+            <p>Optional longer walk up mountain (150 m elevation gain) to the lookout for sunset and a view of the city,             weather permitting.</p>
+          </dd>
+          <dt>18:00</dt>
+          <dd>
+            <p><strong>Dinner, Drinks, and Networking</strong> <a href="https://maps.app.goo.gl/BbrttymDP5fWG6ET9"> - Milton Coop Bar </a></p>
+            <p>A casual social evening to continue talking with fellow researchers and industry professionals.
+            There will be networking activity, with details to be revealed at the venue.
+            </p>  
+          </dd>
+        </dl>
+        </details>
+
+        <details class="day" data-date="2026-10-25" open>
+        <summary><h3>Sunday, October 25</h3></summary>
+
+        <dl class="program-grid">
+          <dt>9:00-9:30</dt>
+          <dd><p><strong>Coffee</strong> - <a href="https://maps.app.goo.gl/csnbnB84NUK8WqHc7">Burnside Hall</a> 1B45</p></dd>
+          <dt>9:30-10:30</dt>
+          <dd>
+            <p><strong>GRAPHQUON Panel</strong></p>
+            <p><em>Topic, moderator, panelsits, TBA</em></p>
+            <!--<p>Descripiton.</a></p>-->
+          </dd>
+          <dt>10:30-11:00</dt><dd><p><strong>Break</strong></p></dd>
+          <dt>11:00-12:30</dt>
+          <dd>
+            <p><strong>Animation</strong> - Chair TBA</p>
+            <p>Matheus M. Cavazotti, École de technologie supérieure<br>
+            Yanbo Cheng, McMaster University<br>
+            Changyue, University of Toronto<br>
+            Tianshu Kuai, Université de Montréal</p>
+            <p><strong>Closing Remarks</strong> - Paul Kry</p>
+            <p><strong>Best Presentation Recognition</strong></p>
+          </dd>
+          <dt>12:30</dt>
+          <dd>
+            <p><strong>Neworking and Departures</strong></p>
+            <p>Informal lunch plans to be made by anyone who does not have an early departure. </p>
+          </dd>
+          </dl>
+        </details>
       </section>
 
       <section id="keynotes">
-        <h2>Keynotes</h2>
-        <p>Keynote speakers for 2026 will be announced soon. We aim to feature speakers spanning animation, rendering, simulation, geometry processing, and machine learning for graphics.</p>
+        <h2>Keynote</h2>
+        <p>In this keynote presentaiton, J.P. Lewis will describe research in the entertainment industry and examine the gap between research promise and industry adoption.</p>
+        <p>Lewis is principal research scientist at Electronic Arts. Previously he worked at NVIDIA and Google research, and in visual effects, where he received credits on a few movies including Avatar and The Matrix sequels. He has published at SIGGRAPH and other leading conferences, and several of his algorithms have been widely adopted in commercial software.</p>
+        
+        <!--  J.P. Lewis is a numerical programmer and researcher working in machine learning. He has worked as as a research scientist at NVIDIA Research and Google Research, and also worked applying ML and computer vision in the movie and games industries, including at Weta Digital, ILM, and ESC, and at Electronic Arts where he served as principal technical director. He received credits on a few movies including Avatar and The Matrix sequels, and his algorithms have been adopted in commercial software including Maya, Matlab, and several game engines. Lewis is also an adjunct Associate Professor in the machine learning group of Victoria University. His research has been published in peer-reviewed venues including ACM TOG/Siggraph, AAAI, ECCV, ICML, and CVPR.</p>-->
       </section>
 
       <section id="registration">
         <h2>Registration</h2>
-        <p>Registration is now <b>open</b>! Please fill out <a href="https://forms.gle/RcAZE6jE4K3vJFJF8" target="_blank" rel="noopener noreferrer">this form</a> to register. </p>
-        <p>The deadline to register is <b>October 7th</b>. Late registrations may be considered on a case-by-case basis.</p>
         <ul>
           <li>Interested in attending? Contact your thesis supervisor.</li>
           <li>Space for presentations may be limited to maintain a focused workshop environment.</li>
         </ul>
+        <p> Please fill out <a href="https://forms.gle/RcAZE6jE4K3vJFJF8" target="_blank" rel="noopener noreferrer">this form</a> to register. The deadline to register is October 7th. Registration is now closed, but late registrations may be considered on a case-by-case basis.</p>
       </section>
 
       <section id="organization">
@@ -97,7 +212,7 @@
         <table class="org-table" aria-label="Organization roles">
           <tbody>
             <tr>
-              <th scope="row">Chair</th>
+              <th scope="row">General Chair</th>
               <td><a href="https://www.cs.mcgill.ca/~kry/" target="_blank" rel="noopener noreferrer">Paul Kry</a></td>
             </tr>
             <tr>
@@ -110,7 +225,7 @@
             </tr>
             <tr>
               <th scope="row">Logistics Chairs</th>
-              <td><a href="https://mcavazotti.github.io/" target="_blank" rel="noopener noreferrer">Matheus Cavazotti</a>, Rikin Gurditta</td>
+              <td><a href="https://mcavazotti.github.io/" target="_blank" rel="noopener noreferrer">Matheus Cavazotti</a>, <a href="https://www.linkedin.com/in/rikin-gurditta/?isSelfProfile=false">Rikin Gurditta</a></td>
               
             </tr>
             <!-- <tr>
@@ -157,11 +272,21 @@
   <footer class="site-footer" aria-label="Footer">
     <div class="footer-inner">
       <div class="footer-copy">
-        <p class="footer-label">Graphquon 2026</p>
+        <p class="footer-label"></p>
       </div>
     </div>
   </footer>
   <script>
+    // Collapse program days that are before today (local time)
+    (() => {
+      const now = new Date();
+      const today = [now.getFullYear(), now.getMonth() + 1, now.getDate()]
+        .map((n) => String(n).padStart(2, '0')).join('-');
+      document.querySelectorAll('details.day[data-date]').forEach((d) => {
+        if (d.dataset.date < today) d.removeAttribute('open');
+      });
+    })();
+
     const navToggle = document.querySelector('.nav-toggle');
     const siteNav = document.querySelector('.site-nav');
     const navLinks = document.querySelectorAll('.site-nav a');
