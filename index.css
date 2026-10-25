@@ -53,6 +53,10 @@ a:hover {
   text-decoration: underline;
 }
 
+.award-highlight {
+  color: var(--brand);
+}
+
 .site-nav {
   position: sticky;
   top: 0;
